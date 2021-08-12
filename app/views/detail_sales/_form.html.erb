@@ -1,0 +1,47 @@
+<%= form_with(model: detail_sale, local: true) do |form| %>
+  <% if detail_sale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(detail_sale.errors.count, "error") %> prohibited this detail_sale from being saved:</h2>
+
+      <ul>
+      <% detail_sale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :detail %>
+    <%= form.text_area :detail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :caratula %>
+    <%= form.number_field :caratula %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.number_field :value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contract %>
+    <%= form.text_field :contract %>
+  </div>
+
+  <div class="field">
+    <%= form.label :buyer_id %>
+    <%= form.text_field :buyer_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

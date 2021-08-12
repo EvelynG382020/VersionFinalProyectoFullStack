@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Buyers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Rut</th>
+      <th>Mail</th>
+      <th>Detail</th>
+      <th>Owner</th>
+      <th>Property</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @buyers.each do |buyer| %>
+      <tr>
+        <td><%= buyer.name %></td>
+        <td><%= buyer.phone %></td>
+        <td><%= buyer.rut %></td>
+        <td><%= buyer.mail %></td>
+        <td><%= buyer.detail %></td>
+        <td><%= buyer.owner %></td>
+        <td><%= buyer.property %></td>
+        <td><%= link_to 'Show', buyer %></td>
+        <td><%= link_to 'Edit', edit_buyer_path(buyer) %></td>
+        <td><%= link_to 'Destroy', buyer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Buyer', new_buyer_path %>

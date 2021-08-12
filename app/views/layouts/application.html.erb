@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FinalProjectBroker</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://blog.nubecolectiva.com/wp-content/uploads/2018/08/faviconcc.png">
+
+    <!-- Con estas 2 líneas llamamos a los archivos CSS y Javascript de Bootstrap y demás -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+    <script src="app/assets/javascripts/indicadores.js"></script>
+  </body>
+</html>

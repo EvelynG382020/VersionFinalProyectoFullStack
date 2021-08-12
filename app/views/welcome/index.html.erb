@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="<% root_path%>">
+    <i class="fas fa-home"></i>
+    Broker Inmobiliario</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="https://www.ekpropiedades.cl/">Pagina Web <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.toppropiedades.cl/intranet/">Intranet Publicaciones</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="https://homer.sii.cl/">SII</a>
+          <a class="dropdown-item" href="https://www.tgr.cl/">Tesoreria GR</a>
+      </div>    
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Intranet BDD</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="<%= owners_path%>">Propietarios</a>
+          <a class="dropdown-item" href="<%= properties_path%>">Propiedades</a>
+          <a class="dropdown-item" href="<%= renters_path%>">Arrendatarios</a>
+          <a class="dropdown-item" href="<%= buyers_path%>">Compradores</a>
+          <a class="dropdown-item" href="<%= detail_sales_path%>">Detalle Ventas</a>
+          <a class="dropdown-item" href="<%= detail_rents_path%>">Detalle Arriendos</a>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav ms-auto">
+      <% if current_user %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="<%=destroy_user_session_path%>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="fa fa-user"></div>
+            <b><%= current_user.email %></b>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to edit_user_registration_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
+              <div class="fa fa-cog"></div>
+              <b>Configuración</b>
+            <% end %>
+            <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+              <div class="fa fa-sign-out-alt"></div>
+              <b>Salir</b>
+            <% end %>
+          </ul>
+        </li>
+      <% else %>
+        <%= link_to "Log in", new_user_session_path, class: "nav-link #{'active fw-bold' if current_page?(new_user_session_path)}" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "nav-link #{'active fw-bold' if current_page?(new_user_registration_path)}" %>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+ 
+<main class="container" role="main">
+  <div class="jumbotron">
+    <h1></h1>
+    <p class="lead">Bienvenido</p>
+    <a class="btn btn-lg btn-primary" href="https://blog.nubecolectiva.com" target="_blank" role="button">Broker Inmobiliario &raquo;</a></div><div class="container"></div><p class="lead">Compartimos tutoriales sobre:</p><div class="row"><div class="col-md-4"><h2>Frontend</h2><p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.<a href="https://blog.nubecolectiva.com/category/frontend/" target="_blank"><img class="img-fluid mt-3" src="https://blog.nubecolectiva.com/wp-content/uploads/2018/11/img_destacada_blog_devs-11-300x169.png"></a></p></div><div class="col-md-4"><h2>Backend</h2><p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.<a href="https://blog.nubecolectiva.com/category/backend/" target="_blank"><img class="img-fluid mt-2" src="https://blog.nubecolectiva.com/wp-content/uploads/2018/11/img_destacada_blog_devs-8-300x169.png"></a></p></div><div class="col-md-4"><h2>Android</h2><p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.<a href="https://blog.nubecolectiva.com/category/android/" target="_blank"><img class="img-fluid mt-2" src="https://blog.nubecolectiva.com/wp-content/uploads/2018/11/img_destacada_blog_devs-9-300x169.png"></a></p></div></div><hr></main>
+<footer></footer><div class="container"><div align="center">Desarrollado por <a href="https://www.nubecolectiva.com" target="_blank">Evelyn Katiuska Gomez Frez</a></div></div><hr>
+<table>
+    <thead>
+      <tr>
+        <th><p id="UF"></p></th>
+        <th><p id="DolarO"></p></th>
+        <th><p id="DolarA"></p></th>
+        <th><p id="Euro"></p></th>
+        <th><p id="UTM"></p></th>
+        <th><p id="IPC"></p></th>
+        <th><p id="IVP"></p></th>
+        <th><p id="Imacec"></p></th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+  </table>

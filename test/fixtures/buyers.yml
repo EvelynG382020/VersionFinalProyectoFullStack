@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phone: 1
+  rut: 1
+  mail: MyString
+  detail: MyString
+  owner: one
+  property: one
+
+two:
+  name: MyString
+  phone: 1
+  rut: 1
+  mail: MyString
+  detail: MyString
+  owner: two
+  property: two

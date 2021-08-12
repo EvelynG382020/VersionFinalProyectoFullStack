@@ -1,0 +1,37 @@
+<%= form_with(model: detail_rent, local: true) do |form| %>
+  <% if detail_rent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(detail_rent.errors.count, "error") %> prohibited this detail_rent from being saved:</h2>
+
+      <ul>
+      <% detail_rent.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :detail %>
+    <%= form.text_area :detail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.number_field :value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contract %>
+    <%= form.text_field :contract %>
+  </div>
+
+  <div class="field">
+    <%= form.label :renter_id %>
+    <%= form.text_field :renter_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  detail: MyText
+  caratula: 1
+  url: MyString
+  value: 1
+  contract: MyString
+  buyer: one
+
+two:
+  detail: MyText
+  caratula: 1
+  url: MyString
+  value: 1
+  contract: MyString
+  buyer: two
