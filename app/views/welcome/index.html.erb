@@ -19,36 +19,51 @@
         <div class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" href="https://homer.sii.cl/">SII</a>
           <a class="dropdown-item" href="https://www.tgr.cl/">Tesoreria GR</a>
+          <a class="dropdown-item" href="https://calculadoraipc.ine.cl/">Calculo IPC</a>
       </div>    
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Intranet BDD</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="<%= owners_path%>">Propietarios</a>
+        <% if current_user.admin? %>
+          <a class="dropdown-item" href="<%= owners_path%>">Propietarios</a>  
+          <a class="dropdown-item" href="<%= properties_path%>">Propiedades</a>
+          <a class="dropdown-item" href="<%= detail_sales_path%>">Detalle Ventas</a>
+          <a class="dropdown-item" href="<%= detail_rents_path%>">Detalle Arriendos</a>
+        <% end %>
+        <% if current_user.asistant? %>
+          <a class="dropdown-item" href="<%= owners_path%>">Propietarios</a>  
+          <a class="dropdown-item" href="<%= properties_path%>">Propiedades</a>
+          <a class="dropdown-item" href="<%= renters_path%>">Arrendatarios</a>
+          <a class="dropdown-item" href="<%= buyers_path%>">Compradores</a>
+        <% end %>
+        <% if current_user.broker? %>
+          <a class="dropdown-item" href="<%= owners_path%>">Propietarios</a>  
           <a class="dropdown-item" href="<%= properties_path%>">Propiedades</a>
           <a class="dropdown-item" href="<%= renters_path%>">Arrendatarios</a>
           <a class="dropdown-item" href="<%= buyers_path%>">Compradores</a>
           <a class="dropdown-item" href="<%= detail_sales_path%>">Detalle Ventas</a>
           <a class="dropdown-item" href="<%= detail_rents_path%>">Detalle Arriendos</a>
+        <% end %>  
         </div>
       </li>
     </ul>
     <ul class="navbar-nav ms-auto">
       <% if current_user %>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="<%=destroy_user_session_path%>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <div class="fa fa-user"></div>
             <b><%= current_user.email %></b>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to edit_user_registration_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
-              <div class="fa fa-cog"></div>
-              <b>Configuración</b>
-            <% end %>
-            <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
-              <div class="fa fa-sign-out-alt"></div>
-              <b>Salir</b>
-            <% end %>
+              <%= link_to edit_user_registration_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
+                <div class="fa fa-cog"></div>
+                <b>Account settings</b>
+              <% end %>
+              <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+                <div class="fa fa-sign-out-alt"></div>
+                <b>Sign out</b>
+              <% end %>
           </ul>
         </li>
       <% else %>

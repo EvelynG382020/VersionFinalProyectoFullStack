@@ -24,7 +24,9 @@
         <td><%= detail_sale.value %></td>
         <td><%= detail_sale.contract %></td>
         <td><%= detail_sale.buyer %></td>
-        <td><%= link_to 'Show', detail_sale %></td>
+        <% if current_user.asistant? %>
+          <td><%= link_to 'Show', detail_sale %></td>
+        <% end %>
         <td><%= link_to 'Edit', edit_detail_sale_path(detail_sale) %></td>
         <td><%= link_to 'Destroy', detail_sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

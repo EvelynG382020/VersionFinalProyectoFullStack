@@ -11,6 +11,7 @@
     <link rel="icon" href="https://blog.nubecolectiva.com/wp-content/uploads/2018/08/faviconcc.png">
 
     <!-- Con estas 2 líneas llamamos a los archivos CSS y Javascript de Bootstrap y demás -->
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -19,7 +20,9 @@
     
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
     <script src="app/assets/javascripts/indicadores.js"></script>
   </body>
 </html>
