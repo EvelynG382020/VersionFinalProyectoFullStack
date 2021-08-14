@@ -12,41 +12,53 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name, "Nombre descriptivo" %>
+    <%= form.text_field :name, class: "form-control", autofocus: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :status, "Estado" %>
+    <%= form.select :status, Property.statuses.keys, class: "form-control", autofocus: true %>
   </div>
 
   <div class="field">
-    <%= form.label :status %>
-    <%= form.number_field :status %>
+    <%= form.label :negotiation, "Observaciones" %>
+    <%= form.text_field :negotiation, placeholder: "Venta o Arriendo" %>
   </div>
 
   <div class="field">
-    <%= form.label :detail %>
+    <%= form.label :detail, "Observaciones" %>
     <%= form.text_field :detail %>
   </div>
 
   <div class="field">
-    <%= form.label :kind %>
-    <%= form.text_field :kind %>
+    <%= form.label :kind, "Tipo de propiedad" %>
+    <%= form.text_field :kind, placeholder: "Casa o Departamento" %>
   </div>
 
   <div class="field">
-    <%= form.label :adress %>
-    <%= form.text_field :adress %>
+    <%= form.label :adress, "Dirección" %>
+    <%= form.text_field :adress, placeholder: "Ej: Los Ciruelos 444" %>
   </div>
 
   <div class="field">
     <%= form.label :rol %>
-    <%= form.number_field :rol %>
+    <%= form.text_field :rol %>
   </div>
 
   <div class="field">
-    <%= form.label :owner_id %>
-    <%= form.text_field :owner_id %>
+    <%= form.label :owner_id, "Propietario" %>
+    <%= form.collection_select :owner_id , Owner.all, :id, :name, prompt: true %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="field">
+    <%= form.label :created_at %>
+    <%= form.date_select :created_at %>
   </div>
+
+  <div class="card-footer text-right">
+    <%= link_to "Cancelar", properties_path, class: "btn btn-default" %>
+    <%= form.submit "Crear Propiedad", class: "btn btn-primary" %>
+  </div>
+          
 <% end %>

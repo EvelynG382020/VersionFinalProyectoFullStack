@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_13_234534) do
+ActiveRecord::Schema.define(version: 2021_08_14_152001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 2021_08_13_234534) do
 
   create_table "buyers", force: :cascade do |t|
     t.string "name"
-    t.integer "phone"
-    t.integer "rut"
+    t.string "phone"
+    t.string "rut"
     t.string "mail"
     t.string "detail"
     t.bigint "owner_id"
@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(version: 2021_08_13_234534) do
     t.bigint "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "negotiation"
     t.index ["owner_id"], name: "index_properties_on_owner_id"
   end
 

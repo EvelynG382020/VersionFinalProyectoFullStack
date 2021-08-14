@@ -1,39 +1,84 @@
 <p id="notice"><%= notice %></p>
-
+<hr>
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @property.name %>
 </p>
-
+<hr>
 <p>
-  <strong>Status:</strong>
+  <strong>Estado:</strong>
   <%= @property.status %>
 </p>
-
+<hr>
 <p>
-  <strong>Detail:</strong>
+  <strong>Negociación:</strong>
+  <%= @property.negotiation %>
+</p>
+<hr>
+<p>
+  <strong>Observaciones:</strong>
   <%= @property.detail %>
 </p>
-
+<hr>
 <p>
-  <strong>Kind:</strong>
+  <strong>Tipo de propiedad:</strong>
   <%= @property.kind %>
 </p>
-
+<hr>
 <p>
-  <strong>Adress:</strong>
+  <strong>Dirección:</strong>
   <%= @property.adress %>
 </p>
-
+<hr>
 <p>
   <strong>Rol:</strong>
   <%= @property.rol %>
 </p>
-
+<hr>
 <p>
-  <strong>Owner:</strong>
-  <%= @property.owner %>
+  <strong>Propietario:</strong>
+  <%= @property.name_owner %>
 </p>
+<hr>
+<p>
+  <strong>Compradores:</strong>
+  <%= @property.buyers.pluck(:name).join(',') %>
+</p>
+<hr>
+<p>
+  <strong>Arrendatario:</strong>
+  <%= @property.renters.pluck(:name).join(',') %>
+</p>
+<hr>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Teléfono</th>
+      <th>Rut</th>
+      <th>Mail</th>
+      <th>Observaciones</th>
+      <th>Propietario</th>
+      <th>Propiedad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
+  <tbody>
+  <h2>Comprador</h2>
+    <% @property.buyers.each do |property| %>
+      <tr>
+        <td><%= property.name %></td>
+        <td><%= property.phone %></td>
+        <td><%= property.rut %></td>
+        <td><%= property.mail %></td>
+        <td><%= property.detail %></td>
+        <td><%= property.owner.name %></td>
+        <td><%= property.property.name %></td>
+     <% end %>
+  </tbody>
+</table>
+
+<hr>
+<%= link_to 'Editar', edit_property_path(@property) %> |
+<%= link_to 'Regresar', properties_path %>

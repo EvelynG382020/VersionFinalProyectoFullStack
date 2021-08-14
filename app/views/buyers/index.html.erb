@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Buyers</h1>
+<h1>Compradores</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Phone</th>
+      <th>Nombre</th>
+      <th>Teléfono</th>
       <th>Rut</th>
       <th>Mail</th>
-      <th>Detail</th>
-      <th>Owner</th>
-      <th>Property</th>
+      <th>Observaciones</th>
+      <th>Propietario</th>
+      <th>Propiedad</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,8 +24,8 @@
         <td><%= buyer.rut %></td>
         <td><%= buyer.mail %></td>
         <td><%= buyer.detail %></td>
-        <td><%= buyer.owner %></td>
-        <td><%= buyer.property %></td>
+        <td><%= buyer.owner.name %></td>
+        <td><%= buyer.property.name %></td>
         <td><%= link_to 'Show', buyer %></td>
         <td><%= link_to 'Edit', edit_buyer_path(buyer) %></td>
         <td><%= link_to 'Destroy', buyer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

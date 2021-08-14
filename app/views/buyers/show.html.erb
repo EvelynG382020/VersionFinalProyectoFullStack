@@ -27,13 +27,18 @@
 
 <p>
   <strong>Owner:</strong>
-  <%= @buyer.owner %>
+  <%= @buyer.owner.name %>
 </p>
 
 <p>
   <strong>Property:</strong>
-  <%= @buyer.property %>
+  <%= @buyer.property.name %>
 </p>
+<hr>
+
+
+
+  
 
 <%= link_to 'Edit', edit_buyer_path(@buyer) %> |
 <%= link_to 'Back', buyers_path %>

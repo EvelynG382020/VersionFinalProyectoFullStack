@@ -3,7 +3,8 @@ class PropertiesController < ApplicationController
   before_action :authenticate_user!
   # GET /properties or /properties.json
   def index
-    @properties = Property.all
+    @q = Property.ransack(params[:q])
+    @properties = @q.result(distinct: true)
   end
 
   # GET /properties/1 or /properties/1.json
@@ -64,6 +65,6 @@ class PropertiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def property_params
-      params.require(:property).permit(:name, :status, :detail, :kind, :adress, :rol, :owner_id)
+      params.require(:property).permit(:name, :status, :detail, :kind, :adress, :rol, :negotiation, :owner_id)
     end
 end
