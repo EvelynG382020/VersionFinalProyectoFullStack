@@ -1,4 +1,4 @@
-
+<% if user_signed_in? && current_user.broker? %>
 <p id="notice"><%= notice %></p>
 
 <h1>Detail Rents</h1>
@@ -22,10 +22,10 @@
         <td><%= detail_rent.contract %></td>
         <td><%= detail_rent.renter %></td>
         <td><%= link_to 'Show', detail_rent %></td>
-        <% if current_user.broker? && current_user.asistant %>
+        
         <td><%= link_to 'Edit', edit_detail_rent_path(detail_rent) %></td>
         <td><%= link_to 'Destroy', detail_rent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
+      
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,5 @@
 <br>
 
 <%= link_to 'New Detail Rent', new_detail_rent_path %>
+
 <% end %>
