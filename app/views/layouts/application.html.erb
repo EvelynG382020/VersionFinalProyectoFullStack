@@ -17,12 +17,13 @@
   </head>
 
   <body>
-    
+    <%= render '/partials/navbar' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <div class="container">
       <%= yield %>
     </div>
-    <script src="app/assets/javascripts/indicadores.js"></script>
+    <%= render '/partials/footer'%>
   </body>
+  
 </html>

@@ -12,23 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name, "Nombre" %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :phone %>
-    <%= form.number_field :phone %>
+    <%= form.label :phone, "Teléfono contacto" %>
+    <%= form.text_field :phone, placeholder: "+56912345678" %>
   </div>
 
   <div class="field">
     <%= form.label :rut %>
-    <%= form.number_field :rut %>
+    <%= form.text_field :rut, placeholder: "11.111.111-1" %>
   </div>
 
   <div class="field">
     <%= form.label :mail %>
-    <%= form.text_field :mail %>
+    <%= form.text_field :mail, placeholder: "example@example.com" %>
   </div>
 
   <div class="actions">

@@ -21,8 +21,10 @@
         <td><%= owner.rut %></td>
         <td><%= owner.mail %></td>
         <td><%= link_to 'Show', owner %></td>
+        <% unless current_user.asistant? %>
         <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
         <td><%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

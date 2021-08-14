@@ -1,6 +1,6 @@
 class RentersController < ApplicationController
   before_action :set_renter, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
   # GET /renters or /renters.json
   def index
     @renters = Renter.all

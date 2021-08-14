@@ -1,6 +1,6 @@
 class DetailRentsController < ApplicationController
   before_action :set_detail_rent, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
   # GET /detail_rents or /detail_rents.json
   def index
     @detail_rents = DetailRent.all
