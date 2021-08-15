@@ -14,5 +14,14 @@ ActiveAdmin.register User do
     permitted << :other if params[:action] == 'create' && current_user.admin?
     permitted
   end
+  before_action :remove_password_params_if_blank, only: [:update]
+  controller do
+    def remove_password_params_if_blank
+      if params[:user][:password].blank? && params[:user][:password_confirmation].blank?
+        params[:user].delete(:password)
+        params[:user].delete(:password_confirmation)
+      end
+    end
+  end
   
 end
