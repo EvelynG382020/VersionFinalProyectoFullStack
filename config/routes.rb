@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'lead/index'
+  get 'dashboard/index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :detail_rents
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   resources :properties
   resources :owners
   root 'home#index'
+  
   devise_for :users, controllers: { registrations: 'users/registrations' }
   
   

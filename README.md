@@ -1,8 +1,11 @@
 # Final Project Full Stack "Platform Broker Inmobiliario"
 rails (version) new (name) -d=postgresql
-gem devise, and devise install, controller and views
-gem activeamine for roles and admin
-gem ransack for search status en_proceso or finazilada of the properties
+gem devise, and devise install, controller and views.
+gem activeamine for roles and admin.
+gem ransack for search status in_process or finished of the properties.
+gem sendgrip install for notify email when create new user. For example the client needs other users for some works in the platform.
+gem acts as votable, for put a like o dislike to tasks.
+The Client will be able to see a dashboard with all information entered...
 Continuation of the project...
 The client needs to see all properties informations and the owners with details of sale and rent, the renters and buyers in the process, also, he needs
 
