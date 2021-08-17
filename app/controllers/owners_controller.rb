@@ -1,6 +1,7 @@
 class OwnersController < ApplicationController
   before_action :set_owner, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
+  respond_to :js, :html, :json
   # GET /owners or /owners.json
   def index
     @owners = Owner.all
@@ -55,6 +56,19 @@ class OwnersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def upvote
+    @owner = Owner.find(params[:id])
+    @owner.upvote_by current_user
+    redirect_back fallback_location: root_path
+  end
+
+  def downvote
+    @owner = Owner.find(params[:id])
+    @owner.downvote_by current_user
+    redirect_back fallback_location: root_path
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

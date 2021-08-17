@@ -6,11 +6,12 @@
 <table>
   <thead>
     <tr>
-      <th>Detail</th>
+      <th>Observaciones</th>
       <th>Caratula</th>
       <th>Url</th>
-      <th>Value</th>
-      <th>Contract</th>
+      <th>Valor $</th>
+      <th>Promesa</th>
+      <th>Firma Escritura</th>
       <th>Buyer</th>
       <th colspan="3"></th>
     </tr>
@@ -24,12 +25,13 @@
         <td><%= detail_sale.url %></td>
         <td><%= detail_sale.value %></td>
         <td><%= detail_sale.contract %></td>
-        <td><%= detail_sale.buyer %></td>
+        <td><%= detail_sale.contract %></td>
+        <td><%= detail_sale.buyer.name %></td>
         <% if current_user.asistant? %>
-          <td><%= link_to 'Show', detail_sale %></td>
+          <td><%= link_to 'Mas info', detail_sale %></td>
         <% end %>
-        <td><%= link_to 'Edit', edit_detail_sale_path(detail_sale) %></td>
-        <td><%= link_to 'Destroy', detail_sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Editar', edit_detail_sale_path(detail_sale) %></td>
+        <td><%= link_to 'Eliminar', detail_sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

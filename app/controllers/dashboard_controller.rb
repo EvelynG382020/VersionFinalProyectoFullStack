@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+  before_action :set_owner, only: %i[ show edit update destroy ]
   def index
     @owners = Owner.all
   end

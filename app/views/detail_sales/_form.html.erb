@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :detail %>
+    <%= form.label :detail, "Observaciones" %>
     <%= form.text_area :detail %>
   </div>
 
   <div class="field">
     <%= form.label :caratula %>
-    <%= form.number_field :caratula %>
+    <%= form.text_field :caratula, placeholder: "1111111111" %>
   </div>
 
   <div class="field">
@@ -27,21 +27,26 @@
   </div>
 
   <div class="field">
-    <%= form.label :value %>
-    <%= form.text_field :value %>
+    <%= form.label :value, "Valor $" %>
+    <%= form.text_field :value, placeholder: "solo numeros sin puntos" %>
   </div>
 
   <div class="field">
-    <%= form.label :contract %>
-    <%= form.text_field :contract %>
+    <%= form.label :contract, "Promesa" %>
+    <%= form.select :contract, DetailSale.contracts.keys %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contract, "Firma Escritura" %>
+    <%= form.select :contract, DetailSale.contracts.keys %>
   </div>
 
   <div class="field">
     <%= form.label :buyer_id %>
-    <%= form.text_field :buyer_id %>
+    <%= form.collection_select :buyer_id , Buyer.all, :id, :name, prompt: true %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Crear" %>
   </div>
 <% end %>

@@ -12,6 +12,7 @@
       <th>Detail</th>
       <th>Owner</th>
       <th>Property</th>
+      <th>Fecha de ingreso</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,6 +27,7 @@
         <td><%= renter.detail %></td>
         <td><%= renter.owner %></td>
         <td><%= renter.property %></td>
+        <td><%= buyer.created_at.to_datetime %></td>
         <td><%= link_to 'Show', renter %></td>
         <td><%= link_to 'Edit', edit_renter_path(renter) %></td>
         <td><%= link_to 'Destroy', renter, method: :delete, data: { confirm: 'Are you sure?' } %></td>

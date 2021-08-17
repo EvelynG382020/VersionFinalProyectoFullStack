@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Detail:</strong>
-  <%= @detail_sale.detail %>
-</p>
-
-<p>
   <strong>Caratula:</strong>
   <%= @detail_sale.caratula %>
 </p>
@@ -16,18 +11,28 @@
 </p>
 
 <p>
-  <strong>Value:</strong>
+  <strong>Valor: $</strong>
   <%= @detail_sale.value %>
 </p>
 
 <p>
-  <strong>Contract:</strong>
+  <strong>Promesa:</strong>
   <%= @detail_sale.contract %>
 </p>
 
 <p>
-  <strong>Buyer:</strong>
-  <%= @detail_sale.buyer %>
+  <strong>Firma de Escritura:</strong>
+  <%= @detail_sale.contract %>
+</p>
+
+<p>
+  <strong>Comprador:</strong>
+  <%= @detail_sale.buyer.name %>
+</p>
+
+<p>
+  <strong>Observaciones:</strong>
+  <%= @detail_sale.detail %>
 </p>
 
 <%= link_to 'Edit', edit_detail_sale_path(@detail_sale) %> |

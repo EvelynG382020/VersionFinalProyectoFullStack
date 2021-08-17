@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
-
+<h2>Propietario</h2>
+<hr>
+<%= link_to 'Editar', edit_owner_path(@owner) %> |
+<%= link_to 'Regresar', owners_path %>
+<hr>
 <p>
   <strong>Name:</strong>
   <%= @owner.name %>
@@ -19,6 +23,69 @@
   <strong>Mail:</strong>
   <%= @owner.mail %>
 </p>
+<p>
+  <strong>Propiedades:</strong>
+  <%= @owner.properties.pluck(:name).join(', ')  %>
+</p>
+<hr>
+<table>
+  <thead>
+    <tr>
+      <th>Detail</th>
+      <th>Value</th>
+      <th>Contract</th>
+      <th>Renter</th>
+      <th>Propiedad</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<%= link_to 'Edit', edit_owner_path(@owner) %> |
-<%= link_to 'Back', owners_path %>
+  <tbody>
+    <h2>Detalle Arriendos</h2>
+    <% @owner.detail_rents.each do |owner| %>
+      <tr>
+        <td><%= owner.detail %></td>
+        <td><%= owner.value %></td>
+        <td><%= owner.contract %></td>
+        <td><%= owner.renter.name %></td>
+        <td><%= owner.renter.property.name %></td>
+        <td><%= owner.renter.property.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<hr>
+<table>
+  <thead>
+    <tr>
+      <th>Detail</th>
+      <th>Caratula</th>
+      <th>Url</th>
+      <th>Value</th>
+      <th>Contract</th>
+      <th>Buyer</th>
+      <th>Propiedad</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <h2>Detalle Ventas</h2>
+    <% @owner.detail_sales.each do |owner| %>
+      <tr>
+        <td><%= owner.detail %></td>
+        <td><%= owner.caratula %></td>
+        <td><%= owner.url %></td>
+        <td><%= owner.value %></td>
+        <td><%= owner.contract %></td>
+        <td><%= owner.buyer.name %></td>
+        <td><%= owner.buyer.property.name %></td>
+        <td><%= owner.buyer.property.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+

@@ -1,14 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+
 <h1>Owners</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Phone</th>
+      <th>Nombre</th>
+      <th>Teléfono</th>
       <th>Rut</th>
       <th>Mail</th>
+      <th>Total propiedades</th>
+      <th>Comprador</th>
+      <th>Arrendatario</th>
+      <th>Propiedades</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,11 +25,19 @@
         <td><%= owner.phone %></td>
         <td><%= owner.rut %></td>
         <td><%= owner.mail %></td>
+        <td><%= owner.total_property %></td>
+        <td><%= owner.buyers.pluck(:name).join(',') %></td>
+        <td><%= owner.renters.pluck(:name).join(',') %></td>
+        <td><%= owner.properties.pluck(:name).join(', ') %></td>
+        <td><%= link_to 'like', like_owner_path(owner), method: :put  %></td>
+          
+           
+        <td><%= link_to 'dislike', dislike_owner_path(owner), method: :put %></td> 
+        
         <td><%= link_to 'Show', owner %></td>
-        <% unless current_user.asistant? %>
         <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
         <td><%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+        
       </tr>
     <% end %>
   </tbody>
@@ -33,3 +46,5 @@
 <br>
 
 <%= link_to 'New Owner', new_owner_path %>
+
+
