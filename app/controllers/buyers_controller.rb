@@ -25,7 +25,7 @@ class BuyersController < ApplicationController
 
     respond_to do |format|
       if @buyer.save
-        format.html { redirect_to @buyer, notice: "Buyer was successfully created." }
+        format.html { redirect_to @buyer, notice: "#{@buyer.name} was successfully created." }
         format.json { render :show, status: :created, location: @buyer }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class BuyersController < ApplicationController
   def update
     respond_to do |format|
       if @buyer.update(buyer_params)
-        format.html { redirect_to @buyer, notice: "Buyer was successfully updated." }
+        format.html { redirect_to @buyer, notice: "#{@buyer.name} was successfully updated." }
         format.json { render :show, status: :ok, location: @buyer }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class BuyersController < ApplicationController
   def destroy
     @buyer.destroy
     respond_to do |format|
-      format.html { redirect_to buyers_url, notice: "Buyer was successfully destroyed." }
+      format.html { redirect_to buyers_url, notice: "#{@buyer.name} was successfully destroyed." }
       format.json { head :no_content }
     end
   end

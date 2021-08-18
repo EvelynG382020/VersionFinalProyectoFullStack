@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :detail %>
+    <%= form.label :contract, "Contrato" %>
+    <%= form.select :contract, DetailSale.contracts.keys %>
+  </div>
+
+  <div class="field">
+    <%= form.label :renter_id, "Arrendatario" %>
+    <%= form.collection_select :renter_id, Renter.all, :id, :name, prompt: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :detail, "Observaciones"%>
     <%= form.text_area :detail %>
   </div>
 
   <div class="field">
-    <%= form.label :value %>
-    <%= form.number_field :value %>
-  </div>
-
-  <div class="field">
-    <%= form.label :contract %>
-    <%= form.text_field :contract %>
-  </div>
-
-  <div class="field">
-    <%= form.label :renter_id %>
-    <%= form.text_field :renter_id %>
+    <%= form.label :value, "Valor $" %>
+    <%= form.text_field :value, placeholder: "solo numeros sin puntos" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Crear" %>
   </div>
 <% end %>

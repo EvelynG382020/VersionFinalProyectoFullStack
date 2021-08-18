@@ -36,7 +36,9 @@
       <th>Contract</th>
       <th>Renter</th>
       <th>Propiedad</th>
-      <th>Status</th>
+      <th>Avanzar</th>
+      <th>Alerta</th>
+      <th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -51,6 +53,9 @@
         <td><%= owner.renter.name %></td>
         <td><%= owner.renter.property.name %></td>
         <td><%= owner.renter.property.status %></td>
+        <td><%= link_to 'like', like_owner_path(owner), method: :put %></td>
+         
+        <td><%= link_to 'dislike', dislike_owner_path(owner), method: :put %></td> 
       </tr>
     <% end %>
   </tbody>
@@ -59,14 +64,16 @@
 <table>
   <thead>
     <tr>
-      <th>Detail</th>
+      <th>Observaciones</th>
       <th>Caratula</th>
       <th>Url</th>
-      <th>Value</th>
+      <th>Valor $</th>
       <th>Contract</th>
-      <th>Buyer</th>
+      <th>Comprador</th>
       <th>Propiedad</th>
       <th>Status</th>
+      <th>Avanzar</th>
+      <th>Alerta</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -82,6 +89,9 @@
         <td><%= owner.buyer.name %></td>
         <td><%= owner.buyer.property.name %></td>
         <td><%= owner.buyer.property.status %></td>
+        <td><%= link_to 'like', like_owner_path(owner), method: :put %></td>
+        
+        <td><%= link_to 'dislike', dislike_owner_path(owner), method: :put %></td> 
       </tr>
     <% end %>
   </tbody>

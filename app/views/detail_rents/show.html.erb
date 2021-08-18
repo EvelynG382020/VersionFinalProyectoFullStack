@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Detail:</strong>
+  <strong>Observaciones:</strong>
   <%= @detail_rent.detail %>
 </p>
 
 <p>
-  <strong>Value:</strong>
+  <strong>Valor: $</strong>
   <%= @detail_rent.value %>
 </p>
 
 <p>
-  <strong>Contract:</strong>
+  <strong>Contrato:</strong>
   <%= @detail_rent.contract %>
 </p>
 
 <p>
-  <strong>Renter:</strong>
-  <%= @detail_rent.renter %>
+  <strong>Arrendatario:</strong>
+  <%= @detail_rent.renter.name %>
 </p>
 
-<%= link_to 'Edit', edit_detail_rent_path(@detail_rent) %> |
-<%= link_to 'Back', detail_rents_path %>
+<%= link_to 'Editar', edit_detail_rent_path(@detail_rent) %> |
+<%= link_to 'Regresar', detail_rents_path %>

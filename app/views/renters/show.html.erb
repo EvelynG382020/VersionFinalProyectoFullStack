@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @renter.name %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
+  <strong>Teléfono:</strong>
   <%= @renter.phone %>
 </p>
 
@@ -21,19 +21,19 @@
 </p>
 
 <p>
-  <strong>Detail:</strong>
+  <strong>Observaciones:</strong>
   <%= @renter.detail %>
 </p>
 
 <p>
-  <strong>Owner:</strong>
-  <%= @renter.owner %>
+  <strong>Propietario:</strong>
+  <%= @renter.owner.name %>
 </p>
 
 <p>
-  <strong>Property:</strong>
-  <%= @renter.property %>
+  <strong>Propiedad:</strong>
+  <%= @renter.property.name %>
 </p>
 
-<%= link_to 'Edit', edit_renter_path(@renter) %> |
-<%= link_to 'Back', renters_path %>
+<%= link_to 'Editar', edit_renter_path(@renter) %> |
+<%= link_to 'Regresar', renters_path %>

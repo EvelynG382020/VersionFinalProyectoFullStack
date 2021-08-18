@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @buyer.name %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
+  <strong>Teléfono:</strong>
   <%= @buyer.phone %>
 </p>
 
@@ -21,17 +21,17 @@
 </p>
 
 <p>
-  <strong>Detail:</strong>
+  <strong>Observaciones:</strong>
   <%= @buyer.detail %>
 </p>
 
 <p>
-  <strong>Owner:</strong>
+  <strong>Propietario:</strong>
   <%= @buyer.owner.name %>
 </p>
 
 <p>
-  <strong>Property:</strong>
+  <strong>Propiedad:</strong>
   <%= @buyer.property.name %>
 </p>
 <hr>
@@ -40,5 +40,5 @@
 
   
 
-<%= link_to 'Edit', edit_buyer_path(@buyer) %> |
-<%= link_to 'Back', buyers_path %>
+<%= link_to 'Editar', edit_buyer_path(@buyer) %> |
+<%= link_to 'Regresar', buyers_path %>

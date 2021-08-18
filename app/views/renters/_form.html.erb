@@ -12,41 +12,36 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name, "Nombre" %>
+    <%= form.text_field :name, placeholder: "Nombre y Apellidos"  %>
   </div>
 
   <div class="field">
-    <%= form.label :phone %>
-    <%= form.number_field :phone %>
+    <%= form.label :phone, "Teléfono" %>
+    <%= form.text_field :phone, placeholder: "+56912345678"  %>
   </div>
 
   <div class="field">
     <%= form.label :rut %>
-    <%= form.number_field :rut %>
+    <%= form.text_field :rut, placeholder: "11.111.111-1" %>
   </div>
 
   <div class="field">
     <%= form.label :mail %>
-    <%= form.text_field :mail %>
+    <%= form.text_field :mail, placeholder: "ejemplo@ejemplo.com" %>
   </div>
 
   <div class="field">
-    <%= form.label :detail %>
-    <%= form.text_field :detail %>
+    <%= form.label :owner_id, "Propietario" %>
+    <%= form.collection_select :owner_id, Owner.all, :id, :name, prompt: true %>
   </div>
 
   <div class="field">
-    <%= form.label :owner_id %>
-    <%= form.text_field :owner_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :property_id %>
-    <%= form.text_field :property_id %>
+    <%= form.label :property_id, "Propiedad" %>
+    <%= form.collection_select :property_id, Property.all, :id, :name, prompt: true %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Crear" %>
   </div>
 <% end %>

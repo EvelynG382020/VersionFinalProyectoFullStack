@@ -1,39 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 
-<h1>Owners</h1>
-
-<table>
+<h2>Propietarios</h2>
+<hr>
+<%= link_to 'Nuevo Propietario', new_owner_path %>
+<hr>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Nombre</th>
-      <th>Teléfono</th>
-      <th>Rut</th>
-      <th>Mail</th>
-      <th>Total propiedades</th>
-      <th>Comprador</th>
-      <th>Arrendatario</th>
-      <th>Propiedades</th>
-      <th colspan="3"></th>
+      <td>Nombre</td>
+      <td>Teléfono</td>
+      <td>Rut</td>
+      <td>Mail</td>
+      <td>Total propiedades</td>
+      <td>Comprador</td>
+      <td>Arrendatario</td>
+      <td>Propiedades</td>
+      <td colspan="3"></td>
     </tr>
   </thead>
 
   <tbody>
     <% @owners.each do |owner| %>
       <tr>
-        <td><%= owner.name %></td>
-        <td><%= owner.phone %></td>
-        <td><%= owner.rut %></td>
-        <td><%= owner.mail %></td>
-        <td><%= owner.total_property %></td>
-        <td><%= owner.buyers.pluck(:name).join(',') %></td>
-        <td><%= owner.renters.pluck(:name).join(',') %></td>
-        <td><%= owner.properties.pluck(:name).join(', ') %></td>
-        <td><%= link_to 'like', like_owner_path(owner), method: :put  %></td>
-          
-           
-        <td><%= link_to 'dislike', dislike_owner_path(owner), method: :put %></td> 
-        
+        <td scope="col"><%= owner.name %></td>
+        <td scope="col"><%= owner.phone %></td>
+        <td scope="col"><%= owner.rut %></td>
+        <td scope="col"><%= owner.mail %></td>
+        <td scope="col"><%= owner.total_property %></td>
+        <td scope="col"><%= owner.buyers.pluck(:name).join(',') %></td>
+        <td scope="col"><%= owner.renters.pluck(:name).join(',') %></td>
+        <td scope="col"><%= owner.properties.pluck(:name).join(', ') %></td>
         <td><%= link_to 'Show', owner %></td>
         <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
         <td><%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -45,6 +42,6 @@
 
 <br>
 
-<%= link_to 'New Owner', new_owner_path %>
+
 
 

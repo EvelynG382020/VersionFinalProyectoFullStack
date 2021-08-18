@@ -4,51 +4,54 @@
   <strong>Nombre:</strong>
   <%= @property.name %>
 </p>
-<hr>
+
 <p>
   <strong>Estado:</strong>
   <%= @property.status %>
 </p>
-<hr>
+
 <p>
   <strong>Negociación:</strong>
   <%= @property.negotiation %>
 </p>
-<hr>
+
 <p>
   <strong>Observaciones:</strong>
   <%= @property.detail %>
 </p>
-<hr>
+
 <p>
   <strong>Tipo de propiedad:</strong>
   <%= @property.kind %>
 </p>
-<hr>
+
 <p>
   <strong>Dirección:</strong>
   <%= @property.adress %>
 </p>
-<hr>
+
 <p>
   <strong>Rol:</strong>
   <%= @property.rol %>
 </p>
-<hr>
+
 <p>
   <strong>Propietario:</strong>
   <%= @property.name_owner %>
 </p>
-<hr>
+
 <p>
   <strong>Compradores:</strong>
   <%= @property.buyers.pluck(:name).join(',') %>
 </p>
-<hr>
+
 <p>
   <strong>Arrendatario:</strong>
   <%= @property.renters.pluck(:name).join(',') %>
 </p>
+<hr>
+<%= link_to 'Editar', edit_property_path(@property) %> |
+<%= link_to 'Regresar', properties_path %>
 <hr>
 <table>
   <thead>
@@ -63,7 +66,6 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
   <h2>Comprador</h2>
     <% @property.buyers.each do |property| %>
@@ -78,7 +80,38 @@
      <% end %>
   </tbody>
 </table> 
+<hr>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Telefono</th>
+      <th>Rut</th>
+      <th>Mail</th>
+      <th>Observaciones</th>
+      <th>Propietario</th>
+      <th>Propiedad</th>
+      <th>Fecha de ingreso</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <h2>Arrendatario</h2>
+    <% @property.renters.each do |property| %>
+      <tr>
+        <td><%= property.name %></td>
+        <td><%= property.phone %></td>
+        <td><%= property.rut %></td>
+        <td><%= property.mail %></td>
+        <td><%= property.detail %></td>
+        <td><%= property.owner.name %></td>
+        <td><%= property.property.name %></td>
+        <td><%= property.created_at.to_datetime %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <hr>
-<%= link_to 'Editar', edit_property_path(@property) %> |
-<%= link_to 'Regresar', properties_path %>
+

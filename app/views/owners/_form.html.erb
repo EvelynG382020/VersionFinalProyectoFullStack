@@ -34,4 +34,8 @@
   <div class="actions">
     <%= form.submit "Crear" %>
   </div>
+  <div class="card-footer text-right">
+    <%= link_to "Cancelar", owners_path, class: "btn btn-default" %>
+    <%= form.submit "Crear Propietario", class: "btn btn-primary" %>
+  </div>
 <% end %>

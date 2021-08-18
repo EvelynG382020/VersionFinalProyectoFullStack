@@ -1,7 +1,8 @@
 class OwnersController < ApplicationController
   before_action :set_owner, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
-  respond_to :js, :html, :json
+  #load_and_authorize_resource
+
   # GET /owners or /owners.json
   def index
     @owners = Owner.all
@@ -26,7 +27,7 @@ class OwnersController < ApplicationController
 
     respond_to do |format|
       if @owner.save
-        format.html { redirect_to @owner, notice: "Owner was successfully created." }
+        format.html { redirect_to @owner, notice: "#{@owner.name} was successfully created." }
         format.json { render :show, status: :created, location: @owner }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +40,7 @@ class OwnersController < ApplicationController
   def update
     respond_to do |format|
       if @owner.update(owner_params)
-        format.html { redirect_to @owner, notice: "Owner was successfully updated." }
+        format.html { redirect_to @owner, notice: "#{@owner.name} was successfully updated." }
         format.json { render :show, status: :ok, location: @owner }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +53,7 @@ class OwnersController < ApplicationController
   def destroy
     @owner.destroy
     respond_to do |format|
-      format.html { redirect_to owners_url, notice: "Owner was successfully destroyed." }
+      format.html { redirect_to owners_url, notice: "#{@owner.name} was successfully destroyed." }
       format.json { head :no_content }
     end
   end

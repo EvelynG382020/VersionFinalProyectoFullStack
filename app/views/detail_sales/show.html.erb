@@ -22,7 +22,12 @@
 
 <p>
   <strong>Firma de Escritura:</strong>
-  <%= @detail_sale.contract %>
+  <%= @detail_sale.purchase_contract %>
+</p>
+
+<p>
+  <strong>Inscripción:</strong>
+  <%= @detail_sale.inscription %>
 </p>
 
 <p>
@@ -35,5 +40,5 @@
   <%= @detail_sale.detail %>
 </p>
 
-<%= link_to 'Edit', edit_detail_sale_path(@detail_sale) %> |
-<%= link_to 'Back', detail_sales_path %>
+<%= link_to 'Editar', edit_detail_sale_path(@detail_sale) %> |
+<%= link_to 'Regresar', detail_sales_path %>

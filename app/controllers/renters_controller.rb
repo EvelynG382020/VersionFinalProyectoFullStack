@@ -25,7 +25,7 @@ class RentersController < ApplicationController
 
     respond_to do |format|
       if @renter.save
-        format.html { redirect_to @renter, notice: "Renter was successfully created." }
+        format.html { redirect_to @renter, notice: "#{@renter.name} was successfully created." }
         format.json { render :show, status: :created, location: @renter }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class RentersController < ApplicationController
   def update
     respond_to do |format|
       if @renter.update(renter_params)
-        format.html { redirect_to @renter, notice: "Renter was successfully updated." }
+        format.html { redirect_to @renter, notice: "#{@renter.name} was successfully updated." }
         format.json { render :show, status: :ok, location: @renter }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class RentersController < ApplicationController
   def destroy
     @renter.destroy
     respond_to do |format|
-      format.html { redirect_to renters_url, notice: "Renter was successfully destroyed." }
+      format.html { redirect_to renters_url, notice: "#{@renter.name} was successfully destroyed." }
       format.json { head :no_content }
     end
   end

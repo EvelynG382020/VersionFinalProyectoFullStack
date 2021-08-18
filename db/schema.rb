@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_16_183245) do
+ActiveRecord::Schema.define(version: 2021_08_18_143501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,6 +95,8 @@ ActiveRecord::Schema.define(version: 2021_08_16_183245) do
     t.bigint "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "purchase_contract"
+    t.string "inscription"
     t.index ["buyer_id"], name: "index_detail_sales_on_buyer_id"
   end
 
@@ -139,8 +141,8 @@ ActiveRecord::Schema.define(version: 2021_08_16_183245) do
 
   create_table "renters", force: :cascade do |t|
     t.string "name"
-    t.integer "phone"
-    t.integer "rut"
+    t.string "phone"
+    t.string "rut"
     t.string "mail"
     t.string "detail"
     t.bigint "owner_id"

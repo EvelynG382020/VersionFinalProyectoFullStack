@@ -12,13 +12,28 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :contract, "Promesa" %>
+    <%= form.select :contract, DetailSale.contracts.keys %>
+  </div>
+
+  <div class="field">
+    <%= form.label :purchase_contract, "Firma Escritura" %>
+    <%= form.select :purchase_contract, DetailSale.purchase_contracts.keys %>
+  </div>
+
+  <div class="field">
+    <%= form.label :buyer_id, "Comprador" %>
+    <%= form.collection_select :buyer_id , Buyer.all, :id, :name, prompt: true %>
+  </div>
+
+  <div class="field">
     <%= form.label :detail, "Observaciones" %>
     <%= form.text_area :detail %>
   </div>
 
   <div class="field">
     <%= form.label :caratula %>
-    <%= form.text_field :caratula, placeholder: "1111111111" %>
+    <%= form.text_field :caratula, placeholder: "formato 11111111" %>
   </div>
 
   <div class="field">
@@ -26,24 +41,14 @@
     <%= form.text_field :url %>
   </div>
 
+   <div class="field">
+    <%= form.label :inscription %>
+    <%= form.select :inscription, DetailSale.inscriptions.keys %>
+  </div>
+
   <div class="field">
     <%= form.label :value, "Valor $" %>
     <%= form.text_field :value, placeholder: "solo numeros sin puntos" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :contract, "Promesa" %>
-    <%= form.select :contract, DetailSale.contracts.keys %>
-  </div>
-
-  <div class="field">
-    <%= form.label :contract, "Firma Escritura" %>
-    <%= form.select :contract, DetailSale.contracts.keys %>
-  </div>
-
-  <div class="field">
-    <%= form.label :buyer_id %>
-    <%= form.collection_select :buyer_id , Buyer.all, :id, :name, prompt: true %>
   </div>
 
   <div class="actions">

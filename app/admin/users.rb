@@ -9,12 +9,15 @@ ActiveAdmin.register User do
   #
   # or
   #
-  permit_params do
-    permitted = [:email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at, :name]
-    permitted << :other if params[:action] == 'create' && current_user.admin?
-    permitted
-  end
+  # permit_params do
+  #   permitted = [:email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at, :name]
+  #   permitted << :other if params[:action] == 'create' && current_user.admin?
+  #   permitted
+  # end
+
+  permit_params :name, :email, :user_id
   before_action :remove_password_params_if_blank, only: [:update]
+  
   controller do
     def remove_password_params_if_blank
       if params[:user][:password].blank? && params[:user][:password_confirmation].blank?

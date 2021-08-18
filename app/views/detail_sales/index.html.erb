@@ -1,35 +1,36 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Detail Sales</h1>
+<h2>Detalle Ventas</h2>
 
-<table>
+<table class="container">
   <thead>
     <tr>
-      <th>Observaciones</th>
-      <th>Caratula</th>
-      <th>Url</th>
-      <th>Valor $</th>
-      <th>Promesa</th>
-      <th>Firma Escritura</th>
-      <th>Buyer</th>
-      <th colspan="3"></th>
+      <th class="text-center">Promesa</th>
+      <th class="text-center">Escritura Compraventa</th>
+      <th class="text-center">Comprador</th>
+      <th class="text-center">Observaciones</th>
+      <th class="text-center">Caratula</th>
+      <th class="text-center">Url Conservador</th>
+      <th class="text-center">Inscripción CBRs</th>
+      <th class="text-center">Valor $</th>
+      <th colspan="6"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @detail_sales.each do |detail_sale| %>
       <tr>
-        <td><%= detail_sale.detail %></td>
-        <td><%= detail_sale.caratula %></td>
-        <td><%= detail_sale.url %></td>
-        <td><%= detail_sale.value %></td>
-        <td><%= detail_sale.contract %></td>
-        <td><%= detail_sale.contract %></td>
-        <td><%= detail_sale.buyer.name %></td>
-        <% if current_user.asistant? %>
-          <td><%= link_to 'Mas info', detail_sale %></td>
-        <% end %>
+        <td class="text-center"><%= detail_sale.contract %></td>
+        <td class="text-center"><%= detail_sale.purchase_contract %></td>
+        <td class="text-center"><%= detail_sale.buyer.name %></td>
+        <td class="text-center"><%= detail_sale.detail %></td>
+        <td class="text-center"><%= detail_sale.caratula %></td>
+        <td class="text-center"><%= detail_sale.url %></td>
+        <td class="text-center"><%= detail_sale.inscription%></td>
+        <td class="text-center"><%= detail_sale.value%></td>
+        <td><%= link_to 'Mas info', detail_sale %></td>
+       
         <td><%= link_to 'Editar', edit_detail_sale_path(detail_sale) %></td>
         <td><%= link_to 'Eliminar', detail_sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -39,4 +40,5 @@
 
 <br>
 
-<%= link_to 'New Detail Sale', new_detail_sale_path %>
+<%= link_to 'Nuevo Detalle Ventas', new_detail_sale_path %> |
+<%= link_to 'Detalle Arriendo', detail_rents_path %>

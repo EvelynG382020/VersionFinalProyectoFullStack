@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Renters</h1>
+<h2>Arrendatarios</h2>
 
 <table>
   <thead>
@@ -25,9 +25,9 @@
         <td><%= renter.rut %></td>
         <td><%= renter.mail %></td>
         <td><%= renter.detail %></td>
-        <td><%= renter.owner %></td>
-        <td><%= renter.property %></td>
-        <td><%= buyer.created_at.to_datetime %></td>
+        <td><%= renter.owner.name %></td>
+        <td><%= renter.property.name %></td>
+        <td><%= renter.created_at.to_datetime %></td>
         <td><%= link_to 'Show', renter %></td>
         <td><%= link_to 'Edit', edit_renter_path(renter) %></td>
         <td><%= link_to 'Destroy', renter, method: :delete, data: { confirm: 'Are you sure?' } %></td>

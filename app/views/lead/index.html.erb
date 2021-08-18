@@ -1,12 +1,76 @@
 <h1>Lead#index</h1>
 <p>Find me in app/views/lead/index.html.erb</p>
 
-<main class="container" role="main">
-  <div class="jumbotron">
-    <h1></h1>
-    <p class="lead">No estás registrado?! Visítanos...</p>
-    <a class="btn btn-lg btn-primary" href="<% lead_index_path %>" target="light" role="button">Más sobre la plataforma! &raquo;</a></div><div class="container"></div>
-    <p class="lead">Compartimos tutoriales sobre:</p><div class="row"><div class="col-md-4"><h2>Corredores</h2><p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.<a href="https://blog.nubecolectiva.com/category/frontend/" target="_blank"><img class="img-fluid mt-3" src="https://blog.nubecolectiva.com/wp-content/uploads/2018/11/img_destacada_blog_devs-11-300x169.png"></a></p></div>
-    <div class="col-md-4"><h2>Legal</h2><p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.<a href="https://tupatrimonio.cl/" target="_blank"><%= image_tag,class: "img-fluid mt-2" src="TuPatrimonioServiciosDigitales.png" :size => "260x180"%></a></p></div>
-    <div class="col-md-4"><h2>Noticias</h2><p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.<a href="https://blog.nubecolectiva.com/category/android/" target="_blank"><img class="img-fluid mt-2" src="https://blog.nubecolectiva.com/wp-content/uploads/2018/11/img_destacada_blog_devs-9-300x169.png"></a></p></div></div><hr></main>
-  
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #28A745">
+    <a class="navbar-brand" href="#">
+        <img src="img/logo-white.png" width="86" height="25" alt=""loading="lazy">
+    </a>
+    <button class="navbar-toggler bg-success" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="btn btn-outline-dark">
+        <span class="navbar-toggler-icon"></span>
+    </button>   
+</nav>
+
+<div class="row row-cols-1 row-cols-md-3 my-2 mx-2 p-2">
+    <div class="col mb-4">
+        <img src="img/cupon-1.jpg" class="card-img-top" alt="cupon-1">
+        <div class="card-body">
+            <h5 class="card-title font-weight-light mb-4">Plumón Coral Fleece estampado en modelo y tamaño a elección</h5>
+            <p class="card-subtitle"><small class="text-muted mt-2">Plumones Manolio</small></p>
+            <i class="fas fa-map-marker-alt fa-0.3x text-muted p-0 mb-2"><small class="text-muted"> 9191 Avenida Vitacura, Chile</small></i>         
+            <div class="card-footer text-right">
+                <small class="antes text-muted font-weight-light">  $45.990</small>
+                <small class="oferta text-success font-weight-bold">  $22.990</small>
+            </div>
+        </div>
+    </div>
+    <div class="col mb-4">
+        <img src="img/cupon-2.jpg" class="card-img-top" alt="cupon-2">
+        <div class="card-body">
+            <h5 class="card-title font-weight-light mb-4">Entrada para compartir + platos de fondo + postres + bebestibles</h5>
+            <p class="card-subtitle"><small class="text-muted mt-2">V for Vegan</small></p>
+            <i class="fas fa-map-marker-alt fa-0.3x text-muted p-0 mb-2"><small class="text-muted"> 777 Jesse Pinkman, Chile</small></i>
+            <div class="card-footer text-right">
+                <small class="antes text-muted font-weight-light">  $30.990</small>
+                <small class="oferta text-success font-weight-bold">  $12.990</small>
+            </div>
+        </div>
+    </div>
+    <div class="col mb-4">
+        <img src="img/cupon-3.jpg" class="card-img-top" alt="cupon-3">
+        <div class="card-body">
+            <h5 class="card-title font-weight-light mb-4">Evaluación integral + blanqueamiento dental led + limpieza + fluoración</h5>
+            <p class="card-subtitle"><small class="text-muted mt-2">Clínica Dental Quijada</small></p>
+            <i class="fas fa-map-marker-alt fa-0.3x text-muted p-0 mb-2"><small class="text-muted"> 1342, Blanco Encalada, Chile</small></i>         
+            <div class="card-footer text-right">
+                <small class="antes text-muted font-weight-light">  $300.000</small>
+                <small class="oferta text-success font-weight-bold">  $25.990</small>
+            </div>
+        </div>
+    </div>
+    <div class="col mb-4">
+        <img src="img/cupon-4.jpg" class="card-img-top" alt="cupon-3">
+        <div class="card-body">
+            <h5 class="card-title font-weight-light mb-4">Colación para 2 personas + postre (no incluye bebidas)</h5>
+            <p class="card-subtitle"><small class="text-muted mt-2">Suricata almacen</small></p>
+            <i class="fas fa-map-marker-alt fa-0.3x text-muted p-0 mb-2"><small class="text-muted"> 1071 Miguel Claro, Chile</small></i>         
+            <div class="card-footer text-right">
+                <small class="antes text-muted font-weight-light">  $4.200</small>
+                <small class="oferta text-success font-weight-bold">  $2.100</small>
+            </div>
+        </div>
+    </div>
+    <div class="col mb-4">
+        <img src="img/cupon-5.jpg" class="card-img-top" alt="cupon-3">
+        <div class="card-body">
+            <h5 class="card-title font-weight-light mb-4">1, 2 o 4 tickets para Stukids. Elige sucursal</h5>
+            <p class="card-subtitle"><small class="text-muted mt-2">Stukids Centro de Eventos</small></p>
+            <i class="fas fa-map-marker-alt fa-0.3x text-muted p-0 mb-2"><small class="text-muted"> 133 El tranque, Chile</small></i>         
+            <div class="card-footer text-right">
+                <small class="antes text-muted font-weight-light">  $4.000</small>
+                <small class="oferta text-success font-weight-bold">  $2.000</small>
+            </div>
+        </div>
+    </div>
+    

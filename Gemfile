@@ -66,9 +66,20 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+
 gem 'ransack'
+
 gem 'activeadmin'
+
 gem 'sendgrid-ruby'
+
 gem 'acts_as_votable'
+
 gem "omniauth"
 gem "omniauth-facebook"
+
+gem 'cancancan', '~> 1.15'
+
+gem 'chartkick', '~> 1.4', '>= 1.4.1'
+
+gem 'groupdate'

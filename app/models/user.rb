@@ -5,13 +5,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:twitter, :facebook]
 
-  
-  enum role: [:broker, :asistant, :admin]
-  # after_initialize :set_default_role, :if => :new_record?
+        
 
-  # def set_default_role
-  #   self.role ||= :broker
-  # end
+  attr_accessor :name , :email
+         
+  enum role: [:broker, :asistant, :admin]
+
+  def is?( requested_role )
+    self.role == requested_role.to_s
+  end
 
   acts_as_voter
 

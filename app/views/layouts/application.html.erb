@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FinalProjectBroker</title>
+    <title>BDD Broker</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="https://blog.nubecolectiva.com/wp-content/uploads/2018/08/faviconcc.png">
+    <meta name="description" content="Plataforma de base datos para corredor de propiedades">
+    <meta name="author" content="Evelyn Gomez Frez">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
 
     <!-- Con estas 2 líneas llamamos a los archivos CSS y Javascript de Bootstrap y demás -->
     
@@ -20,7 +25,7 @@
     <%= render '/partials/navbar' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div class="container">
+    <div class="container-fluid">
       <%= yield %>
     </div>
     <%= render '/partials/footer'%>
