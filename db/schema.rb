@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_18_143501) do
+ActiveRecord::Schema.define(version: 2021_08_19_021755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,12 +91,12 @@ ActiveRecord::Schema.define(version: 2021_08_18_143501) do
     t.integer "caratula"
     t.string "url"
     t.integer "value"
-    t.string "contract"
+    t.integer "contract", default: 0
     t.bigint "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "purchase_contract"
-    t.string "inscription"
+    t.integer "purchase_contract", default: 0
+    t.integer "inscription", default: 0
     t.index ["buyer_id"], name: "index_detail_sales_on_buyer_id"
   end
 

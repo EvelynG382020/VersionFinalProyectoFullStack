@@ -7,7 +7,10 @@ class Ability
     def initialize(user)  
       user ||= User.new #guest user (not logged in)
       if user.is? :broker
-        can :manage, Owner
+        can :manage, :all
+      elsif user.is? :asistant
+        can :manage, DetailSale
+        can :manage, DetailRent
       else
         can :read, :all
       end

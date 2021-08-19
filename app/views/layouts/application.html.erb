@@ -23,10 +23,16 @@
 
   <body>
     <%= render '/partials/navbar' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class="container-fluid">
-      <%= yield %>
+    <div class="mt-4  pt-4 container">
+      <div class="container">
+        <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+        <%= yield %>
+      </div>  
     </div>
     <%= render '/partials/footer'%>
   </body>

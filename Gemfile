@@ -52,6 +52,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rails-erd', '~> 1.4', '>= 1.4.7'
 end
 
 group :test do
@@ -83,3 +84,4 @@ gem 'cancancan', '~> 1.15'
 gem 'chartkick', '~> 1.4', '>= 1.4.1'
 
 gem 'groupdate'
+

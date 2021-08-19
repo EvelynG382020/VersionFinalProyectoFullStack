@@ -1,6 +1,8 @@
 class BuyersController < ApplicationController
   before_action :set_buyer, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
+  load_and_authorize_resource
+  
   # GET /buyers or /buyers.json
   def index
     @buyers = Buyer.all

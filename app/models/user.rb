@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
         
 
-  attr_accessor :name , :email
+ 
          
   enum role: [:broker, :asistant, :admin]
 

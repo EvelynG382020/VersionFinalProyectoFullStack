@@ -1,7 +1,7 @@
 class OwnersController < ApplicationController
   before_action :set_owner, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
-  #load_and_authorize_resource
+  load_and_authorize_resource # le dice al controlador que escuche al ability
 
   # GET /owners or /owners.json
   def index
