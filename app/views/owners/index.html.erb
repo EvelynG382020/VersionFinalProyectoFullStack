@@ -16,6 +16,7 @@
       <td>Comprador</td>
       <td>Arrendatario</td>
       <td>Propiedades</td>
+      <td>Voto</td>
       <td colspan="3"></td>
     </tr>
   </thead>
@@ -31,10 +32,16 @@
         <td scope="col"><%= owner.buyers.pluck(:name).join(',') %></td>
         <td scope="col"><%= owner.renters.pluck(:name).join(',') %></td>
         <td scope="col"><%= owner.properties.pluck(:name).join(', ') %></td>
+        
+        <% if current_user.liked? owner%>
+          <td><%= link_to 'dislike', dislike_owner_path(owner) %></td> 
+        <% else %>  
+          <td><%= link_to 'like', like_owner_path(owner) %></td>
+        <% end %>
+
         <td><%= link_to 'Show', owner %></td>
         <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
         <td><%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        
       </tr>
     <% end %>
   </tbody>

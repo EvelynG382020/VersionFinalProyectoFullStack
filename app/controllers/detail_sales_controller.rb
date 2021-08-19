@@ -5,7 +5,8 @@ class DetailSalesController < ApplicationController
   
   # GET /detail_sales or /detail_sales.json
   def index
-    @detail_sales = DetailSale.all
+    @q = DetailSale.ransack(params[:q])
+    @detail_sales = @q.result(distinct: true)
   end
 
   # GET /detail_sales/1 or /detail_sales/1.json

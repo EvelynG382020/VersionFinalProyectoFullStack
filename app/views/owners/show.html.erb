@@ -1,32 +1,34 @@
 <p id="notice"><%= notice %></p>
-<h2>Propietario</h2>
+<hr>
+<h2>Propiedad Asociada</h2>
 <hr>
 <%= link_to 'Editar', edit_owner_path(@owner) %> |
 <%= link_to 'Regresar', owners_path %>
 <hr>
 <p>
-  <strong>Name:</strong>
-  <%= @owner.name %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @owner.phone %>
-</p>
-
-<p>
-  <strong>Rut:</strong>
-  <%= @owner.rut %>
-</p>
-
-<p>
-  <strong>Mail:</strong>
-  <%= @owner.mail %>
-</p>
-<p>
   <strong>Propiedades:</strong>
-  <%= @owner.properties.pluck(:name).join(', ')  %>
+  <%= @owner.properties.pluck(:name).join('; ')  %>
 </p>
+<p>
+  <strong>Estado:</strong>
+  <%= @owner.properties.pluck(:status).join('; ') %>
+</p>
+
+<p>
+  <strong>Negociación:</strong>
+  <%= @owner.properties.pluck(:negotiation).join('; ') %>
+</p>
+
+<p>
+  <strong>Dirección:</strong>
+  <%= @owner.properties.pluck(:adress).join('; ') %>
+</p>
+
+<p>
+  <strong>Rol:</strong>
+  <%= @owner.properties.pluck(:rol).join('; ') %>
+</p>
+
 <hr>
 <table>
   <thead>
@@ -36,8 +38,6 @@
       <th>Contract</th>
       <th>Renter</th>
       <th>Propiedad</th>
-      <th>Avanzar</th>
-      <th>Alerta</th>
       <th>
       <th colspan="3"></th>
     </tr>
@@ -53,9 +53,7 @@
         <td><%= owner.renter.name %></td>
         <td><%= owner.renter.property.name %></td>
         <td><%= owner.renter.property.status %></td>
-        <td><%= link_to 'like', like_owner_path(owner), method: :put %></td>
-         
-        <td><%= link_to 'dislike', dislike_owner_path(owner), method: :put %></td> 
+        
       </tr>
     <% end %>
   </tbody>
@@ -72,8 +70,6 @@
       <th>Comprador</th>
       <th>Propiedad</th>
       <th>Status</th>
-      <th>Avanzar</th>
-      <th>Alerta</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -89,9 +85,7 @@
         <td><%= owner.buyer.name %></td>
         <td><%= owner.buyer.property.name %></td>
         <td><%= owner.buyer.property.status %></td>
-        <td><%= link_to 'like', like_owner_path(owner), method: :put %></td>
-        
-        <td><%= link_to 'dislike', dislike_owner_path(owner), method: :put %></td> 
+
       </tr>
     <% end %>
   </tbody>

@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   resources :properties
   resources :owners do
     member do
-      put 'like', to: 'owners#upvote'
-      put 'dislike', to: 'owners#downvote'
+      get 'like', to: 'owners#upvote'
+      get 'dislike', to: 'owners#downvote'
     end
   end
   root 'home#index'

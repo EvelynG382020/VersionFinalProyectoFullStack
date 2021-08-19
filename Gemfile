@@ -78,6 +78,7 @@ gem 'acts_as_votable'
 
 gem "omniauth"
 gem "omniauth-facebook"
+gem "omniauth-rails_csrf_protection"
 
 gem 'cancancan', '~> 1.15'
 
