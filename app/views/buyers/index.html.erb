@@ -2,40 +2,41 @@
 
 <h1>Compradores</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Teléfono</th>
-      <th>Rut</th>
-      <th>Mail</th>
-      <th>Observaciones</th>
-      <th>Propietario</th>
-      <th>Propiedad</th>
-      <th>Fecha de ingreso</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @buyers.each do |buyer| %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= buyer.name %></td>
-        <td><%= buyer.phone %></td>
-        <td><%= buyer.rut %></td>
-        <td><%= buyer.mail %></td>
-        <td><%= buyer.detail %></td>
-        <td><%= buyer.owner.name %></td>
-        <td><%= buyer.property.name %></td>
-        <td><%= buyer.created_at.to_datetime %></td>
-        <td><%= link_to 'Show', buyer %></td>
-        <td><%= link_to 'Edit', edit_buyer_path(buyer) %></td>
-        <td><%= link_to 'Destroy', buyer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Rut</th>
+        <th>Mail</th>
+        <th>Observaciones</th>
+        <th>Propietario</th>
+        <th>Propiedad</th>
+        <th>Fecha de ingreso</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @buyers.each do |buyer| %>
+        <tr>
+          <td><%= buyer.name %></td>
+          <td><%= buyer.phone %></td>
+          <td><%= buyer.rut %></td>
+          <td><%= buyer.mail %></td>
+          <td><%= buyer.detail %></td>
+          <td><%= buyer.owner.name %></td>
+          <td><%= buyer.property.name %></td>
+          <td><%= buyer.created_at.to_datetime %></td>
+          <td><%= link_to 'Mostrar', buyer %></td>
+          <td><%= link_to 'Editar', edit_buyer_path(buyer) %></td>
+          <td><%= link_to 'Eliminar', buyer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
-<%= link_to 'New Buyer', new_buyer_path %>
+<%= link_to 'Nuevo Comprador', new_buyer_path %>

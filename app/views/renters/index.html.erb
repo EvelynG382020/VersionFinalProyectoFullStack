@@ -2,40 +2,41 @@
 
 <h2>Arrendatarios</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Phone</th>
-      <th>Rut</th>
-      <th>Mail</th>
-      <th>Detail</th>
-      <th>Owner</th>
-      <th>Property</th>
-      <th>Fecha de ingreso</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @renters.each do |renter| %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= renter.name %></td>
-        <td><%= renter.phone %></td>
-        <td><%= renter.rut %></td>
-        <td><%= renter.mail %></td>
-        <td><%= renter.detail %></td>
-        <td><%= renter.owner.name %></td>
-        <td><%= renter.property.name %></td>
-        <td><%= renter.created_at.to_datetime %></td>
-        <td><%= link_to 'Show', renter %></td>
-        <td><%= link_to 'Edit', edit_renter_path(renter) %></td>
-        <td><%= link_to 'Destroy', renter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Nombre</th>
+        <th>Telefono</th>
+        <th>Rut</th>
+        <th>Mail</th>
+        <th>Detalles</th>
+        <th>Propietario</th>
+        <th>Propiedad</th>
+        <th>Fecha de ingreso</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @renters.each do |renter| %>
+        <tr>
+          <td><%= renter.name %></td>
+          <td><%= renter.phone %></td>
+          <td><%= renter.rut %></td>
+          <td><%= renter.mail %></td>
+          <td><%= renter.detail %></td>
+          <td><%= renter.owner.name %></td>
+          <td><%= renter.property.name %></td>
+          <td><%= renter.created_at.to_datetime %></td>
+          <td><%= link_to 'Mostrar', renter %></td>
+          <td><%= link_to 'Editar', edit_renter_path(renter) %></td>
+          <td><%= link_to 'Eliminar', renter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
-<%= link_to 'New Renter', new_renter_path %>
+<%= link_to 'Nuevo Arrendatario', new_renter_path %>

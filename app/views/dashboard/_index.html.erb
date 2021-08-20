@@ -1,2 +1,57 @@
+<h1>Dashboard</h1>
 
+<div>
+    <h2>Last 12 months sales</h2>
+    <%= column_chart @sales_by_month %>
+</div>
+
+<div>
+    <h2>Last 12 months count sales</h2>
+    <%= column_chart @sales_by_count %>
+</div>
+
+<div>
+    <h2>Last 12 months average sales</h2>
+    <%= column_chart @sales_by_average %>
+</div>
+
+<div>
+    <h2>Last 12 months Origin Coffee sales</h2>
+    <%= pie_chart @sales_origin_12 %>
+</div>
+
+<div>
+    <h2>Last 6 months Origin Coffee sales</h2>
+    <%= pie_chart @sales_origin_6 %>
+</div>
+
+<div>
+    <h2>Last 3 months Origin Coffee sales</h2>
+    <%= pie_chart @sales_origin_3 %>
+</div>
+
+<div>
+    <h2>Last 1 months Origin Coffee sales</h2>
+    <%= pie_chart @sales_origin_1 %>
+</div>
+
+<div>
+    <h2>Last 12 months Blend Coffee sales</h2>
+    <%= pie_chart @sales_blend_name_12 %>
+</div>
+
+<div>
+    <h2>Last 6 months Blend Coffee sales</h2>
+    <%= pie_chart @sales_blend_name_6 %>
+</div>
+
+<div>
+    <h2>Last 3 months Blend Coffee sales</h2>
+    <%= pie_chart @sales_blend_name_3 %>
+</div>
+
+<div>
+    <h2>Last 1 months Blend Coffee sales</h2>
+    <%= pie_chart @sales_blend_name_1 %>
+</div>
 

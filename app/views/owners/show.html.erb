@@ -5,91 +5,89 @@
 <%= link_to 'Editar', edit_owner_path(@owner) %> |
 <%= link_to 'Regresar', owners_path %>
 <hr>
-<p>
-  <strong>Propiedades:</strong>
-  <%= @owner.properties.pluck(:name).join('; ')  %>
-</p>
-<p>
-  <strong>Estado:</strong>
-  <%= @owner.properties.pluck(:status).join('; ') %>
-</p>
-
-<p>
-  <strong>Negociación:</strong>
-  <%= @owner.properties.pluck(:negotiation).join('; ') %>
-</p>
-
-<p>
-  <strong>Dirección:</strong>
-  <%= @owner.properties.pluck(:adress).join('; ') %>
-</p>
-
-<p>
-  <strong>Rol:</strong>
-  <%= @owner.properties.pluck(:rol).join('; ') %>
-</p>
-
-<hr>
-<table>
-  <thead>
-    <tr>
-      <th>Detail</th>
-      <th>Value</th>
-      <th>Contract</th>
-      <th>Renter</th>
-      <th>Propiedad</th>
-      <th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <h2>Detalle Arriendos</h2>
-    <% @owner.detail_rents.each do |owner| %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= owner.detail %></td>
-        <td><%= owner.value %></td>
-        <td><%= owner.contract %></td>
-        <td><%= owner.renter.name %></td>
-        <td><%= owner.renter.property.name %></td>
-        <td><%= owner.renter.property.status %></td>
-        
+        <th>Propiedades</th>
+        <th>Estado</th>
+        <th>Negociación</th>
+        <th>Dirección</th>
+        <th>Rol</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<hr>
-<table>
-  <thead>
-    <tr>
-      <th>Observaciones</th>
-      <th>Caratula</th>
-      <th>Url</th>
-      <th>Valor $</th>
-      <th>Contract</th>
-      <th>Comprador</th>
-      <th>Propiedad</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <h2>Detalle Ventas</h2>
-    <% @owner.detail_sales.each do |owner| %>
+    </thead>
+    <tbody>
       <tr>
-        <td><%= owner.detail %></td>
-        <td><%= owner.caratula %></td>
-        <td><%= owner.url %></td>
-        <td><%= owner.value %></td>
-        <td><%= owner.contract %></td>
-        <td><%= owner.buyer.name %></td>
-        <td><%= owner.buyer.property.name %></td>
-        <td><%= owner.buyer.property.status %></td>
-
+        <td><%= @owner.properties.pluck(:name).join('; ')  %></td>
+        <td><%= @owner.properties.pluck(:status).join('; ') %></td>
+        <td><%= @owner.properties.pluck(:negotiation).join('; ') %></td>
+        <td><%= @owner.properties.pluck(:adress).join('; ') %></td>
+        <td><%= @owner.properties.pluck(:rol).join('; ') %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
+<hr>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Detail</th>
+        <th>Value</th>
+        <th>Contract</th>
+        <th>Renter</th>
+        <th>Propiedad</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
+    <tbody>
+      <h2>Detalle Arriendos</h2>
+      <% @owner.detail_rents.each do |owner| %>
+        <tr>
+          <td><%= owner.detail %></td>
+          <td><%= owner.value %></td>
+          <td><%= owner.contract %></td>
+          <td><%= owner.renter.name %></td>
+          <td><%= owner.renter.property.name %></td>
+          <td><%= owner.renter.property.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>  
+<hr>
+<div class="table-responsive">
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Observaciones</th>
+        <th>Caratula</th>
+        <th>Url</th>
+        <th>Valor $</th>
+        <th>Contract</th>
+        <th>Comprador</th>
+        <th>Propiedad</th>
+        <th>Status</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <h2>Detalle Ventas</h2>
+      <% @owner.detail_sales.each do |owner| %>
+        <tr>
+          <td><%= owner.detail %></td>
+          <td><%= owner.caratula %></td>
+          <td><%= owner.url %></td>
+          <td><%= owner.value %></td>
+          <td><%= owner.contract %></td>
+          <td><%= owner.buyer.name %></td>
+          <td><%= owner.buyer.property.name %></td>
+          <td><%= owner.buyer.property.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 

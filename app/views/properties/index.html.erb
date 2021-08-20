@@ -48,8 +48,10 @@
           <td scope="col"><%= property.rol %></td>
           <td scope="col"><%= property.name_owner %></td>
           <td><%= link_to 'Mostrar', property %></td>
+          
           <td><%= link_to 'Editar', edit_property_path(property) %></td>
           <td><%= link_to 'Eliminar', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
         </tr>
       <% end %>
     </tbody>

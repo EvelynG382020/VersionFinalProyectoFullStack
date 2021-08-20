@@ -17,41 +17,42 @@
 </div>
 <br>
 
-<table class="container">
-  <thead>
-    <tr>
-      <th class="text-center">Promesa</th>
-      <th class="text-center">Escritura Compraventa</th>
-      <th class="text-center">Comprador</th>
-      <th class="text-center">Observaciones</th>
-      <th class="text-center">Caratula</th>
-      <th class="text-center">Url Conservador</th>
-      <th class="text-center">Inscripción CBRs</th>
-      <th class="text-center">Valor $</th>
-      <th colspan="6"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @detail_sales.each do |detail_sale| %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
       <tr>
-        <td class="text-center"><%= detail_sale.contract %></td>
-        <td class="text-center"><%= detail_sale.purchase_contract %></td>
-        <td class="text-center"><%= detail_sale.buyer.name %></td>
-        <td class="text-center"><%= detail_sale.detail %></td>
-        <td class="text-center"><%= detail_sale.caratula %></td>
-        <td class="text-center"><%= detail_sale.url %></td>
-        <td class="text-center"><%= detail_sale.inscription%></td>
-        <td class="text-center"><%= detail_sale.value%></td>
-        <td><%= link_to 'Mas info', detail_sale %></td>
-       
-        <td><%= link_to 'Editar', edit_detail_sale_path(detail_sale) %></td>
-        <td><%= link_to 'Eliminar', detail_sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Promesa</th>
+        <th>Escritura Compraventa</th>
+        <th>Comprador</th>
+        <th>Observaciones</th>
+        <th>Caratula</th>
+        <th>Url Conservador</th>
+        <th>Inscripción CBRs</th>
+        <th>Valor $</th>
+        <th colspan="6"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @detail_sales.each do |detail_sale| %>
+        <tr>
+          <td><%= detail_sale.contract %></td>
+          <td><%= detail_sale.purchase_contract %></td>
+          <td><%= detail_sale.buyer.name %></td>
+          <td><%= detail_sale.detail %></td>
+          <td><%= detail_sale.caratula %></td>
+          <td><%= detail_sale.url %></td>
+          <td><%= detail_sale.inscription%></td>
+          <td><%= detail_sale.value%></td>
+          <td><%= link_to 'Mas info', detail_sale %></td>
+        
+          <td><%= link_to 'Editar', edit_detail_sale_path(detail_sale) %></td>
+          <td><%= link_to 'Eliminar', detail_sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
 <%= link_to 'Nuevo Detalle Ventas', new_detail_sale_path %> |

@@ -23,7 +23,7 @@
           <a class="dropdown-item" href="https://homer.sii.cl/" target="_blank">SII</a>
           <a class="dropdown-item" href="https://www.tgr.cl/" target="_blank">Tesoreria GR</a>
           <a class="dropdown-item" href="https://calculadoraipc.ine.cl/" target="_blank">Calculo IPC</a>
-      </div>    
+        </div>    
       </li>
       <li class="nav-item dropdown">
         <span class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Intranet BDD</span>
@@ -35,13 +35,16 @@
           <a class="dropdown-item" href="<%= buyers_path%>">Compradores</a>
           <a class="dropdown-item" href="<%= detail_sales_path%>">Detalle Ventas</a>
           <a class="dropdown-item" href="<%= detail_rents_path%>">Detalle Arriendos</a>
-          <a class="dropdown-item" href="<%= dashboard_index_path%>">Dashboard</a>
         <% else %>  
           <a class="dropdown-item" href="<%= detail_sales_path%>">Detalle Ventas</a>
           <a class="dropdown-item" href="<%= detail_rents_path%>">Detalle Arriendos</a>
-          <a class="dropdown-item" href="<%= dashboard_index_path%>">Dashboard</a>
+          <a class="dropdown-item" href="<%= owners_path%>">Propietarios</a>  
+          <a class="dropdown-item" href="<%= properties_path%>">Propiedades</a>
         <% end %> 
         </div>
+        <li class="nav-item">
+          <%= link_to "Contacto", home_contacto_path, class:"nav-link" %>
+        </li>
       </li>
     </ul>
     <ul class="navbar-nav ms-auto">
@@ -59,7 +62,7 @@
         </div>
         <% else %>
         <%= link_to "Log in", new_user_session_path, class: "nav-link #{'active fw-bold' if current_page?(new_user_session_path)}" %>
-        <%#= link_to "Sign up", new_user_registration_path, class: "nav-link #{'active fw-bold' if current_page?(new_user_registration_path)}" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "nav-link #{'active fw-bold' if current_page?(new_user_registration_path)}" %>
       <% end %>
     </ul>
   </div>

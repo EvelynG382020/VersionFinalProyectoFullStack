@@ -3,32 +3,33 @@
 
 <h2>Detalle Arriendo</h2>
 
-<table class="Container">
-  <thead>
-    <tr>
-      <th>Observaciones</th>
-      <th>Valor</th>
-      <th>Contrato</th>
-      <th>Arrendatario</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @detail_rents.each do |detail_rent| %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= detail_rent.detail %></td>
-        <td><%= detail_rent.value %></td>
-        <td><%= detail_rent.contract %></td>
-        <td><%= detail_rent.renter.name %></td>
-        <td><%= link_to 'Mostrar', detail_rent %></td>
-        <td><%= link_to 'Editar', edit_detail_rent_path(detail_rent) %></td>
-        <td><%= link_to 'Eliminar', detail_rent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Observaciones</th>
+        <th>Valor</th>
+        <th>Contrato</th>
+        <th>Arrendatario</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @detail_rents.each do |detail_rent| %>
+        <tr>
+          <td><%= detail_rent.detail %></td>
+          <td><%= detail_rent.value %></td>
+          <td><%= detail_rent.contract %></td>
+          <td><%= detail_rent.renter.name %></td>
+          <td><%= link_to 'Mostrar', detail_rent %></td>
+          <td><%= link_to 'Editar', edit_detail_rent_path(detail_rent) %></td>
+          <td><%= link_to 'Eliminar', detail_rent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
 <%= link_to 'Nuevo Detalle Arriendo', new_detail_rent_path %> |

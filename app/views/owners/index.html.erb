@@ -5,48 +5,51 @@
 <hr>
 <%= link_to 'Nuevo Propietario', new_owner_path %>
 <hr>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <td>Nombre</td>
-      <td>Teléfono</td>
-      <td>Rut</td>
-      <td>Mail</td>
-      <td>Total propiedades</td>
-      <td>Comprador</td>
-      <td>Arrendatario</td>
-      <td>Propiedades</td>
-      <td>Voto</td>
-      <td colspan="3"></td>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @owners.each do |owner| %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
       <tr>
-        <td scope="col"><%= owner.name %></td>
-        <td scope="col"><%= owner.phone %></td>
-        <td scope="col"><%= owner.rut %></td>
-        <td scope="col"><%= owner.mail %></td>
-        <td scope="col"><%= owner.total_property %></td>
-        <td scope="col"><%= owner.buyers.pluck(:name).join(',') %></td>
-        <td scope="col"><%= owner.renters.pluck(:name).join(',') %></td>
-        <td scope="col"><%= owner.properties.pluck(:name).join(', ') %></td>
-        
-        <% if current_user.liked? owner%>
-          <td><%= link_to 'dislike', dislike_owner_path(owner) %></td> 
-        <% else %>  
-          <td><%= link_to 'like', like_owner_path(owner) %></td>
-        <% end %>
-
-        <td><%= link_to 'Show', owner %></td>
-        <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
-        <td><%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>Nombre</td>
+        <td>Teléfono</td>
+        <td>Rut</td>
+        <td>Mail</td>
+        <td>Total propiedades</td>
+        <td>Comprador</td>
+        <td>Arrendatario</td>
+        <td>Propiedades</td>
+        <td>Voto</td>
+        <td colspan="3"></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @owners.each do |owner| %>
+        <tr>
+          <td><%= owner.name %></td>
+          <td><%= owner.phone %></td>
+          <td><%= owner.rut %></td>
+          <td><%= owner.mail %></td>
+          <td><%= owner.total_property %></td>
+          <td><%= owner.buyers.pluck(:name).join(',') %></td>
+          <td><%= owner.renters.pluck(:name).join(',') %></td>
+          <td><%= owner.properties.pluck(:name).join(', ') %></td>
+          
+          <% if current_user.liked? owner%>
+            <td><%= link_to 'dislike', dislike_owner_path(owner) %></td> 
+          <% else %>  
+            <td><%= link_to 'like', like_owner_path(owner) %></td>
+          <% end %>
+
+          <td><%= link_to 'Mas Info', owner %></td>
+          
+          <td><%= link_to 'Editar', edit_owner_path(owner) %></td>
+          <td><%= link_to 'Elimar', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
 

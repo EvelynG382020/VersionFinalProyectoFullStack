@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'lead/index'
-  get 'dashboard/index'
+ 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :detail_rents
@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :renters
   resources :buyers
   resources :properties
+  resources :contacts, only: [:create]
   resources :owners do
     member do
       get 'like', to: 'owners#upvote'
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
     end
   end
   root 'home#index'
+  get 'home/contacto'
   
   devise_for :users, controllers: { 
     registrations: 'users/registrations', 
