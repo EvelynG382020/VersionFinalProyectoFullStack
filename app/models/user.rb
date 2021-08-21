@@ -5,10 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:twitter, :facebook]
 
-        
 
- 
-         
   enum role: [:broker, :asistant, :admin]
 
   def is?( requested_role )

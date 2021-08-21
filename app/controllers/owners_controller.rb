@@ -5,7 +5,12 @@ class OwnersController < ApplicationController
 
   # GET /owners or /owners.json
   def index
-    @owners = Owner.all
+    @q = Owner.ransack(params[:q])
+    @owners = @q.result(distinct: true)
+
+    if params[:ownersearch].present?
+      @owners = Owner.search_my_owners(params[:ownersearch]).page(params[:page]).order("created_at DESC")
+    end
   end
 
   # GET /owners/1 or /owners/1.json

@@ -10,6 +10,7 @@ AdminUser.destroy_all
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 User.destroy_all
+Owner.destroy_all
 
 User.create(
     name: "Nicole Gonzalez",
@@ -28,5 +29,26 @@ User.create(
     password_confirmation: '123456'
 )
 
+
+
+Owner.create(
+    name: "Juanito Perez",
+    phone: "+56912345678",
+    rut: "12.222.222-1",
+    mail: "juanito@email.com"
+)
+
+Owner.create(
+    name: "Carolina Solis",
+    phone: "+56912345678",
+    rut: "12.222.222-1",
+    mail: "carolinas@email.com"
+)
+Owner.create(
+    name: "Pedrito Perez",
+    phone: "+56912345678",
+    rut: "12.222.222-1",
+    mail: "pedritop@email.com"
+)
 
 
