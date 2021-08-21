@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :renters
   resources :buyers
   resources :properties
-  resources :contacts, only: [:create]
+  resources :contacts, only: [:create, :new]
   resources :owners do
     member do
       get 'like', to: 'owners#upvote'
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
   root 'home#index'
   get 'home/contacto'
-  
+  post 'contacts/new'
   devise_for :users, controllers: { 
     registrations: 'users/registrations', 
     sessions: 'users/sessions',
