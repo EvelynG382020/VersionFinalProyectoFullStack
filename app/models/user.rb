@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  acts_as_voter
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -11,8 +12,6 @@ class User < ApplicationRecord
   def is?( requested_role )
     self.role == requested_role.to_s
   end
-
-  acts_as_voter
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
     identity = Identity.find_for_oauth(auth)
@@ -61,4 +60,16 @@ class User < ApplicationRecord
       return false
     end
   end
+  # def self.find_for_facebook_oauth(auth)
+  #   user= User.where(provider: auth.provider, uid: auth.uid).first
+  #   return user if user
+  #   user = User.where(email: auth.info.email).first
+  #   return user if user
+  #   User.create(
+  #     provider: auth.provider,
+  #     uid: auth.uid,
+  #     email: auth.info.email,
+  #     password: Devise.friendly_token[0,20]
+  #   )
+  # end
 end

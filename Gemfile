@@ -86,3 +86,6 @@ gem 'chartkick', '~> 1.4', '>= 1.4.1'
 
 gem 'groupdate'
 
+#Payment method
+gem 'mercadopago-sdk'
+
