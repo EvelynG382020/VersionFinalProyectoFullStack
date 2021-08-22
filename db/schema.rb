@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_20_210149) do
+ActiveRecord::Schema.define(version: 2021_08_22_162023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,11 +68,9 @@ ActiveRecord::Schema.define(version: 2021_08_20_210149) do
     t.string "rut"
     t.string "mail"
     t.string "detail"
-    t.bigint "owner_id"
     t.bigint "property_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_id"], name: "index_buyers_on_owner_id"
     t.index ["property_id"], name: "index_buyers_on_property_id"
   end
 
@@ -153,11 +151,9 @@ ActiveRecord::Schema.define(version: 2021_08_20_210149) do
     t.string "rut"
     t.string "mail"
     t.string "detail"
-    t.bigint "owner_id"
     t.bigint "property_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_id"], name: "index_renters_on_owner_id"
     t.index ["property_id"], name: "index_renters_on_property_id"
   end
 
@@ -190,12 +186,10 @@ ActiveRecord::Schema.define(version: 2021_08_20_210149) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "buyers", "owners"
   add_foreign_key "buyers", "properties"
   add_foreign_key "detail_rents", "renters"
   add_foreign_key "detail_sales", "buyers"
   add_foreign_key "identities", "users"
   add_foreign_key "properties", "owners"
-  add_foreign_key "renters", "owners"
   add_foreign_key "renters", "properties"
 end

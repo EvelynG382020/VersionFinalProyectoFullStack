@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
+<hr>
 <form class="form-inline ">
   <div class="d-inline-block">
-      <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar" name="ownersearch">
+      <input class="form-control" type="search" placeholder="Ingresa nombre" aria-label="Buscar" name="ownersearch">
   </div>
   <div class="d-inline-block">
       <button class="btn btn-outline-light" type="submit">Buscar</button>
   </div>
 </form>
-
+<hr>
 <h2>Propietarios</h2>
 <hr>
 <%= link_to 'Nuevo Propietario', new_owner_path %>
@@ -23,8 +24,6 @@
         <td>Total propiedades</td>
         <td>Comprador</td>
         <td>Arrendatario</td>
-        <td>Propiedades</td>
-        <td>Voto</td>
         <td colspan="3"></td>
       </tr>
     </thead>
@@ -42,9 +41,12 @@
           <td><%= owner.properties.pluck(:name).join(', ') %></td>
           
           <% if current_user.liked? owner%>
-            <td><%= link_to 'dislike', dislike_owner_path(owner) %></td> 
+            
+            <td><%= link_to dislike_owner_path(owner) do  %><i class="fas fa-phone fa-2x"></i></i></td> 
+            <% end %>
           <% else %>  
-            <td><%= link_to 'like', like_owner_path(owner) %></td>
+            <td><%= link_to like_owner_path(owner) do %><i class="fas fa-phone-slash fa-2x"></i></i></td>
+            <% end %>
           <% end %>
 
           <td><%= link_to 'Mas Info', owner %></td>
