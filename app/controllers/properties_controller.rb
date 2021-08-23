@@ -24,8 +24,9 @@ class PropertiesController < ApplicationController
 
   # POST /properties or /properties.json
   def create
+    sleep 1
     @property = Property.new(property_params)
-
+    
     respond_to do |format|
       if @property.save
         format.html { redirect_to @property, notice: "#{@property.name} was successfully created." }

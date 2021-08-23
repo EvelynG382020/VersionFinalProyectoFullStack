@@ -1,4 +1,4 @@
-<%= form_with(model: property, local: true) do |form| %>
+<%= form_with(model: property, remote: true, data: { confirm: '¿Desea confirmar?'}) do |form| %>
   <% if property.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
@@ -58,7 +58,7 @@
 
   <div class="card-footer text-right">
     <%= link_to "Cancelar", properties_path, class: "btn btn-default" %>
-    <%= form.submit "Crear Propiedad", class: "btn btn-primary" %>
+    <%= form.submit data: {disable_with: "Creando"}, class: "btn btn-primary" %>
   </div>
           
 <% end %>

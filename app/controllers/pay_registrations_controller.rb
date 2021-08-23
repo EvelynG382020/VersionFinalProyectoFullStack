@@ -34,8 +34,9 @@ class PayRegistrationsController < ApplicationController
       preference = preference_response[:response]
       puts "++++++ #{preference}"
       # Este valor reemplazará el string "<%= @preference_id %>" en tu HTML
-      @preference_id = preference[:response]
-      #(sandbox_init_point)
+      @preference_id = preference['id']
+      sandbox_init_point = preference["sandbox_init_point"]
+      redirect_to sandbox_init_point
     end
   
     private
