@@ -9,7 +9,4 @@ class Property < ApplicationRecord
 
   enum status: %i[en_proceso finalizado]
 
-  def name_owner
-    owner.name
-  end
 end

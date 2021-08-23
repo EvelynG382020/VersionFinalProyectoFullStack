@@ -5,47 +5,38 @@
 <strong>Nombre:</strong>
   <%= @property.name %>
 </p>
-
 <p>
   <strong>Estado:</strong>
   <%= @property.status %>
 </p>
-
 <p>
   <strong>Negociación:</strong>
   <%= @property.negotiation %>
 </p>
-
 <p>
   <strong>Observaciones:</strong>
   <%= @property.detail %>
 </p>
-
 <p>
   <strong>Tipo de propiedad:</strong>
   <%= @property.kind %>
 </p>
-
 <p>
   <strong>Dirección:</strong>
   <%= @property.adress %>
 </p>
-
 <p>
   <strong>Rol:</strong>
   <%= @property.rol %>
 </p>
-
 <p>
   <strong>Propietario:</strong>
-  <%= @property.name_owner %>
+  <%= @property.owner.name %>
 </p>
-
 <p>
   <strong>Compradores:</strong>
   <%= @property.buyers.pluck(:name).join(',') %>
 </p>
-
 <p>
   <strong>Arrendatario:</strong>
   <%= @property.renters.pluck(:name).join(',') %>
@@ -55,66 +46,71 @@
 <%= link_to 'Regresar', properties_path %>
 <hr>
 
+
+<hr>
 <div class="table-responsive">
   <table class="table">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Teléfono</th>
-      <th>Rut</th>
-      <th>Mail</th>
-      <th>Observaciones</th>
-      <th>Propietario</th>
-      <th>Propiedad</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-  <h2>Comprador</h2>
-    <% @property.buyers.each do |property| %>
+    <thead>
       <tr>
-        <td><%= property.name %></td>
-        <td><%= property.phone %></td>
-        <td><%= property.rut %></td>
-        <td><%= property.mail %></td>
-        <td><%= property.detail %></td>
-        <td><%= property.owner.name %></td>
-        <td><%= property.property.name %></td>
-     <% end %>
-  </tbody>
-</table> 
-<hr>
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Telefono</th>
-      <th>Rut</th>
-      <th>Mail</th>
-      <th>Observaciones</th>
-      <th>Propietario</th>
-      <th>Propiedad</th>
-      <th>Fecha de ingreso</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <h2>Arrendatario</h2>
-    <% @property.renters.each do |property| %>
-      <tr>
-        <td><%= property.name %></td>
-        <td><%= property.phone %></td>
-        <td><%= property.rut %></td>
-        <td><%= property.mail %></td>
-        <td><%= property.detail %></td>
-        <td><%= property.owner.name %></td>
-        <td><%= property.property.name %></td>
-        <td><%= property.created_at.to_datetime %></td>
+        <th>Observaciones</th>
+        <th>Valor</th>
+        <th>Contrato</th>
+        <th>Estado</th>
+        <th>Arrendatario</th>
+        <th>Propiedad</th>
+        <th>Propietario</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
+    </thead>
+    <tbody>
+      <h2>Detalle Arriendos</h2>
+      <% @property.detail_rents.each do |dr| %>
+        <tr>
+          <td><%= dr.detail %></td>
+          <td><%= dr.value %></td>
+          <td><%= dr.contract %></td>
+          <td><%= dr.renter.property.status %></td>
+          <td><%= dr.renter.name %></td>
+          <td><%= dr.renter.property.name %></td>
+          <td><%= dr.renter.property.owner.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>  
 <hr>
+<div class="table-responsive">
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Observaciones</th>
+        <th>Caratula</th>
+        <th>Url</th>
+        <th>Valor $</th>
+        <th>Contract</th>
+        <th>Comprador</th>
+        <th>Propietario</th>
+        <th>Propiedad</th>
+        <th>Status</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <h2>Detalle Ventas</h2>
+      <% @property.detail_sales.each do |ds| %>
+        <tr>
+          <td><%= ds.detail %></td>
+          <td><%= ds.caratula %></td>
+          <td><%= ds.url %></td>
+          <td><%= ds.value %></td>
+          <td><%= ds.contract %></td>
+          <td><%= ds.buyer.name %></td>
+          <td><%= ds.buyer.property.owner.name %></td>
+          <td><%= ds.buyer.property.name %></td>
+          <td><%= ds.buyer.property.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 

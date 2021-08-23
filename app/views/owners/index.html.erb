@@ -2,7 +2,7 @@
 <hr>
 <form class="form-inline ">
   <div class="d-inline-block">
-      <input class="form-control" type="search" placeholder="Ingresa nombre" aria-label="Buscar" name="ownersearch">
+      <input class="form-control" type="search" placeholder="Busca Nombre" aria-label="Buscar" name="ownersearch">
   </div>
   <div class="d-inline-block">
       <button class="btn btn-outline-light" type="submit">Buscar</button>
@@ -17,17 +17,15 @@
   <table class="table">
     <thead>
       <tr>
-        <td>Nombre</td>
-        <td>Teléfono</td>
-        <td>Rut</td>
-        <td>Mail</td>
-        <td>Total propiedades</td>
-        <td>Comprador</td>
-        <td>Arrendatario</td>
-        <td colspan="3"></td>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Rut</th>
+        <th>Mail</th>
+        <th>Total propiedades</th>
+        <th>Propiedades</th>
+        <th colspan="3"></th>
       </tr>
     </thead>
-
     <tbody>
       <% @owners.each do |owner| %>
         <tr>
@@ -36,16 +34,13 @@
           <td><%= owner.rut %></td>
           <td><%= owner.mail %></td>
           <td><%= owner.total_property %></td>
-          <td><%= owner.buyers.pluck(:name).join(',') %></td>
-          <td><%= owner.renters.pluck(:name).join(',') %></td>
           <td><%= owner.properties.pluck(:name).join(', ') %></td>
-          
+ 
           <% if current_user.liked? owner%>
-            
-            <td><%= link_to dislike_owner_path(owner) do  %><i class="fas fa-phone fa-2x"></i></i></td> 
+            <td><%= link_to dislike_owner_path(owner) do  %><i class="fas fa-phone fa-2x"></i></td> 
             <% end %>
           <% else %>  
-            <td><%= link_to like_owner_path(owner) do %><i class="fas fa-phone-slash fa-2x"></i></i></td>
+            <td><%= link_to like_owner_path(owner) do %><i class="fas fa-phone-slash fa-2x"></i></td>
             <% end %>
           <% end %>
 
@@ -53,7 +48,6 @@
           
           <td><%= link_to 'Editar', edit_owner_path(owner) %></td>
           <td><%= link_to 'Elimar', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-         
         </tr>
       <% end %>
     </tbody>

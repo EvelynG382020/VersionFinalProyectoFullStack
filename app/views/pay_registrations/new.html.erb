@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="jumbotron">
+        <h3>Ya te Registraste?! Procede al pago!</h3>
+        <%= form_with(model: @pay_registration, local:true) do |f| %>
+            <% if @pay_registration.errors.any? %>
+                <div id="error_explanation">
+                    <h2><%= pluralize(@pay_registration.errors.count, "error") %> prohibited this owner from being saved:</h2>
+                    <ul>
+                        <% @pay_registration.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
+            <div class="form-group row">
+                <%= f.label "Nombres", class:"offset-md-2 col-md-3 col-form-label text-right space-label-right" %>
+                <%= f.text_field :name, class:"col-md-4 form-control" %>
+            </div>
+            <div class="form-group row">
+                <%= f.label "Apellidos", class:"offset-md-2 col-md-3 col-form-label text-right space-label-right" %>
+                <%= f.text_field :last_name, class:"col-md-4 form-control" %>
+            </div>
+            <div class="form-group row">
+                <%= f.label "Email", class:"offset-md-2 col-md-3 col-form-label text-right space-label-right"  %>
+                <%= f.text_field :email, class:"col-md-4 form-control" %>
+            </div>
+            <div class="form-group row">
+                <%= f.label "Teléfono", class:"offset-md-2 col-md-3 col-form-label text-right space-label-right"  %>
+                <%= f.text_area :phone, class:"col-md-4 form-control" %>
+            </div>
+            <div class="form-group row">
+                <div class="container text-center">
+                    <%= link_to mercado_pago_path do %><i class="fas fa-shopping-cart fa-3x"></i><% end%>
+                </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

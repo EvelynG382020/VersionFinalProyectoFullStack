@@ -35,15 +35,20 @@
           <a class="dropdown-item" href="<%= buyers_path%>">Compradores</a>
           <a class="dropdown-item" href="<%= detail_sales_path%>">Detalle Ventas</a>
           <a class="dropdown-item" href="<%= detail_rents_path%>">Detalle Arriendos</a>
+          <a class="dropdown-item" href="<%= my_completeds_path%>">Mis gestiones finalizadas</a>
         <% else %>  
           <a class="dropdown-item" href="<%= detail_sales_path%>">Detalle Ventas</a>
           <a class="dropdown-item" href="<%= detail_rents_path%>">Detalle Arriendos</a>
           <a class="dropdown-item" href="<%= owners_path%>">Propietarios</a>  
           <a class="dropdown-item" href="<%= properties_path%>">Propiedades</a>
+          <a class="dropdown-item" href="<%= my_completeds_path%>">Procesos finalizadas</a>
         <% end %> 
         </div>
         <li class="nav-item">
           <%= link_to "Contacto", contacts_new_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Mercado Pago", pay_registrations_new_path, class:"nav-link" %>
         </li>
       </li>
     </ul>

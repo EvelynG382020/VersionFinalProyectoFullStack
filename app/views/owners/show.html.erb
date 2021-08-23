@@ -32,62 +32,59 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Detail</th>
-        <th>Value</th>
-        <th>Contract</th>
-        <th>Renter</th>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Rut</th>
+        <th>Mail</th>
+        <th>Observaciones</th>
         <th>Propiedad</th>
+        <th>Fecha de ingreso</th>
         <th colspan="3"></th>
       </tr>
     </thead>
-
     <tbody>
-      <h2>Detalle Arriendos</h2>
-      <% @owner.detail_rents.each do |owner| %>
+      <h2>Comprador</h2>
+      <% @owner.buyers.each do |owner| %>
         <tr>
+          <td><%= owner.name %></td>
+          <td><%= owner.phone %></td>
+          <td><%= owner.rut %></td>
+          <td><%= owner.mail %></td>
           <td><%= owner.detail %></td>
-          <td><%= owner.value %></td>
-          <td><%= owner.contract %></td>
-          <td><%= owner.renter.name %></td>
-          <td><%= owner.renter.property.name %></td>
-          <td><%= owner.renter.property.status %></td>
-        </tr>
+          <td><%= owner.property.name %></td>
+          <td><%= owner.created_at.to_datetime %></td>
       <% end %>
     </tbody>
-  </table>
+  </table> 
 </div>  
-<hr>
+  <hr>
 <div class="table-responsive">
-    <table class="table">
+  <table class="table">
     <thead>
       <tr>
+        <th>Nombre</th>
+        <th>Telefono</th>
+        <th>Rut</th>
+        <th>Mail</th>
         <th>Observaciones</th>
-        <th>Caratula</th>
-        <th>Url</th>
-        <th>Valor $</th>
-        <th>Contract</th>
-        <th>Comprador</th>
         <th>Propiedad</th>
-        <th>Status</th>
+        <th>Fecha de ingreso</th>
         <th colspan="3"></th>
       </tr>
     </thead>
     <tbody>
-      <h2>Detalle Ventas</h2>
-      <% @owner.detail_sales.each do |owner| %>
+    <h2>Arrendatario</h2>
+      <% @owner.renters.each do |owner| %>
         <tr>
+          <td><%= owner.name %></td>
+          <td><%= owner.phone %></td>
+          <td><%= owner.rut %></td>
+          <td><%= owner.mail %></td>
           <td><%= owner.detail %></td>
-          <td><%= owner.caratula %></td>
-          <td><%= owner.url %></td>
-          <td><%= owner.value %></td>
-          <td><%= owner.contract %></td>
-          <td><%= owner.buyer.name %></td>
-          <td><%= owner.buyer.property.name %></td>
-          <td><%= owner.buyer.property.status %></td>
+          <td><%= owner.property.name %></td>
+          <td><%= owner.created_at.to_datetime %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
-
-

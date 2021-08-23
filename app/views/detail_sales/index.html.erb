@@ -24,6 +24,8 @@
         <th>Promesa</th>
         <th>Escritura Compraventa</th>
         <th>Comprador</th>
+        <th>Propietario</th>
+        <th>Propiedad</th>
         <th>Observaciones</th>
         <th>Caratula</th>
         <th>Url Conservador</th>
@@ -32,13 +34,14 @@
         <th colspan="6"></th>
       </tr>
     </thead>
-
     <tbody>
       <% @detail_sales.each do |detail_sale| %>
         <tr>
           <td><%= detail_sale.contract %></td>
           <td><%= detail_sale.purchase_contract %></td>
           <td><%= detail_sale.buyer.name %></td>
+          <td><%= detail_sale.buyer.property.name %></td>
+          <td><%= detail_sale.buyer.property.owner.name%></td>
           <td><%= detail_sale.detail %></td>
           <td><%= detail_sale.caratula %></td>
           <td><%= detail_sale.url %></td>

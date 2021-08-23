@@ -66,6 +66,6 @@ class BuyersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def buyer_params
-      params.require(:buyer).permit(:name, :phone, :rut, :mail, :detail, :owner_id, :property_id)
+      params.require(:buyer).permit(:name, :phone, :rut, :mail, :detail, :property_id)
     end
 end

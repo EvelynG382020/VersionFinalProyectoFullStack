@@ -37,11 +37,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :owner_id, "Propietario" %>
-    <%= form.collection_select :owner_id, Owner.all, :id, :name, prompt: true %>
-  </div>
-
-  <div class="field">
     <%= form.label :property_id, "Propiedad" %>
     <%= form.collection_select :property_id, Property.all, :id, :name, prompt: true %>
   </div>

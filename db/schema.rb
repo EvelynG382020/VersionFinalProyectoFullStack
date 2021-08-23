@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_22_162023) do
+ActiveRecord::Schema.define(version: 2021_08_23_000908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,15 @@ ActiveRecord::Schema.define(version: 2021_08_22_162023) do
     t.index ["property_id"], name: "index_buyers_on_property_id"
   end
 
+  create_table "completeds", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "property_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_completeds_on_property_id"
+    t.index ["user_id"], name: "index_completeds_on_user_id"
+  end
+
   create_table "contacts", force: :cascade do |t|
     t.string "title"
     t.string "email"
@@ -129,6 +138,15 @@ ActiveRecord::Schema.define(version: 2021_08_22_162023) do
     t.integer "cached_weighted_score", default: 0
     t.integer "cached_weighted_total", default: 0
     t.float "cached_weighted_average", default: 0.0
+  end
+
+  create_table "pay_registrations", force: :cascade do |t|
+    t.string "name"
+    t.string "last_name"
+    t.string "mail"
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "properties", force: :cascade do |t|
@@ -187,6 +205,8 @@ ActiveRecord::Schema.define(version: 2021_08_22_162023) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "buyers", "properties"
+  add_foreign_key "completeds", "properties"
+  add_foreign_key "completeds", "users"
   add_foreign_key "detail_rents", "renters"
   add_foreign_key "detail_sales", "buyers"
   add_foreign_key "identities", "users"

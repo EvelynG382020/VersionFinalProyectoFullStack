@@ -10,6 +10,10 @@ class UsersController < ApplicationController
         render :action => 'new'
       end
     end
+
+    def my_completed 
+      @completeds = current_user.completeds
+    end
   
     private
   

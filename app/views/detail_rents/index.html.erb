@@ -7,10 +7,10 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Observaciones</th>
+        <th>Arrendatario</th>
         <th>Valor</th>
         <th>Contrato</th>
-        <th>Arrendatario</th>
+        <th>Observaciones</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -18,10 +18,10 @@
     <tbody>
       <% @detail_rents.each do |detail_rent| %>
         <tr>
-          <td><%= detail_rent.detail %></td>
+          <td><%= detail_rent.renter.name %></td>
           <td><%= detail_rent.value %></td>
           <td><%= detail_rent.contract %></td>
-          <td><%= detail_rent.renter.name %></td>
+          <td><%= detail_rent.detail %></td>
           <td><%= link_to 'Mostrar', detail_rent %></td>
           <td><%= link_to 'Editar', edit_detail_rent_path(detail_rent) %></td>
           <td><%= link_to 'Eliminar', detail_rent, method: :delete, data: { confirm: 'Are you sure?' } %></td>

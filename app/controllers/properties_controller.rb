@@ -59,6 +59,15 @@ class PropertiesController < ApplicationController
     end
   end
 
+  def finished 
+    completed = Completed.new(property: @property, user: current_user)
+    if completed.save!
+      @msg = "Finalizado exitosamente"
+    else
+      @msg = "Error al intentar finalizarlo"
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_property
@@ -67,6 +76,6 @@ class PropertiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def property_params
-      params.require(:property).permit(:name, :status, :detail, :kind, :adress, :rol, :negotiation, :owner_id)
+      params.require(:property).permit(:name, :status, :detail, :kind, :adress, :rol, :negotiation, :owner_id, buyers_attributes: [:name, :phone, :mail, :rut, :detail, :property_id, :_destroy], renters_attributes: [:name, :phone, :mail, :rut, :detail, :property_id, :_destroy])
     end
 end

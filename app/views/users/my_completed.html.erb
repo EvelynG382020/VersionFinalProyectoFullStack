@@ -1,0 +1,12 @@
+<div class="container">
+  <h3 class="text-center">Mis Gestiones Finalizadas</h3>
+  <ul>
+    <% @completeds.each do |comp|%>
+      <br>
+      <li class="list" id="reservation_<%=comp.id%>" > 
+        <%= comp.property.name %> 
+    <%end%>
+  </ul>
+  <br>
+  <%= link_to 'Regresar a Propiedades', properties_path %>
+</div>
