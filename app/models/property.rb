@@ -7,6 +7,6 @@ class Property < ApplicationRecord
   accepts_nested_attributes_for :buyers, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :renters, reject_if: :all_blank, allow_destroy: true
 
-  enum status: %i[en_proceso finalizado]
+  enum status: %i[venta arriendo]
 
 end

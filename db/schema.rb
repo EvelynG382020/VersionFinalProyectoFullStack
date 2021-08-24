@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_23_000908) do
+ActiveRecord::Schema.define(version: 2021_08_24_193221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 2021_08_23_000908) do
   create_table "detail_rents", force: :cascade do |t|
     t.text "detail"
     t.integer "value"
-    t.string "contract"
+    t.integer "contract", default: 0
     t.bigint "renter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

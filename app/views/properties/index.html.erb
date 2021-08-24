@@ -1,26 +1,25 @@
 
 <p id="notice"><%= notice %></p>
 <hr>
-<h2 class="text-center">Propiedades</h2>
 <div class="row">
   <div class="col-md-3 offset-md-2">
       <%= search_form_for @q do |f| %>
     <div class="form-group">
-      <%= f.label :status_eq, "Selecciona el estado del proceso" %>
+      <%= f.label :status_eq, "Selecciona el estado de la propiedad" %>
       <br>
       <%= f.select :status_eq, options_for_select(Property.statuses , @q.status_eq), {},{class: "form-control"} %>
     </div>
     <br>
-    <%= f.submit "Search", class: "btn btn-primary" %>
+    <%= f.submit "Buscar", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
 <br>
-
+<h2 class="text-center">Propiedades</h2>
   
   <hr> 
   <%= link_to 'Nueva Propiedad', new_property_path %> |
-  <%= link_to 'Procesos Finalizados', my_completeds_path %>
+  <%= link_to 'Procesos Cerrados', my_completeds_path %>
   <hr>
 <div class="table-responsive">
   <table class="table">

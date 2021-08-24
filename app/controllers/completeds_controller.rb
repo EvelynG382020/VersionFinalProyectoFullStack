@@ -64,6 +64,6 @@ class CompletedsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def completed_params
-      params.fetch(:completed, {})
+      params.require(:completed).permit(:user_id, :property_id)
     end
 end
