@@ -4,11 +4,14 @@
           <td><%= property.name %></td>
           <td><%= property.status %></td>
           <td><%= property.negotiation %></td>
-          <td><%= property.detail %></td>
+          <td><%= property.transaction_type %></td>
           <td><%= property.kind %></td>
           <td><%= property.adress %></td>
+          <td><%= property.location %></td>
+          <td><%= property.city %></td>
           <td><%= property.rol %></td>
           <td><%= property.owner.name %></td>
+          <td><%= property.detail %></td>
           <td><%= link_to 'Mostrar', property %></td>
           <td><%= link_to 'Editar', edit_property_path(property) %></td>
           <td><%= link_to 'Eliminar', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>

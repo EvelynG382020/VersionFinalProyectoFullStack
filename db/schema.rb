@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_24_193221) do
+ActiveRecord::Schema.define(version: 2021_08_25_153636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -153,13 +153,16 @@ ActiveRecord::Schema.define(version: 2021_08_24_193221) do
     t.string "name"
     t.integer "status"
     t.string "detail"
-    t.string "kind"
+    t.integer "kind", default: 0
     t.string "adress"
     t.integer "rol"
     t.bigint "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "negotiation"
+    t.integer "negotiation", default: 0
+    t.string "location"
+    t.string "city"
+    t.integer "transaction_type", default: 0
     t.index ["owner_id"], name: "index_properties_on_owner_id"
   end
 

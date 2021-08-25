@@ -1,38 +1,49 @@
 
 <p id="notice"><%= notice %></p>
 <hr>
-<div class="row">
-  <div class="col-md-3 offset-md-2">
+<form class="form-inline ">
+   <div class="d-inline-block">
       <%= search_form_for @q do |f| %>
     <div class="form-group">
-      <%= f.label :status_eq, "Selecciona el estado de la propiedad" %>
-      <br>
-      <%= f.select :status_eq, options_for_select(Property.statuses , @q.status_eq), {},{class: "form-control"} %>
+      <%= f.label :status_eq, "Estado " %>
+      <%= f.select :status_eq, options_for_select(Property.statuses , @q.status_eq), {},{class: "form-control"} %> |
+      <%= f.submit "Buscar", class: "btn btn-primary" %>
     </div>
-    <br>
-    <%= f.submit "Buscar", class: "btn btn-primary" %>
     <% end %>
   </div>
-</div>
-<br>
-<h2 class="text-center">Propiedades</h2>
-  
+</form>
+<hr>
+<form class="form-inline ">
+  <div class="d-inline-block">
+      <input class="form-control" type="search" placeholder="Buscar por Comuna" aria-label="Buscar" name="locationsearch"> |
+  </div>
+  <div class="d-inline-block">
+      <button class="btn btn-outline-light" type="submit">Buscar</button>
+  </div>
+</form>
   <hr> 
-  <%= link_to 'Nueva Propiedad', new_property_path %> |
-  <%= link_to 'Procesos Cerrados', my_completeds_path %>
+  <%= link_to 'Nueva Propiedad', new_property_path, class: "btn btn-info" %> |
+  <%= link_to 'Index Propietarios', owners_path, class: "btn btn-info"  %> |
+  <%= link_to 'Index Arrendatarios', renters_path, class: "btn btn-info"  %> |
+  <%= link_to 'Index Compradores', buyers_path, class: "btn btn-info"  %> |
+   <%= link_to 'Procesos Cerrados', my_completeds_path, class: "btn btn-info"  %>
   <hr>
+  <h2 class="text-center">Propiedades</h2>
 <div class="table-responsive">
   <table class="table">
       <thead>
         <tr>
           <th>Nombre</th>
           <th>Estado</th>
-          <th>Negociación</th>
-          <th>Observaciones</th>
+          <th>Forma de pago</th>
+          <th>Transacción</th>
           <th>Tipo de Propiedad</th>
           <th>Dirección</th>
+          <th>Comuna</th>
+          <th>Ciudad</th>
           <th>Rol</th>
           <th>Propietario</th>
+          <th>Observaciones</th>
         </tr>
       </thead>
       <hr>

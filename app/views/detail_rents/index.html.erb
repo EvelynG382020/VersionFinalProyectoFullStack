@@ -2,7 +2,11 @@
 <p id="notice"><%= notice %></p>
 
 <h2>Detalle Arriendo</h2>
-
+<hr>
+<%= link_to 'Nuevo Detalle Arriendo', new_detail_rent_path, class: "btn btn-info" %> |
+<%= link_to 'Index Detalle Ventas', detail_sales_path, class: "btn btn-info" %> |
+<%= link_to 'Index Propiedades', properties_path, class: "btn btn-info" %>
+<hr>
 <div class="table-responsive">
   <table class="table">
     <thead>
@@ -32,5 +36,3 @@
 </div>
 <br>
 
-<%= link_to 'Nuevo Detalle Arriendo', new_detail_rent_path %> |
-<%= link_to 'Detalle Ventas', detail_sales_path %>

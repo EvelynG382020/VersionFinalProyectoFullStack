@@ -8,6 +8,7 @@
       <tr>
         <th>Nombre Propiedad</th>
         <th>Propietario</th>
+        <th>Fecha de cierre</th>
       </tr>
     </thead> 
     <tbody> 
@@ -15,6 +16,7 @@
         <tr>
           <td><%= comp.property.name %></td>
           <td><%= comp.property.owner.name %></td>
+          <td><%= comp.property.created_at %></td>
           <td><%= link_to 'Deshacer', completed_path(comp.id), method: :delete, data: { confirm: 'Are you sure?' }, remote: true%></td>
         </tr>
       <%end%>

@@ -7,6 +7,10 @@ class PropertiesController < ApplicationController
   def index
     @q = Property.ransack(params[:q])
     @properties = @q.result(distinct: true)
+
+    if params[:locationsearch].present?
+      @properties = Property.where(location: params[:locationsearch]).page(params[:page]).order("created_at DESC")
+    end
   end
 
   # GET /properties/1 or /properties/1.json
@@ -77,6 +81,6 @@ class PropertiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def property_params
-      params.require(:property).permit(:name, :status, :detail, :kind, :adress, :rol, :negotiation, :owner_id, buyers_attributes: [:name, :phone, :mail, :rut, :detail, :property_id, :_destroy], renters_attributes: [:name, :phone, :mail, :rut, :detail, :property_id, :_destroy])
+      params.require(:property).permit(:name, :status, :detail, :kind, :adress, :rol, :negotiation, :transaction_type, :owner_id, :location, :city, buyers_attributes: [:name, :phone, :mail, :rut, :detail, :property_id, :_destroy], renters_attributes: [:name, :phone, :mail, :rut, :detail, :property_id, :_destroy])
     end
 end

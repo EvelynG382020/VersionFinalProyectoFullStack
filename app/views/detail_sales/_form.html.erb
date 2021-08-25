@@ -51,6 +51,11 @@
     <%= form.text_field :value, placeholder: "solo numeros sin puntos" %>
   </div>
 
+  <div class="field">
+    <%= form.label :created_at %>
+    <%= form.date_select :created_at %>
+  </div>
+
   <div class="actions">
     <%= form.submit "Crear" %>
   </div>

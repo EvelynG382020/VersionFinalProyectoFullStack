@@ -89,3 +89,6 @@ gem 'groupdate'
 #Payment method
 gem 'mercadopago-sdk'
 
+gem 'faker'
+
+

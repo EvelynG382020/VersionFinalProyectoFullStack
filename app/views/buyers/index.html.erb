@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Compradores</h1>
-
+<hr>
+<%= link_to 'Nuevo Comprador', new_buyer_path, class: "btn btn-info" %> |
+<%= link_to 'Index Propiedades', properties_path, class: "btn btn-info" %> |
+<%= link_to 'Index Detalle Ventas', detail_sales_path, class: "btn btn-info" %>
+<hr>
 <div class="table-responsive">
   <table class="table">
     <thead>
@@ -39,4 +43,4 @@
 </div>
 <br>
 
-<%= link_to 'Nuevo Comprador', new_buyer_path %>
+

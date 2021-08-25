@@ -1,74 +1,195 @@
-<h1>Plataforma para Corredores de Propiedades!!</h1>
-
 <body>
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #28A745">
-    <a class="navbar-brand" href="#">
-        <img src="img/logo-white.png" width="86" height="25" alt=""loading="lazy">
-    </a>
-    <button class="navbar-toggler bg-success" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="btn btn-outline-dark">
-        <span class="navbar-toggler-icon"></span>
-    </button>   
-</nav>
-
-<div class="row row-cols-1 row-cols-md-3 my-2 mx-2 p-2">
-    <div class="col mb-4">
-        <img src="img/cupon-1.jpg" class="card-img-top" alt="cupon-1">
-        <div class="card-body">
-            <h5 class="card-title font-weight-light mb-4">Plumón Coral Fleece estampado en modelo y tamaño a elección</h5>
-            <p class="card-subtitle"><small class="text-muted mt-2">Plumones Manolio</small></p>
-            <i class="fas fa-map-marker-alt fa-0.3x text-muted p-0 mb-2"><small class="text-muted"> 9191 Avenida Vitacura, Chile</small></i>         
-            <div class="card-footer text-right">
-                <small class="antes text-muted font-weight-light">  $45.990</small>
-                <small class="oferta text-success font-weight-bold">  $22.990</small>
+        <!--Barra de navegación-->
+        <nav class="container-fluid navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand col-4 col-sm-2 font-weight-normal text-white" href="#"><img
+                        src="assets/img/viajes.svg">   Viajes Chile
+                </a>
+                <button class="navbar-toggler border-light" type="button" data-toggle="collapse"
+                    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#carouselExampleControls">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Quienes somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#destacados">Destacados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacto">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="col mb-4">
-        <img src="img/cupon-2.jpg" class="card-img-top" alt="cupon-2">
-        <div class="card-body">
-            <h5 class="card-title font-weight-light mb-4">Entrada para compartir + platos de fondo + postres + bebestibles</h5>
-            <p class="card-subtitle"><small class="text-muted mt-2">V for Vegan</small></p>
-            <i class="fas fa-map-marker-alt fa-0.3x text-muted p-0 mb-2"><small class="text-muted"> 777 Jesse Pinkman, Chile</small></i>
-            <div class="card-footer text-right">
-                <small class="antes text-muted font-weight-light">  $30.990</small>
-                <small class="oferta text-success font-weight-bold">  $12.990</small>
+        </nav>
+        <!--Carrusel-->
+        <header>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/img/carousel1.jpg" class="d-block w-100" alt="alpaca">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/carousel2.jpg" class="d-block w-100" alt="moai">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/carousel3.jpg" class="d-block w-100" alt="pinguino">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/carousel4.jpg" class="d-block w-100" alt="paine">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/carousel5.jpg" class="d-block w-100" alt="patagonia">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/carousel6.jpg" class="d-block w-100" alt="Laja">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-        </div>
-    </div>
-    <div class="col mb-4">
-        <img src="img/cupon-3.jpg" class="card-img-top" alt="cupon-3">
-        <div class="card-body">
-            <h5 class="card-title font-weight-light mb-4">Evaluación integral + blanqueamiento dental led + limpieza + fluoración</h5>
-            <p class="card-subtitle"><small class="text-muted mt-2">Clínica Dental Quijada</small></p>
-            <i class="fas fa-map-marker-alt fa-0.3x text-muted p-0 mb-2"><small class="text-muted"> 1342, Blanco Encalada, Chile</small></i>         
-            <div class="card-footer text-right">
-                <small class="antes text-muted font-weight-light">  $300.000</small>
-                <small class="oferta text-success font-weight-bold">  $25.990</small>
+        </header>
+        <!--Quienes somos-->
+        <section id="about" class="container-fluid d-none d-sm-block text-white my-5 mx-3">
+            <h3>¿Quiénes somos?</h3>
+            <hr class="barra">
+            <div class="row mt-3 mb-1">
+                <div class="container-fluid mx-3 ">
+                    <div class="card-deck card1">
+                        <div class="card">
+                            <i class="fas fa-plane fa-2x py-1 fa-icons"></i>
+                            <div class="card-body">
+                                <p class="card-text">Si bien muchas veces podemos alegar contra los viajes en avión
+                                    diciendo que se atrasan, que son caros o que simplemente da susto subirse a uno de
+                                    ellos, hay varios motivos que nos llevan a pensar que este medio de transporte es
+                                    muy importante y conveniente. Las respuestas a la pregunta “¿por qué viajar en
+                                    avión?” pueden ser múltiples. La primera, y más obvia, es la velocidad del
+                                    transporte. Un avión promedio de una línea aérea, viaja a unos 800 kilómetros por
+                                    hora, más rápido que cualquier otro medio.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-text">El montañismo nace en las montañas al final del siglo XVIII. Su
+                                    objetivo es conseguir llegar a la cima de una determinada montaña, como un reto a la
+                                    naturaleza, que en ocasiones se llega a perder la vida. Se trata de la disciplina,
+                                    en general deportiva o recreativa, que consiste en la realización del ascenso y
+                                    descenso de montañas. Es también el conjunto de técnicas, conocimientos y Destreza o
+                                    habilidades orientadas a la realización de este objetivo. </p>
+                            </div>
+                            <i class="fas fa-mountain fa-2x py-1 fa-icons"></i>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-route fa-2x py-1 fa-icons"></i>
+                            <div class="card-body">
+                                <p class="card-text">Algo muy común en senderistas sin mucha experiencia es perderse en
+                                    la montaña, en el mejor de los casos por unas horas pero en otros hasta un día
+                                    entero o hasta varios días incluso. Caminar por la montaña parecería algo fácil como
+                                    dar solo un paso tras otro, esto puede ser en parte cierto, más cuando solo se va
+                                    tras los pasos de un guía de montaña. Antes de dar el primer paso de tú caminata,
+                                    ubica tú norte, y pregunta al guía en que dirección será la caminata. Esto por si te
+                                    llegas a perder, poder regresar en dirección que iniciaste la caminata.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="col mb-4">
-        <img src="img/cupon-4.jpg" class="card-img-top" alt="cupon-3">
-        <div class="card-body">
-            <h5 class="card-title font-weight-light mb-4">Colación para 2 personas + postre (no incluye bebidas)</h5>
-            <p class="card-subtitle"><small class="text-muted mt-2">Suricata almacen</small></p>
-            <i class="fas fa-map-marker-alt fa-0.3x text-muted p-0 mb-2"><small class="text-muted"> 1071 Miguel Claro, Chile</small></i>         
-            <div class="card-footer text-right">
-                <small class="antes text-muted font-weight-light">  $4.200</small>
-                <small class="oferta text-success font-weight-bold">  $2.100</small>
+        </section>
+        <hr class="espacio_grande">
+        <!--Destacados-->
+        <section id="destacados" class="container-fluid text-white my-5 mx-3">
+            <h3>Destacados</h3>
+            <hr class="barra">
+            <div class="container-fluid">
+                <div class="row mt-3 mb-1">
+                    <div class="card-deck card2 px-5">
+                        <div class="card">
+                            <img id="montaña" src="assets/img/card1.jpg" class="card-img-top" alt="montaña">
+                            <div class="card-body celeste">
+                                <h5 class="card-title">Beneficios de habitar junto a la naturaleza.</h5>
+                                <p class="card-text montañaToggle">Estar en contacto con la naturaleza tiene diversos beneficios para
+                                    la salud.
+                                    Si bien muchas personas disfrutan de la adrenalina de vivir en una ciudad, no es
+                                    difícil notar que hasta el más mínimo contacto con la naturaleza impacta de manera
+                                    positiva en el bienestar, otorgando una sensación de relajación y armonía. Pero
+                                    además, aunque no sea evidente, los espacios y verdes tienen grandes beneficios para
+                                    la salud.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img id="reflejo" src="assets/img/card2.jpg" class="card-img-top" alt="reflejo">
+                            <div class="card-body celeste">
+                                <h5 class="card-title">Contemplar la hermosura de la naturaleza e inmortalizarla en
+                                    fotografías.</h5>
+                                <p class="card-text reflejoToggle">Para todos aquellos que estén disfrutando de unas buenas vacaciones
+                                    –y para los que están trabajando pero aprovechan el buen tiempo para arrancarse los
+                                    fines de semana–, les queremos compartir una serie de datos útiles para tomar
+                                    mejores fotografías de los lugares que recorren.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img id="arena" src="assets/img/card3.jpg" class="card-img-top" alt="arena">
+                            <div class="card-body celeste">
+                                <h5 class="card-title">La importancia de mantener limpio el medioambiente.</h5>
+                                <p class="card-text arenaToggle">Solamente un medio ambiente limpio, libre de contaminantes podrá
+                                    garantizar una vida saludable para todos y la disminución de muchas enfermedades
+                                    ocasionadas por el agua sucia, el aire impuso y la basura.
+                                    Uno de los factores de contaminación más importantes en la actualidad lo son las
+                                    pilas que se consumen en gran número debido a la infinidad de aparatos que requieren
+                                    de ellas.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img id="bosque" src="assets/img/card4.jpg" class="card-img-top" alt="...">
+                            <div class="card-body celeste">
+                                <h5 class="card-title">La importancia de no interrumpir el crecimiento de áreas verdes.
+                                </h5>
+                                <p class="card-text bosqueToggle">Las áreas verdes tienen una finalidad ecológica no sólo de contrarrestar la contaminación, sino de constituir áreas de recreación así y de esparcimiento; así como de constituir una forma de contacto con la naturaleza.La población urbana crece entre dos y tres veces más deprisa que la población rural. Con toda probabilidad esta tendencia se mantendrá en las próximas décadas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="col mb-4">
-        <img src="img/cupon-5.jpg" class="card-img-top" alt="cupon-3">
-        <div class="card-body">
-            <h5 class="card-title font-weight-light mb-4">1, 2 o 4 tickets para Stukids. Elige sucursal</h5>
-            <p class="card-subtitle"><small class="text-muted mt-2">Stukids Centro de Eventos</small></p>
-            <i class="fas fa-map-marker-alt fa-0.3x text-muted p-0 mb-2"><small class="text-muted"> 133 El tranque, Chile</small></i>         
-            <div class="card-footer text-right">
-                <small class="antes text-muted font-weight-light">  $4.000</small>
-                <small class="oferta text-success font-weight-bold">  $2.000</small>
+        </section>
+        <!--Contacto-->
+        <section id="contacto" class="container-fluid text-white my-5 mx-3">
+            <h3>Contacto</h3>
+            <hr class="barra">
+            <div class="typeform-widget px-5 py-2"
+                data-url="https://form.typeform.com/to/cQQTb7Zx?typeform-medium=embed-snippet"
+                style="width: 100%; height: 500px;"></div>
+            <script> (function () { var qs, js, q, s, d = document, gi = d.getElementById, ce = d.createElement, gt = d.getElementsByTagName, id = "typef_orm", b = "https://embed.typeform.com/"; if (!gi.call(d, id)) { js = ce.call(d, "script"); js.id = id; js.src = b + "embed.js"; q = gt.call(d, "script")[0]; q.parentNode.insertBefore(js, q) } })()</script>
+        </section>
+        <!--Footer-->
+        <footer id="contact">
+            <div class="icons-section container-fluid mt-2">
+                <div class="row">
+                    <div class="col-6 text-left">
+                        <h5 class="display-5 my-2 text-center text-white">VIAJES CHILE</h5>
+                    </div>
+                    <div class="col text-center p-0">
+                        <a href="https://github.com/" target="_blank" class="text-white"><i
+                                class="fab fa-github-square fa-2x my-1 pr-2"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="text-white"><i
+                                class="fab fa-linkedin fa-2x my-1 pr-2"></i></a>
+                        <a href="https://twitter.com/" target="_blank" class="text-white"><i
+                                class="fab fa-twitter-square fa-2x my-1 pr-2"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank" class="text-white"><i
+                                class="fab fa-facebook-square fa-2x my-1 pr-1"></i></a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
+        </footer>
+</body>

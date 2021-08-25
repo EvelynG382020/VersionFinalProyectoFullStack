@@ -30,6 +30,11 @@
     <%= form.label :mail %>
     <%= form.text_field :mail, placeholder: "example@example.com" %>
   </div>
+  
+  <div class="field">
+    <%= form.label :created_at %>
+    <%= form.date_select :created_at %>
+  </div>
 
   <div class="actions">
     <%= form.submit "Crear" %>

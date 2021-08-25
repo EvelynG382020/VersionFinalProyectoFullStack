@@ -1,7 +1,11 @@
 
 <p id="notice"><%= notice %></p>
 <hr>
-<h2 class="text-center">Detalle Ventas</h2>
+<h2>Detalle Ventas</h2>
+<%= link_to 'Nuevo Detalle Ventas', new_detail_sale_path, class: "btn btn-info"  %> |
+<%= link_to 'Detalle Arriendo', detail_rents_path, class: "btn btn-info" %> |
+<%= link_to 'Index Propiedades', properties_path, class: "btn btn-info" %>
+<hr>
 <div class="row">
   <div class="col-md-3 offset-md-2">
       <%= search_form_for @q do |f| %>
@@ -58,5 +62,4 @@
 </div>
 <br>
 
-<%= link_to 'Nuevo Detalle Ventas', new_detail_sale_path %> |
-<%= link_to 'Detalle Arriendo', detail_rents_path %>
+

@@ -11,7 +11,8 @@
 <hr>
 <h2>Propietarios</h2>
 <hr>
-<%= link_to 'Nuevo Propietario', new_owner_path %>
+<%= link_to 'Nuevo Propietario', new_owner_path, class: "btn btn-info" %> |
+<%= link_to 'Index Propiedades', properties_path, class: "btn btn-info"%>
 <hr>
 <div class="table-responsive">
   <table class="table">
@@ -47,7 +48,7 @@
           <td><%= link_to 'Mas Info', owner %></td>
           
           <td><%= link_to 'Editar', edit_owner_path(owner) %></td>
-          <td><%= link_to 'Elimar', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Eliminar', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>

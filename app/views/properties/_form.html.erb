@@ -22,18 +22,18 @@
   </div>
 
   <div class="field">
-    <%= form.label :negotiation, "Negociación" %>
-    <%= form.text_field :negotiation, placeholder: "Banco o contado" %>
+    <%= form.label :negotiation, "Forma de Pago" %>
+    <%= form.select :negotiation, Property.negotiations.keys %>
   </div>
 
   <div class="field">
-    <%= form.label :detail, "Observaciones" %>
-    <%= form.text_area :detail %>
+    <%= form.label :transaction_type, "Transacción" %>
+    <%= form.select :transaction_type, Property.transaction_types.keys %>
   </div>
 
   <div class="field">
     <%= form.label :kind, "Tipo de propiedad" %>
-    <%= form.text_field :kind, placeholder: "Casa o Departamento" %>
+    <%= form.select :kind, Property.kinds.keys %>
   </div>
 
   <div class="field">
@@ -42,13 +42,27 @@
   </div>
 
   <div class="field">
-    <%= form.label :rol %>
-    <%= form.text_field :rol %>
+    <%= form.label :location, "Comuna" %>
+    <%= form.text_field :location %>
   </div>
 
   <div class="field">
+    <%= form.label :city, "Ciudad" %>
+    <%= form.text_field :city, placeholder: "Ej: Región o ciudad" %>
+  </div>
+  <div class="field">
+    <%= form.label :rol %>
+    <%= form.text_field :rol %>
+  </div>
+  
+  <div class="field">
     <%= form.label :owner_id, "Propietario" %>
     <%= form.collection_select :owner_id , Owner.all, :id, :name, prompt: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :detail, "Observaciones" %>
+    <%= form.text_area :detail %>
   </div>
 
   <div class="field">

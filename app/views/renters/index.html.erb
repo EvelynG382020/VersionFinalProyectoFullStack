@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h2>Arrendatarios</h2>
-
+<hr>
+<%= link_to 'Nuevo Arrendatario', new_renter_path, class: "btn btn-info"  %> |
+<%= link_to 'Index Detalle Arriendos', detail_rents_path, class: "btn btn-info" %>
+<%= link_to 'Index Propiedades', properties_path, class: "btn btn-info" %>
+<hr>
 <div class="table-responsive">
   <table class="table">
     <thead>
@@ -39,4 +43,4 @@
 </div>
 <br>
 
-<%= link_to 'Nuevo Arrendatario', new_renter_path %>
+

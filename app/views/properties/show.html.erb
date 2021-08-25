@@ -10,12 +10,12 @@
   <%= @property.status %>
 </p>
 <p>
-  <strong>Negociación:</strong>
+  <strong>Forma de pago:</strong>
   <%= @property.negotiation %>
 </p>
 <p>
-  <strong>Observaciones:</strong>
-  <%= @property.detail %>
+  <strong>Transacción:</strong>
+  <%= @property.transaction_type %>
 </p>
 <p>
   <strong>Tipo de propiedad:</strong>
@@ -26,12 +26,24 @@
   <%= @property.adress %>
 </p>
 <p>
+  <strong>Comuna:</strong>
+  <%= @property.location %>
+</p>
+<p>
+  <strong>Ciudad:</strong>
+  <%= @property.city %>
+</p>
+<p>
   <strong>Rol:</strong>
   <%= @property.rol %>
 </p>
 <p>
   <strong>Propietario:</strong>
   <%= @property.owner.name %>
+</p>
+<p>
+  <strong>Observaciones:</strong>
+  <%= @property.detail %>
 </p>
 <p>
   <strong>Compradores:</strong>
