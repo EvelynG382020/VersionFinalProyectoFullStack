@@ -20,7 +20,7 @@ class PayRegistrationsController < ApplicationController
     def pay
       puts "++++++++" 
       require 'mercadopago'
-      sdk = Mercadopago::SDK.new(Rails.application.credentials.mercadopago[:access_token])
+      sdk = Mercadopago::SDK.new(ENV['MP_ACCESS_TOKEN'])
       preference_data = {
         items: [
           {
