@@ -91,8 +91,8 @@
           <td><%= dr.renter.name %></td>
           <td><%= dr.renter.property.name %></td>
           <td><%= dr.renter.property.owner.name %></td>
-          <td><%= localize dr.renter.created_at, format: "%d de %B de %Y" %></td>
-          <td><%= dr.renter.date.strftime("%d de %B de %Y") %></td>
+          <td><%= localize dr.renter.created_at, format: "%F" %></td>
+          <td><%#= localize dr.date, format: "%d de %B de %Y" %></td>
         </tr>
       <% end %>
     </tbody>

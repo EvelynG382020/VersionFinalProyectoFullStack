@@ -35,7 +35,7 @@ gem'image_processing','~> 1.2'
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
-gem 'rails-i18n'
+#gem 'rails-i18n'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
