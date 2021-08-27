@@ -12,6 +12,7 @@
           <td><%= property.rol %></td>
           <td><%= property.owner.name %></td>
           <td><%= property.detail %></td>
+          <td><%= localize property.created_at, format: "%d de %B de %Y" %></td>
           <td><%= link_to 'Mostrar', property %></td>
           <td><%= link_to 'Editar', edit_property_path(property) %></td>
           <td><%= link_to 'Eliminar', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>

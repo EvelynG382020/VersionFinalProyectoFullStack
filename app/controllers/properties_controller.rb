@@ -7,10 +7,12 @@ class PropertiesController < ApplicationController
   def index
     @q = Property.ransack(params[:q])
     @properties = @q.result(distinct: true)
+    @property = Property.available_property 
 
     if params[:locationsearch].present?
       @properties = Property.where(location: params[:locationsearch]).page(params[:page]).order("created_at DESC")
     end
+
   end
 
   # GET /properties/1 or /properties/1.json

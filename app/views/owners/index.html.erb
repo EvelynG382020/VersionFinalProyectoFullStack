@@ -24,6 +24,7 @@
         <th>Mail</th>
         <th>Total propiedades</th>
         <th>Propiedades</th>
+        <th>Fecha ingreso</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -36,6 +37,7 @@
           <td><%= owner.mail %></td>
           <td><%= owner.total_property %></td>
           <td><%= owner.properties.pluck(:name).join(', ') %></td>
+          <td><%= localize owner.created_at, format: "%d de %B de %Y" %></td>
  
           <% if current_user.liked? owner%>
             <td><%= link_to dislike_owner_path(owner) do  %><i class="fas fa-phone fa-2x"></i></td> 

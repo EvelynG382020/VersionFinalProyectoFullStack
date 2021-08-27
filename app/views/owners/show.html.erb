@@ -52,7 +52,7 @@
           <td><%= owner.mail %></td>
           <td><%= owner.detail %></td>
           <td><%= owner.property.name %></td>
-          <td><%= owner.created_at.to_datetime %></td>
+          <td><%= localize owner.created_at, format: "%d de %B de %Y" %></td>
       <% end %>
     </tbody>
   </table> 
@@ -82,7 +82,7 @@
           <td><%= owner.mail %></td>
           <td><%= owner.detail %></td>
           <td><%= owner.property.name %></td>
-          <td><%= owner.created_at.to_datetime %></td>
+          <td><%= localize owner.created_at, format: "%d de %B de %Y" %></td>
         </tr>
       <% end %>
     </tbody>

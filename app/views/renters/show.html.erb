@@ -34,6 +34,9 @@
   <strong>Propiedad:</strong>
   <%= @renter.property.name %>
 </p>
-
+<p>
+  <strong>Fecha ingreso:</strong>
+  <%= localize renter.created_at, format: "%d de %B de %Y" %>
+</p>
 <%= link_to 'Editar', edit_renter_path(@renter) %> |
 <%= link_to 'Regresar', renters_path %>

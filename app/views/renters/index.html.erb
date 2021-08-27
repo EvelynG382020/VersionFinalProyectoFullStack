@@ -32,7 +32,7 @@
           <td><%= renter.detail %></td>
           <td><%= renter.property.owner.name %></td>
           <td><%= renter.property.name %></td>
-          <td><%= renter.created_at.to_datetime %></td>
+          <td><%= localize renter.created_at, format: "%d de %B de %Y" %></td>
           <td><%= link_to 'Mostrar', renter %></td>
           <td><%= link_to 'Editar', edit_renter_path(renter) %></td>
           <td><%= link_to 'Eliminar', renter, method: :delete, data: { confirm: 'Are you sure?' } %></td>

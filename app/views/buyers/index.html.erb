@@ -32,7 +32,7 @@
           <td><%= buyer.detail %></td>
           <td><%= buyer.property.owner.name %></td>
           <td><%= buyer.property.name %></td>
-          <td><%= buyer.created_at.to_datetime %></td>
+          <td><%= localize buyer.created_at, format: "%d de %B de %Y" %></td>
           <td><%= link_to 'Mostrar', buyer %></td>
           <td><%= link_to 'Editar', edit_buyer_path(buyer) %></td>
           <td><%= link_to 'Eliminar', buyer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

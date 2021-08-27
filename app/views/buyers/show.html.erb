@@ -34,11 +34,13 @@
   <strong>Propiedad:</strong>
   <%= @buyer.property.name %>
 </p>
+<p>
+  <strong>Propiedad:</strong>
+  <%= localize buyer.created_at, format: "%d de %B de %Y" %>
+</p>
 <hr>
 
 
-
-  
 
 <%= link_to 'Editar', edit_buyer_path(@buyer) %> |
 <%= link_to 'Regresar', buyers_path %>

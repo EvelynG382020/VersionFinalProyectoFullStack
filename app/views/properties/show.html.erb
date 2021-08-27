@@ -53,6 +53,10 @@
   <strong>Arrendatario:</strong>
   <%= @property.renters.pluck(:name).join(',') %>
 </p>
+<p>
+  <strong>Fecha de ingreso:</strong>
+  <%= localize @property.created_at, format: "%d de %B de %Y" %>
+</p>
 <hr>
 <%= link_to 'Editar', edit_property_path(@property) %> |
 <%= link_to 'Regresar', properties_path %>
@@ -71,6 +75,8 @@
         <th>Arrendatario</th>
         <th>Propiedad</th>
         <th>Propietario</th>
+        <th>Fecha ingreso</th>
+        <th>Fecha término</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -85,6 +91,8 @@
           <td><%= dr.renter.name %></td>
           <td><%= dr.renter.property.name %></td>
           <td><%= dr.renter.property.owner.name %></td>
+          <td><%= localize dr.renter.created_at, format: "%d de %B de %Y" %></td>
+          <td><%= dr.renter.date.strftime("%d de %B de %Y") %></td>
         </tr>
       <% end %>
     </tbody>
@@ -104,6 +112,7 @@
         <th>Propietario</th>
         <th>Propiedad</th>
         <th>Status</th>
+        <th>Fecha ingreso</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -120,6 +129,7 @@
           <td><%= ds.buyer.property.owner.name %></td>
           <td><%= ds.buyer.property.name %></td>
           <td><%= ds.buyer.property.status %></td>
+          <td><%= localize ds.buyer.created_at, format: "%d de %B de %Y" %></td>
         </tr>
       <% end %>
     </tbody>

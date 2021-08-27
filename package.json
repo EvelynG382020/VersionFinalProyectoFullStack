@@ -1,5 +1,7 @@
 {
   "name": "FinalProjectBroker",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "highcharts": "^9.2.2"
+  }
 }

@@ -24,7 +24,7 @@ class PayRegistrationsController < ApplicationController
       preference_data = {
         items: [
           {
-            title: 'Mi Registro a ls plataforma',
+            title: 'Mi Registro a la plataforma',
             unit_price: 150000,
             quantity: 1
           }

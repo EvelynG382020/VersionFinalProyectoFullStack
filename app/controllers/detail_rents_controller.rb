@@ -66,6 +66,6 @@ class DetailRentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def detail_rent_params
-      params.require(:detail_rent).permit(:detail, :value, :contract, :renter_id)
+      params.require(:detail_rent).permit(:detail, :value, :contract, :date, :renter_id)
     end
 end

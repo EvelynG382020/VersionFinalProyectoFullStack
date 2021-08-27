@@ -11,10 +11,9 @@
       <%= search_form_for @q do |f| %>
     <div class="form-group">
       <%= f.label :inscription_eq, "Selecciona el estado del proceso" %>
-      <br>
       <%= f.select :inscription_eq, options_for_select(DetailSale.inscriptions , @q.inscription_eq), {},{class: "form-control"} %>
     </div>
-    <br>
+    <hr>
     <%= f.submit "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
@@ -30,11 +29,12 @@
         <th>Comprador</th>
         <th>Propietario</th>
         <th>Propiedad</th>
-        <th>Observaciones</th>
         <th>Caratula</th>
         <th>Url Conservador</th>
         <th>Inscripción CBRs</th>
         <th>Valor $</th>
+        <th>Fecha ingreso</th>
+        <th>Observaciones</th>
         <th colspan="6"></th>
       </tr>
     </thead>
@@ -46,11 +46,12 @@
           <td><%= detail_sale.buyer.name %></td>
           <td><%= detail_sale.buyer.property.name %></td>
           <td><%= detail_sale.buyer.property.owner.name%></td>
-          <td><%= detail_sale.detail %></td>
           <td><%= detail_sale.caratula %></td>
           <td><%= detail_sale.url %></td>
           <td><%= detail_sale.inscription%></td>
           <td><%= detail_sale.value%></td>
+          <td><%= localize detail_sale.created_at, format: "%d de %B de %Y" %></td>
+          <td><%= detail_sale.detail %></td>
           <td><%= link_to 'Mas info', detail_sale %></td>
         
           <td><%= link_to 'Editar', edit_detail_sale_path(detail_sale) %></td>

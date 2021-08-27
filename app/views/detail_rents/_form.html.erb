@@ -30,11 +30,15 @@
     <%= form.label :value, "Valor $" %>
     <%= form.text_field :value, placeholder: "solo numeros sin puntos" %>
   </div>
-
   <div class="field">
-    <%= form.label :created_at %>
+    <%= form.label :created_at, "Fecha de inicio" %>
     <%= form.date_select :created_at %>
   </div>
+  <div class="field">
+    <%= form.label :date, "Fecha de termino" %>
+    <%= form.date_select :date %>
+  </div>
+  
 
   <div class="actions">
     <%= form.submit "Crear" %>

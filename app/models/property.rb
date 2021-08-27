@@ -7,9 +7,12 @@ class Property < ApplicationRecord
   accepts_nested_attributes_for :buyers, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :renters, reject_if: :all_blank, allow_destroy: true
 
-  enum status: %i[en_proceso finalizado]
+  enum status: %i[en_proceso disponible finalizado]
   enum kind: %i[casa departamento parcela terreno]
   enum negotiation: %i[banco contado]
   enum transaction_type: %i[venta arriendo]
+
+  scope :available_property, -> { where(status: disponible) }
+  
 
 end

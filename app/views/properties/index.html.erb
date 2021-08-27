@@ -1,34 +1,35 @@
 
 <p id="notice"><%= notice %></p>
 <hr>
-<form class="form-inline ">
-   <div class="d-inline-block">
-      <%= search_form_for @q do |f| %>
-    <div class="form-group">
-      <%= f.label :status_eq, "Estado " %>
-      <%= f.select :status_eq, options_for_select(Property.statuses , @q.status_eq), {},{class: "form-control"} %> |
-      <%= f.submit "Buscar", class: "btn btn-primary" %>
-    </div>
-    <% end %>
-  </div>
-</form>
-<hr>
-<form class="form-inline ">
+<h2>Propiedades</h2>
+  <%= link_to 'Nueva Propiedad', new_property_path, class: "btn btn-info" %> |
+  <%= link_to 'Index Propietarios', owners_path, class: "btn btn-info"  %> |
+  <%= link_to 'Index Arrendatarios', renters_path, class: "btn btn-info"  %> |
+  <%= link_to 'Index Compradores', buyers_path, class: "btn btn-info"  %> |
+  <%= link_to 'Procesos Cerrados', my_completeds_path, class: "btn btn-info"  %>
+  <hr>
+  <form class="form-inline ">
   <div class="d-inline-block">
-      <input class="form-control" type="search" placeholder="Buscar por Comuna" aria-label="Buscar" name="locationsearch"> |
+      <input class="form-control" type="search" placeholder="Buscar por Comuna" aria-label="Buscar" name="locationsearch"> 
   </div>
   <div class="d-inline-block">
       <button class="btn btn-outline-light" type="submit">Buscar</button>
   </div>
 </form>
-  <hr> 
-  <%= link_to 'Nueva Propiedad', new_property_path, class: "btn btn-info" %> |
-  <%= link_to 'Index Propietarios', owners_path, class: "btn btn-info"  %> |
-  <%= link_to 'Index Arrendatarios', renters_path, class: "btn btn-info"  %> |
-  <%= link_to 'Index Compradores', buyers_path, class: "btn btn-info"  %> |
-   <%= link_to 'Procesos Cerrados', my_completeds_path, class: "btn btn-info"  %>
   <hr>
-  <h2 class="text-center">Propiedades</h2>
+<div class="row">
+  <div class="col-md-3 offset-md-2">
+      <%= search_form_for @q do |f| %>
+    <div class="form-group">
+      <%= f.label :status_eq, "Estado " %>
+      <%= f.select :status_eq, options_for_select(Property.statuses , @q.status_eq), {},{class: "form-control"} %> 
+    </div>
+      <%= f.submit "Buscar", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<hr>
+
 <div class="table-responsive">
   <table class="table">
       <thead>
@@ -44,6 +45,7 @@
           <th>Rol</th>
           <th>Propietario</th>
           <th>Observaciones</th>
+          <th>Fecha ingreso</th>
         </tr>
       </thead>
       <hr>

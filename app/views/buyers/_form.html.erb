@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= form.label :property_id, "Propiedad" %>
-    <%= form.collection_select :property_id, Property.all, :id, :name, prompt: true %>
+    <%= form.collection_select :property_id, Property.available_property, :id, :name, prompt: true %>
   </div>
 
   <div class="actions">
