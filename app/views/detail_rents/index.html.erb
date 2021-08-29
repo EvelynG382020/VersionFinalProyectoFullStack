@@ -29,7 +29,7 @@
           <td><%= detail_rent.contract %></td>
           <td><%= detail_rent.detail %></td>
           <td><%= localize detail_rent.created_at, format: "%d de %B de %Y" %></td>
-          <td><%#= detail_rent.date.strftime("%d de %B de %Y") %></td>
+          <td><%= detail_rent.date %></td>
           <td><%= link_to 'Mostrar', detail_rent %></td>
           <td><%= link_to 'Editar', edit_detail_rent_path(detail_rent) %></td>
           <td><%= link_to 'Eliminar', detail_rent, method: :delete, data: { confirm: 'Are you sure?' } %></td>

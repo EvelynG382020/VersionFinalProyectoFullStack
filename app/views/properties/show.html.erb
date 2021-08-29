@@ -1,10 +1,8 @@
 
 <p id="notice"><%= notice %></p>
 <hr>
-<p>
-<strong>Nombre:</strong>
-  <%= @property.name %>
-</p>
+<h2>Mas información Propiedad <%= @property.name %></h2>
+
 <p>
   <strong>Estado:</strong>
   <%= @property.status %>
@@ -46,12 +44,12 @@
   <%= @property.detail %>
 </p>
 <p>
-  <strong>Compradores:</strong>
-  <%= @property.buyers.pluck(:name).join(',') %>
+  <strong>Comprador:</strong>
+  <%= @property.buyers.pluck(:name).join('; ') %>
 </p>
 <p>
   <strong>Arrendatario:</strong>
-  <%= @property.renters.pluck(:name).join(',') %>
+  <%= @property.renters.pluck(:name).join('; ') %>
 </p>
 <p>
   <strong>Fecha de ingreso:</strong>
@@ -61,78 +59,4 @@
 <%= link_to 'Editar', edit_property_path(@property) %> |
 <%= link_to 'Regresar', properties_path %>
 <hr>
-
-
-<hr>
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Observaciones</th>
-        <th>Valor</th>
-        <th>Contrato</th>
-        <th>Estado</th>
-        <th>Arrendatario</th>
-        <th>Propiedad</th>
-        <th>Propietario</th>
-        <th>Fecha ingreso</th>
-        <th>Fecha término</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <h2>Detalle Arriendos</h2>
-      <% @property.detail_rents.each do |dr| %>
-        <tr>
-          <td><%= dr.detail %></td>
-          <td><%= dr.value %></td>
-          <td><%= dr.contract %></td>
-          <td><%= dr.renter.property.status %></td>
-          <td><%= dr.renter.name %></td>
-          <td><%= dr.renter.property.name %></td>
-          <td><%= dr.renter.property.owner.name %></td>
-          <td><%= localize dr.renter.created_at, format: "%F" %></td>
-          <td><%#= localize dr.date, format: "%d de %B de %Y" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>  
-<hr>
-<div class="table-responsive">
-    <table class="table">
-    <thead>
-      <tr>
-        <th>Observaciones</th>
-        <th>Caratula</th>
-        <th>Url</th>
-        <th>Valor $</th>
-        <th>Contract</th>
-        <th>Comprador</th>
-        <th>Propietario</th>
-        <th>Propiedad</th>
-        <th>Status</th>
-        <th>Fecha ingreso</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <h2>Detalle Ventas</h2>
-      <% @property.detail_sales.each do |ds| %>
-        <tr>
-          <td><%= ds.detail %></td>
-          <td><%= ds.caratula %></td>
-          <td><%= ds.url %></td>
-          <td><%= ds.value %></td>
-          <td><%= ds.contract %></td>
-          <td><%= ds.buyer.name %></td>
-          <td><%= ds.buyer.property.owner.name %></td>
-          <td><%= ds.buyer.property.name %></td>
-          <td><%= ds.buyer.property.status %></td>
-          <td><%= localize ds.buyer.created_at, format: "%d de %B de %Y" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
 

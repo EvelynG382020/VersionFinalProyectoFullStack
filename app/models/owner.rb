@@ -1,7 +1,7 @@
 class Owner < ApplicationRecord
     has_many :properties, dependent: :destroy
-    has_many :buyers, through: :properties
-    has_many :renters, through: :properties
+    #has_one :buyer, through: :properties
+    #has_one :renter, through: :properties
     acts_as_votable
 
     def total_property

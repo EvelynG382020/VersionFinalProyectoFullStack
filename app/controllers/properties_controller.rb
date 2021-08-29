@@ -6,13 +6,14 @@ class PropertiesController < ApplicationController
   # GET /properties or /properties.json
   def index
     @q = Property.ransack(params[:q])
-    @properties = @q.result(distinct: true)
-    @property = Property.available_property 
-
+    @properties = Property.where.not(status: :finalizado)
     if params[:locationsearch].present?
       @properties = Property.where(location: params[:locationsearch]).page(params[:page]).order("created_at DESC")
     end
-
+    if params[:q].present?
+      @properties = @q.result(distinct: true)
+      @property = Property.available_property     
+    end
   end
 
   # GET /properties/1 or /properties/1.json
@@ -32,7 +33,6 @@ class PropertiesController < ApplicationController
   def create
     sleep 1
     @property = Property.new(property_params)
-    
     respond_to do |format|
       if @property.save
         format.html { redirect_to @property, notice: "#{@property.name} was successfully created." }
@@ -46,6 +46,7 @@ class PropertiesController < ApplicationController
 
   # PATCH/PUT /properties/1 or /properties/1.json
   def update
+   
     respond_to do |format|
       if @property.update(property_params)
         format.html { redirect_to @property, notice: "#{@property.name} was successfully updated." }
@@ -83,6 +84,6 @@ class PropertiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def property_params
-      params.require(:property).permit(:name, :status, :detail, :kind, :adress, :rol, :negotiation, :transaction_type, :owner_id, :location, :city, buyers_attributes: [:name, :phone, :mail, :rut, :detail, :property_id, :_destroy], renters_attributes: [:name, :phone, :mail, :rut, :detail, :property_id, :_destroy])
+      params.require(:property).permit(:name, :status, :detail, :kind, :adress, :rol, :negotiation, :transaction_type, :owner_id, :location, :city, buyer_attributes: [:name, :phone, :mail, :rut, :detail, :property_id, :_destroy], renter_attributes: [:name, :phone, :mail, :rut, :detail, :property_id, :_destroy])
     end
 end

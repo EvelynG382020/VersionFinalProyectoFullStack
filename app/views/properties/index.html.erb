@@ -2,6 +2,7 @@
 <p id="notice"><%= notice %></p>
 <hr>
 <h2>Propiedades</h2>
+<%#= render 'form', property: @property %>
   <%= link_to 'Nueva Propiedad', new_property_path, class: "btn btn-info" %> |
   <%= link_to 'Index Propietarios', owners_path, class: "btn btn-info"  %> |
   <%= link_to 'Index Arrendatarios', renters_path, class: "btn btn-info"  %> |
@@ -13,7 +14,8 @@
       <input class="form-control" type="search" placeholder="Buscar por Comuna" aria-label="Buscar" name="locationsearch"> 
   </div>
   <div class="d-inline-block">
-      <button class="btn btn-outline-light" type="submit">Buscar</button>
+      <button class="btn btn-dark" type="submit">Buscar</button>
+      <%= link_to 'Todas', properties_path, class: "btn btn-warning" %>
   </div>
 </form>
   <hr>
@@ -24,36 +26,50 @@
       <%= f.label :status_eq, "Estado " %>
       <%= f.select :status_eq, options_for_select(Property.statuses , @q.status_eq), {},{class: "form-control"} %> 
     </div>
-      <%= f.submit "Buscar", class: "btn btn-primary" %>
+      <%= f.submit "Buscar", class: "btn btn-dark" %>
+      <%= link_to 'Todas', properties_path, class: "btn btn-warning" %>
     <% end %>
   </div>
 </div>
 <hr>
-
 <div class="table-responsive">
   <table class="table">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Estado</th>
-          <th>Forma de pago</th>
-          <th>Transacción</th>
-          <th>Tipo de Propiedad</th>
-          <th>Dirección</th>
-          <th>Comuna</th>
-          <th>Ciudad</th>
-          <th>Rol</th>
-          <th>Propietario</th>
-          <th>Observaciones</th>
-          <th>Fecha ingreso</th>
-        </tr>
-      </thead>
-      <hr>
-      <tbody>
-    
-        <%= render @properties %>
-     
-
+    <thead>
+      <tr>
+        <th>Nombre Descriptivo</th>
+        <th>Estado</th>
+        <th>Negociación</th>
+        <th>Transacción</th>
+        <th>Tipo de propiedad</th>
+        <th>Dirección</th>
+        <th>Comuna</th>
+        <th>Ciudad</th>
+        <th>Rol</th>
+        <th>Nombre Propietario</th>
+        <th>Observaciones</th>
+      </tr>  
+    </thead>
+    <tbody>
+      <% @properties.each do |property| %>
+      <tr>
+        <td><%= property.name %></td>
+        <td><%= property.status %></td>
+        <td><%= property.negotiation %></td>
+        <td><%= property.transaction_type %></td>
+        <td><%= property.kind %></td>
+        <td><%= property.adress %></td>
+        <td><%= property.location %></td>
+        <td><%= property.city %></td>
+        <td><%= property.rol %></td>
+        <td><%= property.owner.name %></td>
+        <td><%= property.detail %></td>
+        <td><%= localize property.created_at, format: "%d de %B de %Y" %></td>
+        <td><%= link_to 'Mostrar', property%></td>
+        <td><%= link_to 'Editar', edit_property_path(property)%></td>
+        <td><%= link_to 'Eliminar', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Cerrar Proceso', finalizar_property_path(property), method: :post, remote: true  %>
+      </tr>
+      <% end %>
     </tbody>
   </table> 
 </div> 

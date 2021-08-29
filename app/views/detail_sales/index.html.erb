@@ -13,12 +13,12 @@
       <%= f.label :inscription_eq, "Selecciona el estado del proceso" %>
       <%= f.select :inscription_eq, options_for_select(DetailSale.inscriptions , @q.inscription_eq), {},{class: "form-control"} %>
     </div>
-    <hr>
-    <%= f.submit "Search", class: "btn btn-primary" %>
+    <%= f.submit "Buscar", class: "btn btn-dark" %>
+    <%= link_to 'Todas', detail_sales_path, class: "btn btn-warning" %>
     <% end %>
   </div>
 </div>
-<br>
+<hr>
 
 <div class="table-responsive">
   <table class="table">

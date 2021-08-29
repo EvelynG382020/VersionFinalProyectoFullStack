@@ -5,7 +5,8 @@
       <input class="form-control" type="search" placeholder="Buscar por Nombre" aria-label="Buscar" name="ownersearch">
   </div>
   <div class="d-inline-block">
-      <button class="btn btn-outline-light" type="submit">Buscar</button>
+      <button class="btn btn-dark" type="submit">Buscar</button>
+      <%= link_to 'Todas', owners_path, class: "btn btn-warning" %>
   </div>
 </form>
 <hr>
@@ -36,7 +37,7 @@
           <td><%= owner.rut %></td>
           <td><%= owner.mail %></td>
           <td><%= owner.total_property %></td>
-          <td><%= owner.properties.pluck(:name).join(', ') %></td>
+          <td><%= owner.properties.pluck(:name).join('; ') %></td>
           <td><%= localize owner.created_at, format: "%d de %B de %Y" %></td>
  
           <% if current_user.liked? owner%>

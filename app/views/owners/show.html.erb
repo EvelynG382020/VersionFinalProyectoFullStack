@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <hr>
-<h2>Propiedad Asociada</h2>
+<h2>Propiedad Asociada <%= @owner.name %></h2>
 <hr>
 <%= link_to 'Editar', edit_owner_path(@owner) %> |
 <%= link_to 'Regresar', owners_path %>
@@ -28,63 +28,4 @@
   </table>
 </div>
 <hr>
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Teléfono</th>
-        <th>Rut</th>
-        <th>Mail</th>
-        <th>Observaciones</th>
-        <th>Propiedad</th>
-        <th>Fecha de ingreso</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <h2>Comprador</h2>
-      <% @owner.buyers.each do |owner| %>
-        <tr>
-          <td><%= owner.name %></td>
-          <td><%= owner.phone %></td>
-          <td><%= owner.rut %></td>
-          <td><%= owner.mail %></td>
-          <td><%= owner.detail %></td>
-          <td><%= owner.property.name %></td>
-          <td><%= localize owner.created_at, format: "%d de %B de %Y" %></td>
-      <% end %>
-    </tbody>
-  </table> 
-</div>  
-  <hr>
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Telefono</th>
-        <th>Rut</th>
-        <th>Mail</th>
-        <th>Observaciones</th>
-        <th>Propiedad</th>
-        <th>Fecha de ingreso</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-    <h2>Arrendatario</h2>
-      <% @owner.renters.each do |owner| %>
-        <tr>
-          <td><%= owner.name %></td>
-          <td><%= owner.phone %></td>
-          <td><%= owner.rut %></td>
-          <td><%= owner.mail %></td>
-          <td><%= owner.detail %></td>
-          <td><%= owner.property.name %></td>
-          <td><%= localize owner.created_at, format: "%d de %B de %Y" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+
