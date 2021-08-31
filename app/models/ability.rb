@@ -12,7 +12,7 @@ class Ability
         can :manage, DetailSale
         can :manage, DetailRent
         can :read, [Owner, Property, Renter, Buyer, Completed]
-        #can :create, [Renter, Buyer]
+        
       else
         can :read, :all
       end

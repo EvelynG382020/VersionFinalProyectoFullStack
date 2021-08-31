@@ -16,7 +16,7 @@ Buyer.destroy_all
 DetailRent.destroy_all
 DetailSale.destroy_all
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@email.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 User.create(
     name: "Nicole Gonzalez",
@@ -69,7 +69,7 @@ property_one = Property.new(
     transaction_type: "venta",
     location: Faker::Nation.capital_city,
     city: Faker::Address.city,
-    created_at: Faker::Date.between(from: '2017-01-01', to: Date.today)
+    created_at: Faker::Date.between(from: '2018-01-01', to: Date.today)
 )
 property_one.owner = Owner.find_by(mail: "eugenio@email.com")
 property_one.save!
@@ -85,7 +85,7 @@ property_one = Property.new(
     transaction_type: "arriendo",
     location: Faker::Nation.capital_city,
     city: Faker::Address.city,
-    created_at: Faker::Date.between(from: '2017-01-01', to: Date.today)
+    created_at: Faker::Date.between(from: '2018-01-01', to: Date.today)
 )
 property_one.owner = Owner.find_by(mail: "eugenio@email.com")
 property_one.save!
@@ -101,7 +101,7 @@ property_two = Property.new(
     transaction_type: "venta",
     location: Faker::Nation.capital_city,
     city: Faker::Address.city,
-    created_at: Faker::Date.between(from: '2017-01-01', to: Date.today)
+    created_at: Faker::Date.between(from: '2018-01-01', to: Date.today)
 )
 property_two.owner = Owner.find_by(mail: "boris@email.com")
 property_two.save!
@@ -117,7 +117,7 @@ property_two = Property.new(
     transaction_type: "arriendo",
     location: Faker::Nation.capital_city,
     city: Faker::Address.city,
-    created_at: Faker::Date.between(from: '2017-01-01', to: Date.today)
+    created_at: Faker::Date.between(from: '2018-01-01', to: Date.today)
 )
 property_two.owner = Owner.find_by(mail: "boris@email.com")
 property_two.save!
@@ -133,7 +133,7 @@ property_three = Property.new(
     transaction_type: "venta",
     location: Faker::Nation.capital_city,
     city: Faker::Address.city,
-    created_at: Faker::Date.between(from: '2017-01-01', to: Date.today)
+    created_at: Faker::Date.between(from: '2018-01-01', to: Date.today)
 )
 property_three.owner = Owner.find_by(mail: "sebastian@email.com")
 property_three.save!
@@ -199,7 +199,7 @@ detail_rent_one = DetailRent.new(
     detail: Faker::Lorem.sentence,
     contract: "firmado",
     value: rand(250000..1000000),
-    created_at: Faker::Date.between(from: '2017-01-01', to: Date.today)  
+    created_at: Faker::Date.between(from: '2021-01-01', to: Date.today)  
 )
 detail_rent_one.renter = Renter.find_by(name: "Joaquin Sepulveda")
 detail_rent_one.save!
@@ -208,46 +208,46 @@ detail_rent_two = DetailRent.new(
     detail: Faker::Lorem.sentence,
     contract: "firmado",
     value: rand(250000..1000000),
-    created_at: Faker::Date.between(from: '2017-01-01', to: Date.today)  
+    created_at: Faker::Date.between(from: '2021-01-01', to: Date.today)  
 )
 detail_rent_two.renter = Renter.find_by(name: "Francisca Cabrera")
 detail_rent_two.save!
 
 
 detail_sale_one = DetailSale.new(
-    contract: %w[pendiente firmado].sample,
-    purchase_contract: %w[en_banco en_notaria conservador finalizado].sample,
-    inscription: %w[en_estudio inscrita].sample,
+    contract: %w[firmado].sample,
+    purchase_contract: %w[en_conservador].sample,
+    inscription: %w[en_estudio].sample,
     detail: Faker::Lorem.sentence,
     caratula: Faker::Number.number(digits: 8),
     value: rand(40000000..300000000),
-    created_at: Faker::Date.between(from: '2017-01-01', to: Date.today),
+    created_at: Faker::Date.between(from: '2018-01-01', to: Date.today),
     url: Faker::Internet.url
 )
 detail_sale_one.buyer = Buyer.find_by(name: "Fabian Pino") 
 detail_sale_one.save!
 
 detail_sale_two = DetailSale.new(
-    contract: %w[pendiente firmado].sample,
-    purchase_contract: %w[en_banco en_notaria conservador finalizado].sample,
-    inscription: %w[en_estudio inscrita].sample,
+    contract: %w[pendiente].sample,
+    purchase_contract: %w[en_banco en_notaria en_conservador].sample,
+    inscription: %w[en_estudio].sample,
     detail: Faker::Lorem.sentence,
     caratula: Faker::Number.number(digits: 8),
     value: rand(40000000..300000000),
-    created_at: Faker::Date.between(from: '2017-01-01', to: Date.today),
+    created_at: Faker::Date.between(from: '2021-01-01', to: Date.today),
     url: Faker::Internet.url
 )
 detail_sale_two.buyer = Buyer.find_by(name: "Gaspar Goycoolea") 
 detail_sale_two.save!
 
 detail_sale_three = DetailSale.new(
-    contract: %w[pendiente firmado].sample,
-    purchase_contract: %w[en_banco en_notaria conservador finalizado].sample,
-    inscription: %w[en_estudio inscrita].sample,
+    contract: %w[firmado].sample,
+    purchase_contract: %w[ en_conservador].sample,
+    inscription: %w[inscrita].sample,
     detail: Faker::Lorem.sentence,
     caratula: Faker::Number.number(digits: 8),
     value: rand(40000000..300000000),
-    created_at: Faker::Date.between(from: '2017-01-01', to: Date.today),
+    created_at: Faker::Date.between(from: '2020-01-01', to: Date.today),
     url: Faker::Internet.url
 )
 detail_sale_three.buyer = Buyer.find_by(name: "Pedro Yañez") 

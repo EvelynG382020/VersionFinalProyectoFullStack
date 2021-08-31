@@ -41,15 +41,14 @@
           <td><%= localize owner.created_at, format: "%d de %B de %Y" %></td>
  
           <% if current_user.liked? owner%>
-            <td><%= link_to dislike_owner_path(owner) do  %><i class="fas fa-phone fa-2x"></i></td> 
+            <td><%= link_to dislike_owner_path(owner) do %>Llamar <%= time_ago_in_words(owner.created_at) %><i class="fas fa-phone fa-2x"></i></td> 
             <% end %>
           <% else %>  
-            <td><%= link_to like_owner_path(owner) do %><i class="fas fa-phone-slash fa-2x"></i></td>
+            <td><%= link_to like_owner_path(owner) do %> No llamar <%= time_ago_in_words(owner.created_at) %><i class="fas fa-phone-slash fa-2x"></i></td>
             <% end %>
           <% end %>
-
-          <td><%= link_to 'Mas Info', owner %></td>
           
+          <td><%= link_to 'Mas Info', owner %></td>
           <td><%= link_to 'Editar', edit_owner_path(owner) %></td>
           <td><%= link_to 'Eliminar', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
