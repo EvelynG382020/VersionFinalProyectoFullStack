@@ -17,7 +17,6 @@
 //= require popper
 //= require bootstrap
 //= require chartkick
-//= require highcharts
 //= require Chart.bundle
 //= require_tree .
 
