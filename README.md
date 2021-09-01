@@ -1,10 +1,14 @@
 # Final Project Full Stack "Platform Broker Inmobiliario"
-rails (version) new (name) -d=postgresql
+https://fullstackbroker.herokuapp.com/
+EN ELABORACIÓN.....
+rails 5.2.5, ruby 2.7.4 new (name) -d=postgresql
+gem bootstrap and their installation
 gem devise, and devise install, controller and views.
 gem activeamine for roles and admin.
 gem ransack for search status in_process or finished of the properties.
 gem sendgrip install for notify email when create new user. For example the client needs other users for some works in the platform.
 gem acts as votable, for put a like o dislike to tasks.
+gem omniauth for login with facebook
 The Client will be able to see a dashboard with all information entered...
 Continuation of the project...
 The client needs to see all properties informations and the owners with details of sale and rent, the renters and buyers in the process, also, he needs
