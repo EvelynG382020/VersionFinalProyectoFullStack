@@ -91,6 +91,8 @@ gem 'mercadopago-sdk'
 
 gem 'faker'
 
+gem 'aws-sdk-s3'
+
 
 
 
