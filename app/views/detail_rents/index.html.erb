@@ -12,11 +12,13 @@
     <thead>
       <tr>
         <th>Arrendatario</th>
-        <th>Valor</th>
+        <th>Propiedad</th>
+        <th>Propietario</th>
+        <th>Valor $</th>
         <th>Contrato</th>
-        <th>Observaciones</th>
         <th>Fecha de ingreso</th>
         <th>Fecha de término</th>
+        <th>Observaciones</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -25,6 +27,8 @@
       <% @detail_rents.each do |detail_rent| %>
         <tr>
           <td><%= detail_rent.renter.name %></td>
+          <td><%= detail_rent.renter.property.name %></td>
+          <td><%= detail_rent.renter.property.owner.name %></td>
           <td><%= detail_rent.value %></td>
           <td><%= detail_rent.contract %></td>
           <td><%= detail_rent.detail %></td>
