@@ -1,8 +1,13 @@
 class DashboardController < ApplicationController
+   # content_security_policy only: :index do |policy|
+   #    policy.style_src :self, :unsafe_inline
+   #    policy.script_src :self, :unsafe_inline
+   # end
    def index
-    @sales_by_month = DetailSale.group_by_month(:created_at, last: 24, format: "%b %Y").order(created_at: :asc).sum(:value)
-    @sales_by_count = DetailSale.group_by_month(:created_at, last: 24, format: "%b %Y").order(created_at: :asc).count
-    @sales_by_average = DetailSale.group_by_month(:created_at, last: 24, format: "%b %Y").order(created_at: :asc).average(:value)
+      #use_content_security_policy_named_append(:charts)
+    @sales_by_month = DetailSale.group_by_month(:created_at, last: 24, format: "%b %Y").sum(:value)
+    @sales_by_count = DetailSale.group_by_month(:created_at, last: 24, format: "%b %Y").count
+    @sales_by_average = DetailSale.group_by_month(:created_at, last: 24, format: "%b %Y").average(:value)
    end
 
 end

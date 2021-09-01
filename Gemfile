@@ -92,3 +92,5 @@ gem 'mercadopago-sdk'
 gem 'faker'
 
 
+
+
