@@ -3,11 +3,13 @@
 <hr>
 <h2>Propiedades</h2>
 <%#= render 'form', property: @property %>
+
   <%= link_to 'Nueva Propiedad', new_property_path, class: "btn btn-info" %> |
   <%= link_to 'Index Propietarios', owners_path, class: "btn btn-info"  %> |
   <%= link_to 'Index Arrendatarios', renters_path, class: "btn btn-info"  %> |
   <%= link_to 'Index Compradores', buyers_path, class: "btn btn-info"  %> |
   <%= link_to 'Procesos Cerrados', my_completeds_path, class: "btn btn-info"  %>
+
   <hr>
   <form class="form-inline ">
   <div class="d-inline-block">
@@ -32,6 +34,10 @@
   </div>
 </div>
 <hr>
+
+ 
+
+
 <div class="table-responsive">
   <table class="table">
     <thead>
@@ -49,27 +55,8 @@
         <th>Observaciones</th>
       </tr>  
     </thead>
-    <tbody>
-      <% @properties.each do |property| %>
-      <tr>
-        <td><%= property.name %></td>
-        <td><%= property.status %></td>
-        <td><%= property.negotiation %></td>
-        <td><%= property.transaction_type %></td>
-        <td><%= property.kind %></td>
-        <td><%= property.adress %></td>
-        <td><%= property.location %></td>
-        <td><%= property.city %></td>
-        <td><%= property.rol %></td>
-        <td><%= property.owner.name %></td>
-        <td><%= property.detail %></td>
-        <td><%= localize property.created_at, format: "%d de %B de %Y" %></td>
-        <td><%= link_to 'Mostrar', property%></td>
-        <td><%= link_to 'Editar', edit_property_path(property)%></td>
-        <td><%= link_to 'Eliminar', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Cerrar Proceso', finalizar_property_path(property), method: :post, remote: true  %>
-      </tr>
-      <% end %>
+    <tbody id="myProperty">
+      <%= render @properties%>
     </tbody>
   </table> 
 </div> 
