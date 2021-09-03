@@ -4,20 +4,20 @@
     Broker Inmobiliario</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button> 
 
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault" >
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+      <li class="nav-item" id="btn-hover">
         <a class="nav-link" href="https://www.ekpropiedades.cl/" target="_blank">Pagina Web <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="btn-hover">
         <a class="nav-link" href="https://www.toppropiedades.cl/intranet/" target="_blank">Intranet Publicaciones</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item active" id="btn-hover">
         <a class="nav-link" href="<%= new_admin_admin_user_path%>" target="_blank">Admin</a>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown" id="btn-hover">
         <span class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</span>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" href="https://homer.sii.cl/" target="_blank">SII</a>
@@ -25,7 +25,7 @@
           <a class="dropdown-item" href="https://calculadoraipc.ine.cl/" target="_blank">Calculo IPC</a>
         </div>    
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown" id="btn-hover">
         <span class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Intranet BDD</span>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
         <% if can? :manage, :all %>
@@ -44,10 +44,10 @@
           <a class="dropdown-item" href="<%= my_completeds_path%>">Procesos finalizados</a>
         <% end %> 
         </div>
-        <li class="nav-item">
+        <li class="nav-item" id="btn-hover">
           <%= link_to "Contacto", contacts_new_path, class:"nav-link" %>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="btn-hover">
           <%= link_to "Mercado Pago", pay_registrations_new_path, class:"nav-link" %>
         </li>
       </li>

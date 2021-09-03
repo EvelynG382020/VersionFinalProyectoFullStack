@@ -1,9 +1,17 @@
 <% unless user_signed_in? %> 
 <main class="container" role="main">
-  <div class="jumbotron">
-    <h1></h1>
-    <p class="lead">No estás registrado?! Visítanos...</p>
-    <a class="btn btn-lg btn-info" href="<%= lead_index_path %>" target="light" role="button">Más sobre la          plataforma! &raquo;</a>
+  <div class="jumbotron" style="background-color:#CFD8DC;">
+  <button onclick="displayDate()">Qué hora es?</button>
+  <script>
+  function displayDate() {
+    document.getElementById("demo").innerHTML = Date();
+  }
+  </script>
+  <p id="demo"></p>
+  <hr>
+  <p class="lead text-uppercase mb-4 font-weight-bold">No estás registrado?! Visítanos...</p>
+  <a class="btn btn-lg btn-info" href="<%= lead_index_path %>" target="light" role="button">Más sobre la plataforma! &raquo;</a>
+    
   </div>
   <div class="container">
     <p class="lead">Compartimos información sobre:</p>
@@ -32,6 +40,7 @@
     </div>
   </div>
   <hr>
+
 <% else%>
   <%= render '/dashboard/index'%>
 <% end %>

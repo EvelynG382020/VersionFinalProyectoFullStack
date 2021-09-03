@@ -4,7 +4,7 @@ fetch('https://mindicador.cl/api').then(function(response) {
   document.getElementById("UF").innerHTML = 'UF $' + dailyIndicators.uf.valor;
   document.getElementById("DolarO").innerHTML = 'USD $' + dailyIndicators.dolar.valor;
   document.getElementById("Euro").innerHTML = 'Euro $' + dailyIndicators.euro.valor;
-  document.getElementById("IPC").innerHTML = 'IPC ' + dailyIndicators.ipc.valor;
+  document.getElementById("IPC").innerHTML = 'IPC %' + dailyIndicators.ipc.valor;
 }).catch(function(error) {
   console.log('Requestfailed', error);
 });
