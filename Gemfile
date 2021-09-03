@@ -93,6 +93,9 @@ gem 'faker'
 
 gem 'aws-sdk-s3'
 
+gem "sentry-ruby"
+gem "sentry-rails"
+
 
 
 
