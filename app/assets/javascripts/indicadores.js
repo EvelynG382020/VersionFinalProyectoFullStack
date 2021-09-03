@@ -1,10 +1,10 @@
 fetch('https://mindicador.cl/api').then(function(response) {
    return response.json();
 }).then(function(dailyIndicators) {
-  document.getElementById("UF").innerHTML = 'El valor actual de la UF es $' + dailyIndicators.uf.valor;
-  document.getElementById("DolarO").innerHTML = 'El valor actual del Dólar observado es $' + dailyIndicators.dolar.valor;
-  document.getElementById("Euro").innerHTML = 'El valor actual del Euro es $' + dailyIndicators.euro.valor;
-  document.getElementById("IPC").innerHTML = 'El valor actual del IPC es ' + dailyIndicators.ipc.valor;
+  document.getElementById("UF").innerHTML = 'UF $' + dailyIndicators.uf.valor;
+  document.getElementById("DolarO").innerHTML = 'USD $' + dailyIndicators.dolar.valor;
+  document.getElementById("Euro").innerHTML = 'Euro $' + dailyIndicators.euro.valor;
+  document.getElementById("IPC").innerHTML = 'IPC ' + dailyIndicators.ipc.valor;
 }).catch(function(error) {
   console.log('Requestfailed', error);
 });
