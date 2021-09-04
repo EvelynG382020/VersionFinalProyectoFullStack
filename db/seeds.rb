@@ -324,7 +324,7 @@ detail_sale_one = DetailSale.new(
     inscription: "en_estudio",
     detail: Faker::Lorem.sentence,
     caratula: Faker::Number.number(digits: 8),
-    value: rand(40000000..300000000),
+    value: "120000000",
     created_at: Faker::Date.between(from: '2019-01-01', to: Date.today),
     url: Faker::Internet.url
 )
@@ -337,7 +337,7 @@ detail_sale_two = DetailSale.new(
     inscription: "en_estudio",
     detail: Faker::Lorem.sentence,
     caratula: Faker::Number.number(digits: 8),
-    value: rand(40000000..300000000),
+    value: "200000000",
     created_at: Faker::Date.between(from: '2020-08-01', to: Date.today),
     url: Faker::Internet.url
 )
@@ -350,7 +350,7 @@ detail_sale_three = DetailSale.new(
     inscription: "inscrita",
     detail: Faker::Lorem.sentence,
     caratula: Faker::Number.number(digits: 8),
-    value: rand(40000000..300000000),
+    value: "95000000",
     created_at: Faker::Date.between(from: '2021-01-01', to: Date.today),
     url: Faker::Internet.url
 )
@@ -363,7 +363,7 @@ detail_sale_four = DetailSale.new(
     inscription: "inscrita",
     detail: Faker::Lorem.sentence,
     caratula: Faker::Number.number(digits: 8),
-    value: rand(40000000..300000000),
+    value: "100000000",
     created_at: "2020-01-01",
     url: Faker::Internet.url
 )
@@ -376,7 +376,7 @@ detail_sale_five = DetailSale.new(
     inscription: "inscrita",
     detail: Faker::Lorem.sentence,
     caratula: Faker::Number.number(digits: 8),
-    value: rand(40000000..300000000),
+    value: "110000000",
     created_at: "2020-01-01",
     url: Faker::Internet.url
 )
@@ -389,7 +389,7 @@ detail_sale_six = DetailSale.new(
     inscription: "inscrita",
     detail: Faker::Lorem.sentence,
     caratula: Faker::Number.number(digits: 8),
-    value: rand(40000000..300000000),
+    value: "98000000",
     created_at: "2020-02-01",
     url: Faker::Internet.url
 )

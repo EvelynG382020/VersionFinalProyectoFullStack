@@ -1,10 +1,8 @@
 
 <p id="notice"><%= notice %></p>
 
-<h2>Detalle Arriendo</h2>
+<h5 class="text-uppercase mb-4 font-weight-bold">Detalle Arriendo</h5>
 <hr>
-<%= link_to 'Nuevo Detalle Arriendo', new_detail_rent_path, class: "btn btn-info" %> |
-<%= link_to 'Index Detalle Ventas', detail_sales_path, class: "btn btn-info" %> |
 <%= link_to 'Index Propiedades', properties_path, class: "btn btn-info" %>
 <hr>
 <div class="table-responsive">
@@ -22,8 +20,8 @@
         <th colspan="3"></th>
       </tr>
     </thead>
-
     <tbody>
+    <%= link_to 'Nuevo Detalle Arriendo', new_detail_rent_path, class: "btn btn-info" %>
       <% @detail_rents.each do |detail_rent| %>
         <tr>
           <td><%= detail_rent.renter.name %></td>
@@ -34,9 +32,9 @@
           <td><%= detail_rent.created_at %></td>
           <td><%= detail_rent.date %></td>
            <td><%= detail_rent.detail %></td>
-          <td><%= link_to 'Mostrar', detail_rent %></td>
-          <td><%= link_to 'Editar', edit_detail_rent_path(detail_rent) %></td>
-          <td><%= link_to 'Eliminar', detail_rent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Arrendatarios', renters_path, class: "btn btn-info" %></td>
+          <td><%= link_to 'Editar', edit_detail_rent_path(detail_rent), class: "btn btn-info" %></td>
+          <td><%= link_to 'Eliminar', detail_rent, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-info" %></td>
         </tr>
       <% end %>
     </tbody>

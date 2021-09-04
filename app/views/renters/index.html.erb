@@ -3,7 +3,6 @@
 <h2>Arrendatarios</h2>
 <hr>
 <%= link_to 'Nuevo Arrendatario', new_renter_path, class: "btn btn-info"  %> |
-<%= link_to 'Index Detalle Arriendos', detail_rents_path, class: "btn btn-info" %>
 <%= link_to 'Index Propiedades', properties_path, class: "btn btn-info" %>
 <hr>
 <div class="table-responsive">
@@ -33,9 +32,9 @@
           <td><%= renter.property.owner.name %></td>
           <td><%= renter.property.name %></td>
           <td><%= localize renter.created_at, format: "%d de %B de %Y" %></td>
-          <td><%= link_to 'Mostrar', renter %></td>
-          <td><%= link_to 'Editar', edit_renter_path(renter) %></td>
-          <td><%= link_to 'Eliminar', renter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Mostrar', renter, class: "btn btn-info" %></td>
+          <td><%= link_to 'Editar', edit_renter_path(renter), class: "btn btn-info" %></td>
+          <td><%= link_to 'Eliminar', renter, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-info" %></td>
         </tr>
       <% end %>
     </tbody>

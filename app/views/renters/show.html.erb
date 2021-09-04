@@ -1,42 +1,40 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Nombre:</strong>
-  <%= @renter.name %>
-</p>
-
-<p>
-  <strong>Teléfono:</strong>
-  <%= @renter.phone %>
-</p>
-
-<p>
-  <strong>Rut:</strong>
-  <%= @renter.rut %>
-</p>
-
-<p>
-  <strong>Mail:</strong>
-  <%= @renter.mail %>
-</p>
-
-<p>
-  <strong>Observaciones:</strong>
-  <%= @renter.detail %>
-</p>
-
-<p>
-  <strong>Propietario:</strong>
-  <%= @renter.property.owner.name %>
-</p>
-
-<p>
-  <strong>Propiedad:</strong>
-  <%= @renter.property.name %>
-</p>
-<p>
-<strong>Fecha ingreso:</strong>
-  <td><%= localize @renter.created_at, format: "%d de %B de %Y" %></td>
-</p>
-<%= link_to 'Editar', edit_renter_path(@renter) %> |
+<hr>
+<h6 class="text-uppercase mb-4 font-weight-bold">Detalle de Arriendo Asociada <%= @renter.name %></h6>
+<%= link_to 'Editar', edit_renter_path(@renter) %> 
 <%= link_to 'Regresar', renters_path %>
+<hr>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Arrendatario</th>
+        <th>Propiedad</th>
+        <th>Propietario</th>
+        <th>Valor $</th>
+        <th>Contrato</th>
+        <th>Fecha de ingreso</th>
+        <th>Fecha de término</th>
+        <th>Observaciones</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+    <%= link_to 'Nuevo Detalle Arriendo', new_detail_rent_path, class: "btn btn-info" %>
+      <% @renter.detail_rents.each do |dr| %>
+        <tr>
+          <td><%= dr.renter.name %></td>
+          <td><%= dr.renter.property.name %></td>
+          <td><%= dr.renter.property.owner.name %></td>
+          <td><%= dr.value %></td>
+          <td><%= dr.contract %></td>
+          <td><%= dr.created_at %></td>
+          <td><%= dr.date %></td>
+          <td><%= dr.detail %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
+

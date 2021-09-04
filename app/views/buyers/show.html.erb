@@ -1,46 +1,47 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Nombre:</strong>
-  <%= @buyer.name %>
-</p>
-
-<p>
-  <strong>Teléfono:</strong>
-  <%= @buyer.phone %>
-</p>
-
-<p>
-  <strong>Rut:</strong>
-  <%= @buyer.rut %>
-</p>
-
-<p>
-  <strong>Mail:</strong>
-  <%= @buyer.mail %>
-</p>
-
-<p>
-  <strong>Observaciones:</strong>
-  <%= @buyer.detail %>
-</p>
-
-<p>
-  <strong>Propietario:</strong>
-  <%= @buyer.property.owner.name %>
-</p>
-
-<p>
-  <strong>Propiedad:</strong>
-  <%= @buyer.property.name %>
-</p>
-<p>
-  <strong>Fecha ingreso:</strong>
-  <%= localize @buyer.created_at, format: "%d de %B de %Y" %>
-</p>
+<hr>
+<h6 class="text-uppercase mb-4 font-weight-bold">Detalle de Venta Asociada <%= @buyer.name %></h6>
+<%= link_to 'Editar', edit_buyer_path(@buyer) %> 
+<%= link_to 'Regresar', buyers_path %>
+<hr>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Promesa</th>
+        <th>Escritura Compraventa</th>
+        <th>Comprador</th>
+        <th>Propiedad</th>
+        <th>Propietario</th>
+        <th>Caratula</th>
+        <th>Url Conservador</th>
+        <th>Inscripción CBRs</th>
+        <th>Valor $</th>
+        <th>Fecha ingreso</th>
+        <th>Observaciones</th>
+        <th colspan="6"></th>
+      </tr>
+    </thead>
+    <tbody>
+    <%= link_to 'Nuevo Detalle Ventas', new_detail_sale_path, class: "btn btn-info"  %>
+      <% @buyer.detail_sales.each do |ds| %>
+        <tr>
+          <td><%= ds.contract %></td>
+          <td><%= ds.purchase_contract %></td>
+          <td><%= ds.buyer.name %></td>
+          <td><%= ds.buyer.property.name %></td>
+          <td><%= ds.buyer.property.owner.name%></td>
+          <td><%= ds.caratula %></td>
+          <td><%= ds.url %></td>
+          <td><%= ds.inscription%></td>
+          <td><%= ds.value%></td>
+          <td><%= localize ds.created_at, format: "%d de %B de %Y" %></td>
+          <td><%= ds.detail %></td>
+          
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <hr>
 
-
-
-<%= link_to 'Editar', edit_buyer_path(@buyer) %> |
-<%= link_to 'Regresar', buyers_path %>

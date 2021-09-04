@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook]
 
   has_many :completeds, dependent: :destroy
-  enum role: [:broker, :asistant, :admin]
+  enum role: [:broker, :asistant, :admin, :pendiente_pago]
 
   def is?( requested_role )
     self.role == requested_role.to_s

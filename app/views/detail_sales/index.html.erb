@@ -1,9 +1,7 @@
 
 <p id="notice"><%= notice %></p>
 <hr>
-<h2>Detalle Ventas</h2>
-<%= link_to 'Nuevo Detalle Ventas', new_detail_sale_path, class: "btn btn-info"  %> |
-<%= link_to 'Detalle Arriendo', detail_rents_path, class: "btn btn-info" %> |
+<h5 class="text-uppercase mb-4 font-weight-bold">Detalle Ventas</h5> 
 <%= link_to 'Index Propiedades', properties_path, class: "btn btn-info" %>
 <hr>
 <div class="row">
@@ -39,6 +37,7 @@
       </tr>
     </thead>
     <tbody>
+    <%= link_to 'Nuevo Detalle Ventas', new_detail_sale_path, class: "btn btn-info"  %>
       <% @detail_sales.each do |detail_sale| %>
         <tr>
           <td><%= detail_sale.contract %></td>
@@ -52,10 +51,9 @@
           <td><%= detail_sale.value%></td>
           <td><%= localize detail_sale.created_at, format: "%d de %B de %Y" %></td>
           <td><%= detail_sale.detail %></td>
-          <td><%= link_to 'Mas info', detail_sale %></td>
-        
-          <td><%= link_to 'Editar', edit_detail_sale_path(detail_sale) %></td>
-          <td><%= link_to 'Eliminar', detail_sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Compradores', buyers_path, class: "btn btn-info" %></td>
+          <td><%= link_to 'Editar', edit_detail_sale_path(detail_sale), class: "btn btn-info" %></td>
+          <td><%= link_to 'Eliminar', detail_sale, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-info" %></td>
         </tr>
       <% end %>
     </tbody>

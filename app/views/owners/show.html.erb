@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <hr>
-<h2>Propiedad Asociada <%= @owner.name %></h2>
+<h6 class="text-uppercase mb-4 font-weight-bold">Propiedad Asociada <%= @owner.name %></h6>
 <hr>
 <%= link_to 'Editar', edit_owner_path(@owner) %> |
 <%= link_to 'Regresar', owners_path %>
@@ -9,23 +9,26 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Propiedades</th>
+        <th>Propiedad</th>
         <th>Estado</th>
         <th>Negociación</th>
         <th>Dirección</th>
         <th>Rol</th>
+        <th colspan="3"></th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><%= @owner.properties.pluck(:name).join('; ')  %></td>
-        <td><%= @owner.properties.pluck(:status).join('; ') %></td>
-        <td><%= @owner.properties.pluck(:negotiation).join('; ') %></td>
-        <td><%= @owner.properties.pluck(:adress).join('; ') %></td>
-        <td><%= @owner.properties.pluck(:rol).join('; ') %></td>
-      </tr>
+      <% @owner.properties.each do |owner| %>
+        <tr>
+          <td><%= owner.name %></td>
+          <td><%= owner.status %></td>
+          <td><%= owner.negotiation %></td>
+          <td><%= owner.adress %></td>
+          <td><%= owner.rol %></td>
+        </tr>
+      <% end %>  
     </tbody>
   </table>
-</div>
+</div> 
 <hr>
 

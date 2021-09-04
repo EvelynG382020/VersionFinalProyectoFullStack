@@ -2,9 +2,7 @@
 
 <h1>Compradores</h1>
 <hr>
-<%= link_to 'Nuevo Comprador', new_buyer_path, class: "btn btn-info" %> |
-<%= link_to 'Index Propiedades', properties_path, class: "btn btn-info" %> |
-<%= link_to 'Index Detalle Ventas', detail_sales_path, class: "btn btn-info" %>
+<%= link_to 'Index Propiedades', properties_path, class: "btn btn-info" %> 
 <hr>
 <div class="table-responsive">
   <table class="table">
@@ -23,6 +21,7 @@
     </thead>
 
     <tbody>
+      <%= link_to 'Nuevo Comprador', new_buyer_path, class: "btn btn-info" %>
       <% @buyers.each do |buyer| %>
         <tr>
           <td><%= buyer.name %></td>
@@ -33,9 +32,10 @@
           <td><%= buyer.property.owner.name %></td>
           <td><%= buyer.property.name %></td>
           <td><%= localize buyer.created_at, format: "%d de %B de %Y" %></td>
-          <td><%= link_to 'Mostrar', buyer %></td>
-          <td><%= link_to 'Editar', edit_buyer_path(buyer) %></td>
-          <td><%= link_to 'Eliminar', buyer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Detalle Venta', buyer, class: "btn btn-info" %></td>
+          <td><%= link_to 'Index Propiedades', properties_path, class: "btn btn-info" %></td>
+          <td><%= link_to 'Editar', edit_buyer_path(buyer), class: "btn btn-info" %></td>
+          <td><%= link_to 'Eliminar', buyer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-info" %></td>
         </tr>
       <% end %>
     </tbody>
