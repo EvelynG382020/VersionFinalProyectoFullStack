@@ -27,9 +27,16 @@ class PayRegistrationsController < ApplicationController
             title: 'Mi Registro a la plataforma',
             unit_price: 150000,
             quantity: 1
-          }
+          },
+          back_urls: {
+            success: "https://www.success.com",
+            failure: "http://www.failure.com",
+            pending: "http://www.pending.com"
+        },
+          auto_return: "approved"
         ]
       }
+
       preference_response = sdk.preference.create(preference_data)
       preference = preference_response[:response]
       puts "++++++ #{preference}"
@@ -37,6 +44,7 @@ class PayRegistrationsController < ApplicationController
       @preference_id = preference['id']
       sandbox_init_point = preference["sandbox_init_point"]
       redirect_to sandbox_init_point
+
     end
   
     private

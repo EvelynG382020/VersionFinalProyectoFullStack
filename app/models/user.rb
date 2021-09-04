@@ -7,7 +7,13 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook]
 
   has_many :completeds, dependent: :destroy
-  enum role: [:broker, :asistant, :admin, :pendiente_pago]
+  enum role: [:broker, :asistant, :admin]
+  enum status_payment: [:pend_pago, :pagado]
+  #crear un metodo modelo de usu
+
+  # def self.has_payment?(user)        
+  #   Payment.where(status: "approved", user_id: user.id).first
+  # end
 
   def is?( requested_role )
     self.role == requested_role.to_s
