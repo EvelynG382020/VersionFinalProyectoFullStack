@@ -14,6 +14,11 @@ class PropertiesController < ApplicationController
       @properties = @q.result(distinct: true)
       @property = Property.available_property     
     end
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template: 'properties/reporte', pdf: 'Reporte', layout: 'pdf.html'}
+    end
   end
 
   # GET /properties/1 or /properties/1.json

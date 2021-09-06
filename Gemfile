@@ -96,6 +96,11 @@ gem 'aws-sdk-s3'
 gem "sentry-ruby"
 gem "sentry-rails"
 
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
+
+
 
 
 

@@ -1,0 +1,40 @@
+
+
+  <h1 class="text-uppercase mb-4 font-weight-bold">Reporte de propiedades</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre Descriptivo</th>
+        <th>Estado</th>
+        <th>Negociación</th>
+        <th>Transacción</th>
+        <th>Tipo de propiedad</th>
+        <th>Dirección</th>
+        <th>Comuna</th>
+        <th>Ciudad</th>
+        <th>Rol</th>
+        <th>Nombre Propietario</th>
+        <th>Observaciones</th>
+        <th>Fecha de registro</th>
+      </tr>  
+    </thead>
+    <tbody>
+      <% @properties.each do |property| %>
+        <tr>
+          <td><%= property.name %></td>
+          <td><%= property.status %></td>
+          <td><%= property.negotiation %></td>
+          <td><%= property.transaction_type %></td>
+          <td><%= property.kind %></td>
+          <td><%= property.adress %></td>
+          <td><%= property.location %></td>
+          <td><%= property.city %></td>
+          <td><%= property.rol %></td>
+          <td><%= property.owner.name %></td>
+          <td><%= property.detail %></td>
+          <td><%= property.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+

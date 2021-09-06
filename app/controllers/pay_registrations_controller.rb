@@ -18,13 +18,12 @@ class PayRegistrationsController < ApplicationController
     end
   
     def pay
-      puts "++++++++" 
       require 'mercadopago'
       sdk = Mercadopago::SDK.new(ENV['MP_ACCESS_TOKEN'])
       preference_data = {
         items: [
           {
-            title: 'Mi Registro a la plataforma',
+            title: 'Registro a la plataforma',
             unit_price: 150000,
             quantity: 1
           },
@@ -39,7 +38,7 @@ class PayRegistrationsController < ApplicationController
 
       preference_response = sdk.preference.create(preference_data)
       preference = preference_response[:response]
-      puts "++++++ #{preference}"
+      
       # Este valor reemplazará el string "<%= @preference_id %>" en tu HTML
       @preference_id = preference['id']
       sandbox_init_point = preference["sandbox_init_point"]
