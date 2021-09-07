@@ -1,7 +1,7 @@
 class Owner < ApplicationRecord
     has_many :properties, dependent: :destroy
-   
     acts_as_votable
+    validates :phone, :name, :rut, :mail, presence: true
 
     def total_property
         properties.count

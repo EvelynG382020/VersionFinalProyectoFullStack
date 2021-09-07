@@ -33,6 +33,7 @@
         <th>Total propiedades</th>
         <th>Propiedades</th>
         <th>Fecha ingreso</th>
+        <th>Recordatorio</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -55,9 +56,9 @@
             <% end %>
           <% end %>
           
-          <td><%= link_to 'Mas Info', owner %></td>
-          <td><%= link_to 'Editar', edit_owner_path(owner) %></td>
-          <td><%= link_to 'Eliminar', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Mas Info', owner, class: "btn btn-info"  %></td>
+          <td><%= link_to 'Editar', edit_owner_path(owner), class: "btn btn-info"  %></td>
+          <td><%= link_to 'Eliminar', owner, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-info"  %></td>
         </tr>
       <% end %>
     </tbody>

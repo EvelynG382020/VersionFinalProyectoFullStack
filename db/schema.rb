@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_07_005331) do
+ActiveRecord::Schema.define(version: 2021_09_07_122521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +113,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_005331) do
     t.datetime "updated_at", null: false
     t.integer "purchase_contract", default: 0
     t.integer "inscription", default: 0
+    t.date "end"
     t.index ["buyer_id"], name: "index_detail_sales_on_buyer_id"
   end
 

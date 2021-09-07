@@ -41,11 +41,11 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Nombre Descriptivo</th>
+        <th><%= sort_link(@q, :name, "Nombre Descriptivo") %></th>
         <th>Estado</th>
-        <th>Negociación</th>
-        <th>Transacción</th>
-        <th>Tipo de propiedad</th>
+        <th><%= sort_link(@q, :negotiation, 'Negociación') %></th>
+        <th><%= sort_link(@q, :transaction_type, 'Transacción') %></th>
+        <th><%= sort_link(@q, :kind, 'Tipo de propiedad') %></th>
         <th>Dirección</th>
         <th>Comuna</th>
         <th>Ciudad</th>

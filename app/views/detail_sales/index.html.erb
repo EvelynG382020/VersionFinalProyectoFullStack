@@ -22,8 +22,8 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Promesa</th>
-        <th>Escritura Compraventa</th>
+         <th><%= sort_link(@q, :contract, "Promesa") %></th>
+        <th><%= sort_link(@q, :purchase_contract, "Escritura Compraventa") %></th>
         <th>Comprador</th>
         <th>Propiedad</th>
         <th>Propietario</th>
@@ -32,6 +32,7 @@
         <th>Inscripción CBRs</th>
         <th>Valor $</th>
         <th>Fecha ingreso</th>
+        <th>Fecha término</th>
         <th>Observaciones</th>
         <th colspan="6"></th>
       </tr>
@@ -50,6 +51,7 @@
           <td><%= detail_sale.inscription%></td>
           <td><%= detail_sale.value%></td>
           <td><%= localize detail_sale.created_at, format: "%d de %B de %Y" %></td>
+          <td><%= detail_sale.end %></td>
           <td><%= detail_sale.detail %></td>
           <td><%= link_to 'Compradores', buyers_path, class: "btn btn-info" %></td>
           <td><%= link_to 'Editar', edit_detail_sale_path(detail_sale), class: "btn btn-info" %></td>

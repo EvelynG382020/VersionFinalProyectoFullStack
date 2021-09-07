@@ -13,6 +13,6 @@ class Property < ApplicationRecord
   enum transaction_type: %i[venta arriendo]
 
   scope :available_property, -> { where(status: :disponible) }
-  
+  validates :status, :name, :kind, :adress, :detail, :rol, :negotiation, :location, :city, :transaction_type, presence: true
 
 end

@@ -67,6 +67,6 @@ class DetailSalesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def detail_sale_params
-      params.require(:detail_sale).permit(:detail, :caratula, :url, :value, :contract, :purchase_contract, :inscription, :buyer_id)
+      params.require(:detail_sale).permit(:detail, :caratula, :url, :value, :contract, :purchase_contract, :inscription, :buyer_id, :end)
     end
 end

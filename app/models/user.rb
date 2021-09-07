@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_many :completeds, dependent: :destroy
   enum role: [:broker, :asistant, :admin, :pending]
-  #enum status_payment: [:pend_pago, :pagado]
+  enum status_payment: [:pend_pago, :pagado]
   has_one :pay_registration
 
 

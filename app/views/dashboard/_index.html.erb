@@ -1,19 +1,22 @@
 
 <h2>Resumen Actualizado </h2>
-
-
-
+<hr>
 <div>
-    <h2>Ventas últimos 12 meses</h2>
+    <h2>Ventas últimos 24 meses</h2>
     <%= line_chart @sales_by_month %>
 </div>
-
+<hr>
 <div>
-    <h2>Cantidad de ventas últimos 12 meses</h2>
+    <h2>Ventas finalizadas últimos 24 meses</h2>
+    <%= line_chart @sales_end_by_month %>
+</div>  
+<hr>
+<div>
+    <h2>Cantidad de ventas últimos 24 meses</h2>
     <%= line_chart @sales_by_count %>
 </div>
-
+<hr>
 <div>
-    <h2>Promedio de ventas últimos 12 meses</h2>
+    <h2>Promedio de ventas últimos 24 meses</h2>
     <%= line_chart @sales_by_average %>
 </div>
