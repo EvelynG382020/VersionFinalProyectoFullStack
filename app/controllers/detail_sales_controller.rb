@@ -7,6 +7,11 @@ class DetailSalesController < ApplicationController
   def index
     @q = DetailSale.ransack(params[:q])
     @detail_sales = @q.result(distinct: true)
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template: 'detail_sales/reporte', pdf: 'Reporte', layout: 'pdf.html'}
+    end
   end
 
   # GET /detail_sales/1 or /detail_sales/1.json

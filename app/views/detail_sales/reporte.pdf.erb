@@ -1,0 +1,40 @@
+<h1 class="text-uppercase mb-4 font-weight-bold">Reporte Detalle de Ventas</h1>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Promesa</th>
+        <th>Escritura Compraventa</th>
+        <th>Comprador</th>
+        <th>Propiedad</th>
+        <th>Propietario</th>
+        <th>Caratula</th>
+        <th>Url Conservador</th>
+        <th>Inscripción CBRs</th>
+        <th>Valor $</th>
+        <th>Fecha ingreso</th>
+        <th>Fecha término</th>
+        <th>Observaciones</th>
+        <th colspan="6"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @detail_sales.each do |detail_sale| %>
+        <tr>
+          <td><%= detail_sale.contract %></td>
+          <td><%= detail_sale.purchase_contract %></td>
+          <td><%= detail_sale.buyer.name %></td>
+          <td><%= detail_sale.buyer.property.name %></td>
+          <td><%= detail_sale.buyer.property.owner.name%></td>
+          <td><%= detail_sale.caratula %></td>
+          <td><%= detail_sale.url %></td>
+          <td><%= detail_sale.inscription%></td>
+          <td><%= detail_sale.value%></td>
+          <td><%= localize detail_sale.created_at, format: "%d de %B de %Y" %></td>
+          <td><%= detail_sale.end %></td>
+          <td><%= detail_sale.detail %></td>
+        <% end %>  
+        </tr>
+    </tbody>
+  </table>
+</div>
