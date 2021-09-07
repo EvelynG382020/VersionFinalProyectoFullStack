@@ -5,7 +5,7 @@ ActiveAdmin.register User do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at, :role, :name
+  #permit_params :email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at, :role, :name
   #
   # or
   #
@@ -15,6 +15,7 @@ ActiveAdmin.register User do
     column :name
     column :email
     column :role
+    #column :status_payment
     actions
   end
 
@@ -23,17 +24,18 @@ ActiveAdmin.register User do
       f.input :name
       f.input :email
       f.input :role
+      #f.input :status_payment
       f.input :password
       f.input :password_confirmation
     end
     f.actions
   end
 end
-#   permit_params do
-#     permitted = [:email, :name, :role]
-#     permitted << :other if params[:action] == 'create' && current_user.admin?
-#     permitted
-#   end
+  # permit_params do
+  #   permitted = [:email, :name, :role]
+  #   permitted << :other if params[:action] == 'create' && current_user.admin?
+  #   permitted
+  # end
 
 #   permit_params :name, :email, :user_id
 #   before_action :remove_password_params_if_blank, only: [:update]

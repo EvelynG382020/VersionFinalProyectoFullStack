@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_26_033254) do
+ActiveRecord::Schema.define(version: 2021_09_07_005331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -148,6 +148,10 @@ ActiveRecord::Schema.define(version: 2021_08_26_033254) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.string "payment_id"
+    t.string "status", default: "pending"
+    t.index ["user_id"], name: "index_pay_registrations_on_user_id"
   end
 
   create_table "properties", force: :cascade do |t|
@@ -189,6 +193,8 @@ ActiveRecord::Schema.define(version: 2021_08_26_033254) do
     t.datetime "updated_at", null: false
     t.integer "role", default: 0
     t.string "name"
+    t.integer "payment_id"
+    t.integer "status_payment", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -214,6 +220,7 @@ ActiveRecord::Schema.define(version: 2021_08_26_033254) do
   add_foreign_key "detail_rents", "renters"
   add_foreign_key "detail_sales", "buyers"
   add_foreign_key "identities", "users"
+  add_foreign_key "pay_registrations", "users"
   add_foreign_key "properties", "owners"
   add_foreign_key "renters", "properties"
 end

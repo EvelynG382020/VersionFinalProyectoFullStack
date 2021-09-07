@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'mercado-pago', to: 'pay_registrations#pay'
   post 'pay_registrations/new'
+  get 'payment_success', to: 'pay_registrations#pay_successfull'
   get 'lead/index'
   get 'my_completeds', to: 'users#my_completed'
   devise_for :admin_users, ActiveAdmin::Devise.config
