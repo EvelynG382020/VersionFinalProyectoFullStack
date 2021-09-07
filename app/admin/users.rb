@@ -9,13 +9,13 @@ ActiveAdmin.register User do
   #
   # or
   #
-  permit_params :email, :name, :role, :password, :password_confirmation, :status_payment
+  permit_params :email, :name, :role, :password, :password_confirmation
 
   index do
     column :name
     column :email
     column :role
-    column :status_payment
+    #column :status_payment
     actions
   end
 
@@ -24,7 +24,7 @@ ActiveAdmin.register User do
       f.input :name
       f.input :email
       f.input :role
-      f.input :status_payment
+      #f.input :status_payment
       f.input :password
       f.input :password_confirmation
     end
