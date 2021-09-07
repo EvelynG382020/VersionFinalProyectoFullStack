@@ -1,12 +1,12 @@
 # Final Project Full Stack "Platform Broker Inmobiliario"
 https://fullstackbroker.herokuapp.com/
 
-nicole@email.com role broker all permission
-carlos@email.com role asistant some permission
+nicole@email.com role broker all permission 123456
+carlos@email.com role asistant some permission 123456
 
 https://trello.com/b/U0d54tC4/organizando-el-proyecto
 
-EN ELABORACIÓN.....
+For more informations and registration to platform, contact us, if your are registrated, please continius pay in mercado pago, then you will be able to access to platform.
 
 rails 5.2.5, ruby 2.7.4 new (name) -d=postgresql
 
@@ -37,5 +37,5 @@ Form contact for users that need more information about the platfom and how to r
 
 Landing page for users that not to register and just can read about the platform.
 
-This platform is for broker that needs always register all their process. Also, have access a diferent pages how your web, SII, Tesorería GR, Firmar en linea contratos, 
-Calculo Ipc para arriendos.
+This platform is for broker that needs always register all their process. Also, have access a diferent pages how your web, SII, Tesorería GR, sign contracts online, 
+Calculo Ipc for renters.
