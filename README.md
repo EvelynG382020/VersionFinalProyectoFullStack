@@ -1,16 +1,23 @@
 # Final Project Full Stack "Platform Broker Inmobiliario"
+
+HEROKU
 https://fullstackbroker.herokuapp.com/
 
 nicole@email.com role broker all permission 123456
 carlos@email.com role asistant some permission 123456
+admin@email.com password 'prueba'
 
+DOMAIN
+http://www.brokerinmobiliario.xyz/
 
+TRELLO
 https://trello.com/invite/b/U0d54tC4/cb1ca1f7f8b99414c23b08e81a2f6ef1/organizando-el-proyecto
 
 For more informations and registration to platform, contact us, if your are registrated, please continius pay in mercado pago, then you will be able to access to platform.
 
 rails 5.2.5, ruby 2.7.4 new (name) -d=postgresql
 
+GEM
 gem bootstrap and their installation.
 
 gem devise, and devise install, controller and views.
@@ -29,6 +36,7 @@ gem sentry-rails
 
 gem wicked_pdf for download the views in pdf file
 
+DEPLOY
 The Client will be able to see a dashboard with all information entered...
 The client needs to see all properties informations and the owners with details of sale and rent, also the renters and buyers in the process, so he needs login for create, edit, delete, update and only him can be able to do it. The other user (asistant) just can see the first page inicial or list of properties, but not edit or register properties.
 
