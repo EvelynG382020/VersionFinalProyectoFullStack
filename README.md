@@ -19,7 +19,7 @@ gem activeamine for roles and admin.
 
 gem ransack for search status in_process or finished of the properties.
 
-gem sendgrip install for notify email when create new user. For example the client needs other users for some works in the platform.
+gem sendgrip install for notify email when new user wants to be register and when procees in sales are ended, also make a notify. 
 
 gem acts as votable, for put a like o dislike to tasks.
 
