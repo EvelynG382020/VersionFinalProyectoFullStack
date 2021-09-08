@@ -4,7 +4,7 @@ https://fullstackbroker.herokuapp.com/
 nicole@email.com role broker all permission 123456
 carlos@email.com role asistant some permission 123456
 
-https://trello.com/b/U0d54tC4/organizando-el-proyecto
+https://trello.com/invite/b/U0d54tC4/cb1ca1f7f8b99414c23b08e81a2f6ef1/organizando-el-proyecto
 
 For more informations and registration to platform, contact us, if your are registrated, please continius pay in mercado pago, then you will be able to access to platform.
 
