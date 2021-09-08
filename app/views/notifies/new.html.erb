@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="jumbotron">
+        <h3>Notificación de finalización del proceso</h3>
+        <%= form_with(model: @notify, local:true) do |f| %>
+            <% if @notify.errors.any? %>
+                <div id="error_explanation">
+                    <h2><%= pluralize(@notify.errors.count, "error") %> prohibited this owner from being saved:</h2>
+                    <ul>
+                        <% @notify.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
+            <div class="form-group row">
+                <%= f.label "Nombre", class:"offset-md-2 col-md-3 col-form-label text-right space-label-right" %>
+                <%= f.text_field :name_user, class:"col-md-4 form-control" %>
+            </div>
+            <div class="form-group row">
+                <%= f.label "Asunto", class:"offset-md-2 col-md-3 col-form-label text-right space-label-right" %>
+                <%= f.text_field :title, class:"col-md-4 form-control" %>
+            </div>
+            <div class="form-group row">
+                <%= f.label "Mensaje", class:"offset-md-2 col-md-3 col-form-label text-right space-label-right"  %>
+                <%= f.text_area :description, class:"col-md-4 form-control" %>
+            </div>
+            <div class="form-group row">
+                <div class="container text-center">
+                    <%= f.submit "Enviar correo", class:"btn btn-info col-md-3" %>
+                </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

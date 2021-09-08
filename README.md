@@ -26,6 +26,8 @@ gem omniauth for login with facebook.
 
 gem sentry-rails
 
+gem wicked_pdf for download the views in pdf file
+
 The Client will be able to see a dashboard with all information entered...
 The client needs to see all properties informations and the owners with details of sale and rent, also the renters and buyers in the process, so he needs login for create, edit, delete, update and only him can be able to do it. The other user (asistant) just can see the first page inicial or list of properties, but not edit or register properties.
 

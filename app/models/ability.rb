@@ -11,7 +11,7 @@ class Ability
       elsif user.is? :asistant
         can :manage, DetailSale
         can :manage, DetailRent
-        can :read, [Owner, Property, Renter, Buyer, Completed]
+        can :read, [Owner, Property, Renter, Buyer, User]
       else
         can :read, :all
       end

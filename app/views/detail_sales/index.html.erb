@@ -22,7 +22,7 @@
   <table class="table">
     <thead>
       <tr>
-         <th><%= sort_link(@q, :contract, "Promesa") %></th>
+        <th><%= sort_link(@q, :contract, "Promesa") %></th>
         <th><%= sort_link(@q, :purchase_contract, "Escritura Compraventa") %></th>
         <th>Comprador</th>
         <th>Propiedad</th>
@@ -38,7 +38,8 @@
       </tr>
     </thead>
     <tbody>
-    <%= link_to 'Nuevo Detalle Ventas', new_detail_sale_path, class: "btn btn-info"  %>
+    <%= link_to 'Nuevo Detalle Ventas', new_detail_sale_path, class: "btn btn-info"  %> |
+    <%= link_to "Notificar", notifies_new_path, class:"nav-link", class: "btn btn-info" %>
       <% @detail_sales.each do |detail_sale| %>
         <tr>
           <td><%= detail_sale.contract %></td>

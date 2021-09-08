@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     end
   end
   resources :completeds
+  resources :notifies, only: [:create, :new]
   resources :contacts, only: [:create, :new]
   resources :pay_registrations, only: [:create, :new]
   resources :owners do
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
   end
   root 'home#index'
   post 'contacts/new'
+  post 'notifies/new'
   devise_for :users, controllers: { 
     registrations: 'users/registrations', 
     sessions: 'users/sessions',
