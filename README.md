@@ -1,4 +1,9 @@
 # Final Project Full Stack "Platform Broker Inmobiliario"
+FOR SIGN UP:
+-FIRST YOU HAVE TO CREATE TO NEW USER IN ADMIN WITH ROLE "PENDING", THEN GO TO SIGN IN AND PAY IN "PAGA TU REGISTRO"...FINALY, SIGN OUT. START WITH 
+nicole@email.com role broker all permission 123456
+
+YOU CAN SEND AND EMAIL IN "REGISTRATE AQUI" an I will received your contact!
 
 HEROKU
 https://fullstackbroker.herokuapp.com/

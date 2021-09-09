@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-8 offset-md-2">
       <div class="jumbotron">
-        <h3>Notificación de finalización del proceso</h3>
+        <h3>Notificar finalización del proceso</h3>
         <%= form_with(model: @notify, local:true) do |f| %>
             <% if @notify.errors.any? %>
                 <div id="error_explanation">
@@ -30,6 +30,9 @@
                 <div class="container text-center">
                     <%= f.submit "Enviar correo", class:"btn btn-info col-md-3" %>
                 </div>
+            </div>
+            <div class="container text-center">
+                <%= link_to 'Regresar', detail_sales_path, class:"btn btn-info col-md-3" %>
             </div>
         <% end %>
       </div>
