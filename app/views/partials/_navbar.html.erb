@@ -21,6 +21,7 @@
         <span class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</span>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" href="https://homer.sii.cl/" target="_blank">SII</a>
+          <a class="dropdown-item" href="https://tupatrimonio.cl/" target="_blank">Firma Online</a>
           <a class="dropdown-item" href="https://www.tgr.cl/" target="_blank">Tesoreria GR</a>
           <a class="dropdown-item" href="https://calculadoraipc.ine.cl/" target="_blank">Calculo IPC</a>
         </div>    
@@ -43,11 +44,11 @@
           <a class="dropdown-item" href="<%= properties_path%>">Propiedades</a>
         <% end %> 
         </div>
-        <li class="nav-item" id="btn-hover">
-          <%= link_to "Contacto", contacts_new_path, class:"nav-link" %>
+        <li class="nav-item active" id="btn-hover">
+          <%= link_to "REGÍSTRATE AQUÍ!!", contacts_new_path, class:"nav-link" %>
         </li>
-        <li class="nav-item" id="btn-hover">
-          <%= link_to "Mercado Pago", pay_registrations_new_path, class:"nav-link" %>
+        <li class="nav-item active" id="btn-hover">
+          <%= link_to "PAGO TU REGISTRO", pay_registrations_new_path, class:"nav-link" %>
         </li>
       </li>
     </ul>

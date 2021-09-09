@@ -38,10 +38,10 @@
       </tr>
     </thead>
     <tbody>
-    <%= link_to 'Nuevo Detalle Ventas', new_detail_sale_path, class: "btn btn-info"  %> |
-    <%= link_to "Notificar", notifies_new_path, class:"nav-link", class: "btn btn-info" %>
+    <%= link_to 'Nuevo Detalle Ventas', new_detail_sale_path, class: "btn btn-info"  %> 
       <% @detail_sales.each do |detail_sale| %>
         <tr>
+          <td><%= link_to "Notificar", notifies_new_path, class:"nav-link", class: "btn btn-info" %></td>
           <td><%= detail_sale.contract %></td>
           <td><%= detail_sale.purchase_contract %></td>
           <td><%= detail_sale.buyer.name %></td>
